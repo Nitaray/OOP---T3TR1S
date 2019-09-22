@@ -16,6 +16,17 @@ public class Window {
     private boolean created = false;
 
     /**
+     * Default constructor for the class Window.
+     */
+
+    public Window() {
+
+        WIDTH = 1280;
+
+        HEIGHT = 720;
+    }
+
+    /**
      * The constructor for the class Window.
      * @param width the window's width.
      * @param height the window's height.
@@ -23,9 +34,9 @@ public class Window {
 
     public Window(int width, int height) {
 
-        WIDTH = width;
+        this.WIDTH = width;
 
-        HEIGHT = height;
+        this.HEIGHT = height;
     }
 
     /**
