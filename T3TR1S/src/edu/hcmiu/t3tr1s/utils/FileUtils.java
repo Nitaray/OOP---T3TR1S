@@ -20,7 +20,7 @@ public class FileUtils {
             String buffer = "";
 
             while ((buffer = reader.readLine()) != null)
-                result.append(buffer);
+                result.append(buffer + '\n');
 
         }
 

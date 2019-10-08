@@ -15,6 +15,8 @@ public class Shader {
 
     private Map<String, Integer> locationCache = new HashMap<String, Integer>();
 
+    public static final int VERTEX_ATTRIBUTE = 0;
+    public static final int TEXTURE_COORD_ATTRIBUTE = 1;
 
 
     public Shader(String vertex, String fragment) {
