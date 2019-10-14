@@ -97,7 +97,7 @@ public class Matrix4f {
                 float sum = 0.0f;
 
                 for (int d = 0; d < 4; d++)
-                    sum += this.elements[x + d * 4] * matrix.elements[d + y * 4];
+                    sum += elements[x + d * 4] * matrix.elements[d + y * 4];
 
                 result.elements[x + y * 4] = sum;
             }

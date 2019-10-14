@@ -1,42 +1,32 @@
 package edu.hcmiu.t3tr1s.core;
 
 import org.lwjgl.glfw.*;
+import org.lwjgl.opengl.GL;
 
 import static org.lwjgl.glfw.Callbacks.glfwFreeCallbacks;
 import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.system.MemoryUtil.*;
 
-public class Window {
+class Window {
 
-    private int WIDTH = 1280;
-    private int HEIGHT = 720;
+    private static int WIDTH = 1280;
+    private static int HEIGHT = 720;
 
-    private long window;
+    private static long window;
 
-    private boolean created = false;
+    private static boolean created = false;
 
-    /**
-     * Default constructor for the class Window.
-     */
-
-    public Window() {
-
-        WIDTH = 1280;
-
-        HEIGHT = 720;
-    }
+    private Window() {}
 
     /**
-     * The constructor for the class Window.
-     * @param width the window's width.
-     * @param height the window's height.
+     * This method sets the window's size. Default is 1280 x 720
+     * @param width width of the window
+     * @param height height of the window
      */
 
-    public Window(int width, int height) {
-
-        this.WIDTH = width;
-
-        this.HEIGHT = height;
+    static void setSize(int width, int height) {
+        WIDTH = width;
+        HEIGHT = height;
     }
 
     /**
@@ -44,65 +34,67 @@ public class Window {
      * @param windowName name of the window.
      */
 
-    public void create(String windowName) {
+    static void create(String windowName) {
 
         glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE);
 
-        this.window = glfwCreateWindow(this.WIDTH, this.HEIGHT, windowName, NULL, NULL);
+        window = glfwCreateWindow(WIDTH, HEIGHT, windowName, NULL, NULL);
 
-        if (this.window == NULL)
+        if (window == NULL)
             throw new RuntimeException("Failed to create the GLFW window");
 
         GLFWVidMode vidMode = glfwGetVideoMode(glfwGetPrimaryMonitor());
         glfwSetWindowPos(
-                this.window,
+                window,
                 (vidMode.width() - WIDTH) / 2,
                 (vidMode.height() - HEIGHT) / 2
         );
 
-        this.created = true;
+        created = true;
     }
 
     /**
      * Destroy the window after use.
      */
 
-    public void destroy() {
+    static void destroy() {
 
-        if (!this.created)
+        if (!created)
             throw new IllegalStateException("Window is not created");
 
-        glfwFreeCallbacks(this.window);
+        glfwFreeCallbacks(window);
 
-        glfwDestroyWindow(this.window);
+        glfwDestroyWindow(window);
 
-        this.created = false;
+        created = false;
     }
 
     /**
      * Make the window the current context and show the window.
      */
 
-    public void show() {
+    static void show() {
 
-        if (!this.created)
+        if (!created)
             throw new IllegalStateException("Window is not created");
 
         glfwMakeContextCurrent(window);
 
         glfwShowWindow(window);
+
+        GL.createCapabilities();
     }
 
     /**
      * Render the window onto the screen.
      */
 
-    public void render() {
+    static void render() {
 
-        if (!this.created)
+        if (!created)
             throw new IllegalStateException("Window is not created");
 
-        glfwSwapBuffers(this.window);
+        glfwSwapBuffers(window);
     }
 
     /**
@@ -110,7 +102,7 @@ public class Window {
      * @return true if the window should be close, false otherwise.
      */
 
-    public boolean shouldClose() {
-        return glfwWindowShouldClose(this.window);
+    static boolean shouldClose() {
+        return glfwWindowShouldClose(window);
     }
 }

@@ -15,10 +15,10 @@ public class Vector3f {
 
     public Vector3f(float x, float y, float z) {
 
-        this.x = x;
+        x = x;
 
-        this.y = y;
+        y = y;
 
-        this.z = z;
+        z = z;
     }
 }

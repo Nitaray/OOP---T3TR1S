@@ -1,16 +1,14 @@
 package edu.hcmiu.t3tr1s.core;
 
 import org.lwjgl.glfw.*;
+import org.lwjgl.opengl.GL;
 
-import static org.lwjgl.glfw.Callbacks.*;
 import static org.lwjgl.glfw.GLFW.*;
 
 public class Main implements  Runnable{
 
     private boolean running = false;
     private Thread thread;
-
-    private Window window = new Window(1280, 720);
 
 
     public void start() {
@@ -26,10 +24,15 @@ public class Main implements  Runnable{
         if (!glfwInit())
             throw new IllegalStateException("Unable to initialize GLFW");
 
+        Window.create("T3TR1S");
 
-        window.create("T3TR1S");
+        Window.show();
 
-        window.show();
+        ShaderManager.loadAll();
+
+        ShaderManager.setUniformAll();
+
+        Level.init();
     }
 
     public void run() {
@@ -38,13 +41,14 @@ public class Main implements  Runnable{
 
         while (running) {
             update();
-            window.render();
+            Window.render();
+            Level.render();
 
-            if (window.shouldClose())
+            if (Window.shouldClose())
                 running = false;
         }
 
-        window.destroy();
+        Window.destroy();
 
         glfwTerminate();
         glfwSetErrorCallback(null).free();
