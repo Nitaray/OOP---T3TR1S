@@ -1,7 +1,7 @@
 package edu.hcmiu.t3tr1s.core;
 
+import edu.hcmiu.t3tr1s.client.client;
 import org.lwjgl.glfw.*;
-import org.lwjgl.opengl.GL;
 
 import static org.lwjgl.glfw.GLFW.*;
 
@@ -32,17 +32,16 @@ public class Main implements  Runnable{
 
         ShaderManager.setUniformAll();
 
-        Level.init();
     }
 
     public void run() {
 
         init();
+        client.test();
 
         while (running) {
             update();
-            Window.render();
-            Level.render();
+            Renderer.render();
 
             if (Window.shouldClose())
                 running = false;
