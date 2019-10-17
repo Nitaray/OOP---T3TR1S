@@ -2,8 +2,12 @@ package edu.hcmiu.t3tr1s.core;
 
 import edu.hcmiu.t3tr1s.graphics.Shader;
 import edu.hcmiu.t3tr1s.math.Matrix4f;
+import edu.hcmiu.t3tr1s.utils.FileUtils;
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Scanner;
 
 public class ShaderManager {
 
@@ -11,11 +15,29 @@ public class ShaderManager {
 
     private static ArrayList<Shader> shaders = new ArrayList<>();
 
-    private  ShaderManager() {}
+    private static HashMap<String, Integer> ID = new HashMap<>();
+
+    private ShaderManager() {}
+
+    static void addShader(String vertexPath, String fragmentPath) {
+        shaders.add(new Shader(vertexPath, fragmentPath));
+    }
 
     static void loadAll() {
-        Shader BACKGROUND = new Shader("shaders/bg.vert" , "shaders/bg.frag");
-        shaders.add(BACKGROUND);
+        String cfg = FileUtils.loadAsString("T3TR1S/config/shader.cfg");
+        Scanner s = new Scanner(cfg);
+        Scanner lineScanner;
+        while (s.hasNextLine()) {
+            String line = s.nextLine();
+            lineScanner = new Scanner(line);
+            System.out.println(line);
+            String name = lineScanner.next();
+            lineScanner.next();
+            String vertPath = lineScanner.next();
+            String fragPath = lineScanner.next();
+            ID.put(name, shaders.size());
+            addShader(vertPath, fragPath);
+        }
     }
 
     static void setUniformAll() {
@@ -42,4 +64,10 @@ public class ShaderManager {
             System.err.println("Shader ID could not be found");
     }
 
+    public static int getID(String name) {
+        if (ID.get(name) != null)
+            return ID.get(name);
+        System.err.println("Invalid shader name");
+        return 0;
+    }
 }
