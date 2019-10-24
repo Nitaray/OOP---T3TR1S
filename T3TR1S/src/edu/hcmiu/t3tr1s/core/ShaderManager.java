@@ -4,10 +4,13 @@ import edu.hcmiu.t3tr1s.graphics.Shader;
 import edu.hcmiu.t3tr1s.math.Matrix4f;
 import edu.hcmiu.t3tr1s.utils.FileUtils;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
+
+/**
+ * A manager to handle shaders.
+ */
 
 public class ShaderManager {
 
@@ -19,12 +22,22 @@ public class ShaderManager {
 
     private ShaderManager() {}
 
-    static void addShader(String vertexPath, String fragmentPath) {
+    /**
+     * Add a shader to the current list of available shaders.
+     * @param vertexPath a path of the vertex shader source code.
+     * @param fragmentPath a path of the fragment shader source code.
+     */
+
+    private static void addShader(String vertexPath, String fragmentPath) {
         shaders.add(new Shader(vertexPath, fragmentPath));
     }
 
+    /**
+     * Load all the shaders from the shader config file.
+     */
+
     static void loadAll() {
-        String cfg = FileUtils.loadAsString("T3TR1S/config/shader.cfg");
+        String cfg = FileUtils.loadAsString("config/shader.cfg");
         Scanner s = new Scanner(cfg);
         Scanner lineScanner;
         while (s.hasNextLine()) {
@@ -40,11 +53,20 @@ public class ShaderManager {
         }
     }
 
+    /**
+     * Set the value for the uniform projection matrix in the shader source code.
+     */
+
     static void setUniformAll() {
-        shaders.forEach(shader -> shader.enable());
+        shaders.forEach(Shader::enable);
         shaders.forEach(shader -> shader.setUniformMat4f("pr_matrix", projection_matrix));
-        shaders.forEach(shader -> shader.disable());
+        shaders.forEach(Shader::disable);
     }
+
+    /**
+     * Enable a shader using its ID (index in the shaders list).
+     * @param ID the ID of the shader to be enabled.
+     */
 
     public static void enableShader(int ID) {
         if (ID < shaders.size()) {
@@ -55,6 +77,11 @@ public class ShaderManager {
             System.err.println("Shader ID could not be found");
     }
 
+    /**
+     * Disable a shader using its ID (index in the shaders list).
+     * @param ID the ID of the shader to be disabled.
+     */
+
     public static void disableShader(int ID) {
         if (ID < shaders.size()) {
             Shader shader = shaders.get(ID);
@@ -63,6 +90,12 @@ public class ShaderManager {
         else
             System.err.println("Shader ID could not be found");
     }
+
+    /**
+     * Get the ID of a shader using its name.
+     * @param name name of the shader.
+     * @return the ID of the shader.
+     */
 
     public static int getID(String name) {
         if (ID.get(name) != null)

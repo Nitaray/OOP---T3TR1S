@@ -7,11 +7,22 @@ import static org.lwjgl.opengl.GL15.*;
 import static org.lwjgl.opengl.GL20.*;
 import static org.lwjgl.opengl.GL30.*;
 
+/**
+ * A class used to draw objects with openGL using array of vertices.
+ */
+
 public class VertexArray {
 
     private int count;
 
     private int vertexArrayObject, vertexBufferObject, indexBufferObject, textureBufferObject;
+
+    /**
+     * Constructor of the VertexArray class.
+     * @param vertices An array of floats containing the coordinates for the vertices.
+     * @param indices An array of bytes containing the indices of each triangle being drawn.
+     * @param textureCoords An array of floats containing the coordinates of the texture corresponding to the vertices.
+     */
 
     public VertexArray(float[] vertices, byte[] indices, float[] textureCoords) {
 
@@ -41,19 +52,23 @@ public class VertexArray {
         glBindVertexArray(0);
     }
 
-    public void bind() {
+    private void bind() {
         glBindVertexArray(vertexArrayObject);
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBufferObject);
     }
 
-    public void unbind() {
+    private void unbind() {
         glBindVertexArray(0);
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
     }
 
-    public void draw() {
+    private void draw() {
         glDrawElements(GL_TRIANGLES, count, GL_UNSIGNED_BYTE, 0);
     }
+
+    /**
+     * Render the vertex array.
+     */
 
     public void render() {
         bind();

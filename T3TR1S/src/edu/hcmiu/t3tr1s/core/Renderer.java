@@ -4,6 +4,10 @@ import edu.hcmiu.t3tr1s.blocks.Rectangle;
 
 import java.util.ArrayList;
 
+/**
+ * A Renderer class to handle all renders in the program.
+ */
+
 public class Renderer {
 
     private static ArrayList<Rectangle> onScreen = new ArrayList<>();
@@ -22,10 +26,14 @@ public class Renderer {
             System.err.println("Invalid object, suspecting uninitialized object");
     }
 
+    /**
+     * Render all rendering processes.
+     */
+
     static void render() {
         Window.render();
 
-        onScreen.forEach((object) -> object.render());
+        onScreen.forEach(Rectangle::render);
 
     }
 

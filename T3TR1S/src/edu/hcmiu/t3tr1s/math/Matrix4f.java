@@ -4,15 +4,22 @@ import edu.hcmiu.t3tr1s.utils.BufferUtils;
 
 import java.nio.FloatBuffer;
 
+/**
+ * A 4 x 4 matrix of floats, used for coordinate manipulation.
+ */
+
 public class Matrix4f {
 
     private static final int SIZE = 4 * 4;
 
     public float[] elements = new float[SIZE];
 
-    public Matrix4f() {
+    private Matrix4f() {}
 
-    }
+    /**
+     * A utility method for creating a new identity matrix.
+     * @return the identity matrix
+     */
 
     public static Matrix4f identity() {
 
@@ -33,6 +40,17 @@ public class Matrix4f {
         return result;
     }
 
+    /**
+     * Create and return an orthographic matrix used for orthographic projection.
+     * @param left the left-most coordinate of the viewing box.
+     * @param right the right-most coordinate of the viewing box.
+     * @param bottom the bottom-most coordinate of the viewing box.
+     * @param top the top-most coordinate of the viewing box.
+     * @param near the nearest coordinate of the viewing box.
+     * @param far the furthest coordinate of the viewing box.
+     * @return An orthographic Matrix4f object constructed with the given bounds.
+     */
+
     public static Matrix4f orthographic(float left, float right, float bottom, float top, float near, float far) {
 
         Matrix4f result = identity();
@@ -52,6 +70,12 @@ public class Matrix4f {
         return result;
     }
 
+    /**
+     * Create and return a translation matrix used for moving objects' coordinates.
+     * @param vector a Vector3f object indicating to vector of movement.
+     * @return a translation Matrix4f object constructed from the given movement vector.
+     */
+
     public static Matrix4f translate(Vector3f vector) {
 
         Matrix4f result = identity();
@@ -64,6 +88,12 @@ public class Matrix4f {
 
         return result;
     }
+
+    /**
+     * Create and return a rotation matrix used for rotating objects' coordinates.
+     * @param angle the angle to rotate the objects, counter-clockwise.
+     * @return a rotation Matrix4f object constructed from the given angle.
+     */
 
     public static Matrix4f rotate(float angle) {
 
@@ -87,6 +117,12 @@ public class Matrix4f {
         return result;
     }
 
+    /**
+     * Multiply the current matrix with another matrix (matrix multiplication).
+     * @param matrix the matrix to be multiplied with.
+     * @return the resulting matrix.
+     */
+
     public Matrix4f multiply(Matrix4f matrix) {
 
         Matrix4f result = new Matrix4f();
@@ -103,9 +139,5 @@ public class Matrix4f {
             }
 
         return result;
-    }
-
-    public FloatBuffer toFloatBuffer() {
-        return BufferUtils.createFloatBuffer(elements);
     }
 }
