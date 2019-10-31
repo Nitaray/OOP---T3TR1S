@@ -2,11 +2,20 @@ package edu.hcmiu.t3tr1s.utils;
 
 import static org.lwjgl.opengl.GL20.*;
 
+/**
+ * A utility class for loading and creating Shaders.
+ */
+
 public class ShadersUtils {
 
-    private ShadersUtils() {
+    private ShadersUtils() {}
 
-    }
+    /**
+     * Load and create a shader, attach it to a program and then linking that program for OpenGL to use.
+     * @param vertPath path to the vertex shader source code.
+     * @param fragPath path to the fragment shader source code.
+     * @return the shader program id.
+     */
 
     public static int load(String vertPath, String fragPath) {
 
@@ -17,7 +26,7 @@ public class ShadersUtils {
         return create(vert, frag);
     }
 
-    public static int create(String vert, String frag) {
+    private static int create(String vert, String frag) {
 
         int program = glCreateProgram();
 

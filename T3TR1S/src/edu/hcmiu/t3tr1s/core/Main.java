@@ -5,13 +5,16 @@ import org.lwjgl.glfw.*;
 
 import static org.lwjgl.glfw.GLFW.*;
 
+/**
+ * Main class of the program, starting point of the entire program.
+ */
+
 public class Main implements  Runnable{
 
     private boolean running = false;
     private Thread thread;
 
-
-    public void start() {
+    private void start() {
         running = true;
         thread = new Thread(this, "Game thread");
         thread.start();
