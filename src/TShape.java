@@ -106,11 +106,28 @@ public class TShape extends Shape {
 
     @Override
     public boolean canMoveDown() {
+        int counter=0;
         for(int i=0;i<size;++i){
             if(shape_mat[size-1][i]==0){
-
+                ++counter;
+            }
+        }
+        if((counter==1 && (Box.getBoxMat(LLCorner[1],LLCorner[0])==1 || Box.getBoxMat(LLCorner[1],LLCorner[0]+size-1)==1))){
+            return true;
+        }
+        if(counter==0){
+            for(int i=0;i<size;++i){
+                int LLCornerCol = LLCorner[0]+i;
+                if(Box.getBoxMat(LLCorner[1],LLCornerCol)==1){
+                    return true;
+                }
             }
         }
         return false;
+    }
+
+    @Override
+    public void rotate(RotateDirection r) {
+
     }
 }
