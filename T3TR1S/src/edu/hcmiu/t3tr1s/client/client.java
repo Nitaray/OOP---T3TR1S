@@ -4,6 +4,10 @@ import edu.hcmiu.t3tr1s.blocks.Rectangle;
 import edu.hcmiu.t3tr1s.core.Renderer;
 import edu.hcmiu.t3tr1s.math.Vector3f;
 
+/**
+ * The client to script and update the game.
+ */
+
 public class client {
     private client() {}
 
