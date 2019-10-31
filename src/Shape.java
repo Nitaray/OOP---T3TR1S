@@ -1,104 +1,67 @@
-public class Shape {
-    private Point tl,tr,ll,lr;
-    public Shape(Point tl,Point tr,Point ll,Point lr){
-        this.tl = tl;
-        this.tr = tr;
-        this.ll = ll;
-        this.lr = lr;
+public abstract class Shape {
+    protected int[] TLCorner, TRCorner, LLCorner, LRCorner;
+    protected int size;
+    protected int[][] shape_mat;
+    protected int leftCheck, rightCheck, downCheck;
+
+    public int getShapeMat(int r, int c){
+        return shape_mat[r][c];
     }
 
-    // getters and setters
-    public Point getTl() {
-        return tl;
+    public int getTLCornerX(){
+        return TLCorner[0];
     }
 
-    public void setTl(Point tl) {
-        this.tl = tl;
+    public int getTLCornerY(){
+        return TLCorner[1];
     }
 
-    public Point getTr() {
-        return tr;
-    }
-
-    public void setTr(Point tr) {
-        this.tr = tr;
-    }
-
-    public Point getLl() {
-        return ll;
-    }
-
-    public void setLl(Point ll) {
-        this.ll = ll;
-    }
-
-    public Point getLr() {
-        return lr;
-    }
-
-    public void setLr(Point lr) {
-        this.lr = lr;
+    public int getSize() {
+        return size;
     }
 
     // boolean methods
-    public boolean isTouchLeft(){
-        return (!canMoveLeft() ||
-                (Box.getBoxmat(ll.getY(),ll.getX()-1)==1 || Box.getBoxmat(tl.getY(),tl.getX()-1)==1));
-    }
-
-    public boolean isTouchRight(){
-        return (!canMoveRight() ||
-                (Box.getBoxmat(lr.getY(),lr.getX()+1)==1 || Box.getBoxmat(tr.getY(),tr.getX()+1)==1));
-    }
-
-    public boolean isTouchDown(){
-        return(!isBottom() ||
-                (Box.getBoxmat(ll.getY()+1,ll.getX())==1 || Box.getBoxmat(lr.getY()+1,lr.getX())==1));
-    }
-
-    public boolean isTouch(){
-        return (isTouchRight() || isTouchLeft() || isTouchDown());
-    }
-
     public boolean isBottom(){
-        return (ll.getY()==Box.getH()-2 || lr.getY()==Box.getH()-2);
+        return (TLCorner[1] == Box.getHeight()-2);
     }
 
-    public boolean canMoveLeft(){
-        return (!isBottom() && !isTouch() && (ll.getX()>1 && tl.getX()>1));
+    public boolean isTouchLeftEdge(){
+        return (TLCorner[0]==1);
     }
 
-    public boolean canMoveRight(){
-        return (!isBottom() && !isTouch() && (lr.getX()<Box.getW()-2 && tr.getX()<Box.getW()-2));
+    public boolean isTouchRightEdge(){
+        return (TLCorner[0]==Box.getWidth()-2);
     }
 
+    public abstract boolean canMoveLeft();
+    public abstract boolean canMoveRight();
+    public abstract boolean canMoveDown();
+//    public abstract boolean isCollideLeft();
+//    public abstract boolean isCollideRight();
+//    public abstract boolean isCollideDown();
+    public abstract boolean rotate(RotateDirection r);
 
-
-    // control methods
     public void moveLeft(){
-        if(canMoveLeft()){
-            tl.setX(tl.getX()-1);
-            tr.setX(tr.getX()-1);
-            ll.setX(ll.getX()-1);
-            lr.setX(lr.getX()-1);
-        }
+        if(canMoveLeft()) TLCorner[0]--;
     }
 
     public void moveRight(){
-        if(canMoveRight()){
-            tl.setX(tl.getX()+1);
-            tr.setX(tr.getX()+1);
-            ll.setX(ll.getX()+1);
-            lr.setX(lr.getX()+1);
-        }
+        if(canMoveRight())
+        TLCorner[0]++;
     }
 
     public void moveDown(){
-        if(!isBottom() || !isTouch()){
-            tl.setY(tl.getY()+1);
-            tr.setY(tr.getY()+1);
-            ll.setY(ll.getY()+1);
-            lr.setY(lr.getY()+1);
+        TLCorner[1]++;
+    }
+
+    public void render(){
+        for(int i=0;i<size;++i){
+            for(int j=0;j<size;++j){
+                if(shape_mat[i][j]==1){
+                    System.out.print("*");
+                }
+            }
+            System.out.println();
         }
     }
 }
