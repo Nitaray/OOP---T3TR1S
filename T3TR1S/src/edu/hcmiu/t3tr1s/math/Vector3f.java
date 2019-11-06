@@ -1,5 +1,9 @@
 package edu.hcmiu.t3tr1s.math;
 
+/**
+ * A vector class containing 3 floats x, y, z.
+ */
+
 public class Vector3f {
 
     public float x, y, z;
