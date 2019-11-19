@@ -1,9 +1,11 @@
 package edu.hcmiu.t3tr1s.core;
 
 import edu.hcmiu.t3tr1s.graphics.Shader;
+import edu.hcmiu.t3tr1s.graphics.Texture;
 import edu.hcmiu.t3tr1s.math.Matrix4f;
 import edu.hcmiu.t3tr1s.utils.FileUtils;
 
+import javax.xml.soap.Text;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -14,9 +16,11 @@ import java.util.Scanner;
 
 public class ShaderManager {
 
-    private static Matrix4f projection_matrix = Matrix4f.orthographic(-16.0f, 16.0f, -9.0f, 9.0f, -1.0f, 1.0f);
+    private static Matrix4f projection_matrix = Matrix4f.orthographic(0, 100.0f, 0, 100.f * 9.0f / 16.0f, -1.0f, 1.0f);
 
     private static ArrayList<Shader> shaders = new ArrayList<>();
+
+    private static ArrayList<Texture> textures = new ArrayList<>();
 
     private static HashMap<String, Integer> ID = new HashMap<>();
 
@@ -33,17 +37,25 @@ public class ShaderManager {
     }
 
     /**
+     * Add a texture to the current list of available textures.
+     * @param texturePath a path of the texture.
+     */
+
+    private static void addTexture(String texturePath) {
+        textures.add(new Texture(texturePath));
+    }
+
+    /**
      * Load all the shaders from the shader config file.
      */
 
-    static void loadAll() {
+    static void loadAllShader() {
         String cfg = FileUtils.loadAsString("config/shader.cfg");
         Scanner s = new Scanner(cfg);
         Scanner lineScanner;
         while (s.hasNextLine()) {
             String line = s.nextLine();
             lineScanner = new Scanner(line);
-            System.out.println(line);
             String name = lineScanner.next();
             lineScanner.next();
             String vertPath = lineScanner.next();
@@ -53,14 +65,30 @@ public class ShaderManager {
         }
     }
 
+    static void loadAllTexture() {
+        // TODO: Implement a method to load all textures from paths given in texture.cfg
+        // TODO: By Nguyen Nhat Minh
+        // TODO: Similar to loadAllShader()
+    }
+
     /**
      * Set the value for the uniform projection matrix in the shader source code.
      */
 
     static void setUniformAll() {
-        shaders.forEach(Shader::enable);
         shaders.forEach(shader -> shader.setUniformMat4f("pr_matrix", projection_matrix));
-        shaders.forEach(Shader::disable);
+        shaders.forEach(shader -> shader.setUniform1i("tex", 0));
+    }
+
+    /**
+     * Initialize the ShaderManager
+     */
+
+    static void init() {
+        loadAllShader();
+        addTexture("res/background.png"); // This is temporary, it should be added in loadAllTexture
+        loadAllTexture();
+        setUniformAll();
     }
 
     /**
@@ -69,9 +97,11 @@ public class ShaderManager {
      */
 
     public static void enableShader(int ID) {
-        if (ID < shaders.size()) {
+        if (ID >= 0 && ID < shaders.size()) {
             Shader shader = shaders.get(ID);
+            Texture texture = textures.get(ID);
             shader.enable();
+            texture.bind();
         }
         else
             System.err.println("Shader ID could not be found");
@@ -83,9 +113,11 @@ public class ShaderManager {
      */
 
     public static void disableShader(int ID) {
-        if (ID < shaders.size()) {
+        if (ID >= 0 && ID < shaders.size()) {
             Shader shader = shaders.get(ID);
+            Texture texture = textures.get(ID);
             shader.disable();
+            texture.unbind();
         }
         else
             System.err.println("Shader ID could not be found");
