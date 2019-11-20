@@ -1,4 +1,4 @@
-package edu.hcmiu.t3tr1s.blocks;
+package edu.hcmiu.t3tr1s.graphics;
 
 import edu.hcmiu.t3tr1s.core.ShaderManager;
 import edu.hcmiu.t3tr1s.graphics.VertexArray;
@@ -14,6 +14,9 @@ public class Rectangle {
 
     private int shaderID;
 
+    private float[] vertices, tc;
+    private byte[] indices;
+
     /**
      * Constructor for the rectangle class
      * @param topLeft The 3D-coordinates for the top-left of the rectangle.
@@ -23,19 +26,19 @@ public class Rectangle {
      */
 
     public Rectangle(Vector3f topLeft, float width, float height, String shaderName) {
-        float[] vertices = new float[] {
+        vertices = new float[] {
                 topLeft.x, topLeft.y, topLeft.z,
                 topLeft.x + width,  topLeft.y, topLeft.z,
                 topLeft.x + width,  topLeft.y - height, topLeft.z,
                 topLeft.x, topLeft.y - height, topLeft.z
         };
 
-        byte[] indices = new byte[] {
+        indices = new byte[] {
                 0, 1, 2,
                 2, 3, 0
         };
 
-        float[] tc = new float[] {
+        tc = new float[] {
                 0, 0,
                 1, 0,
                 1, 1,
@@ -44,6 +47,21 @@ public class Rectangle {
 
         vertexArray = new VertexArray(vertices, indices, tc);
         shaderID = ShaderManager.getID(shaderName);
+    }
+
+    /**
+     * Move the rectangle using a directional vector
+     * @param v a vector of floats containing the direction
+     */
+
+    protected void translate(Vector3f v) {
+        float[] newVertices = vertices.clone();
+        for (int i = 0; i < 4; i++) {
+            newVertices[i * 3 + 0] += v.x;
+            newVertices[i * 3 + 1] += v.y;
+            newVertices[i * 3 + 2] += v.z;
+        }
+        vertexArray = new VertexArray(newVertices, indices, tc);
     }
 
     /**

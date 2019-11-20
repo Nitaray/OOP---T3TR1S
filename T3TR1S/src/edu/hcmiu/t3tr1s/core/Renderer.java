@@ -1,6 +1,6 @@
 package edu.hcmiu.t3tr1s.core;
 
-import edu.hcmiu.t3tr1s.blocks.Rectangle;
+import edu.hcmiu.t3tr1s.graphics.Rectangle;
 
 import java.util.ArrayList;
 
@@ -20,10 +20,12 @@ public class Renderer {
      */
 
     public static void addOnScreenObject(Rectangle r) {
-        if (r != null)
-            onScreen.add(r);
+        if (r != null) {
+            if (!onScreen.contains(r))
+                onScreen.add(r);
+        }
         else
-            System.err.println("Invalid object, suspecting uninitialized object");
+            throw new NullPointerException("Invalid object, suspecting uninitialized object");
     }
 
     /**
@@ -34,7 +36,6 @@ public class Renderer {
         Window.render();
 
         onScreen.forEach(Rectangle::render);
-
     }
 
 }

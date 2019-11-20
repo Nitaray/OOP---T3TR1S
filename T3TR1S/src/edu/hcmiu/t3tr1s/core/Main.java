@@ -9,14 +9,14 @@ import static org.lwjgl.glfw.GLFW.*;
  * Main class of the program, starting point of the entire program.
  */
 
-public class Main implements  Runnable{
+public class Main implements Runnable{
 
     private boolean running = false;
     private Thread thread;
 
     private void start() {
         running = true;
-        thread = new Thread(this, "Game thread");
+        thread = new Thread(this, "T3TR1S Thread");
         thread.start();
     }
 
@@ -31,10 +31,9 @@ public class Main implements  Runnable{
 
         Window.show();
 
-        ShaderManager.loadAll();
+        ShaderManager.init();
 
-        ShaderManager.setUniformAll();
-
+        ShapeDataManager.init();
     }
 
     public void run() {

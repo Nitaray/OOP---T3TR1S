@@ -3,11 +3,19 @@ package edu.hcmiu.t3tr1s.core;
 import org.lwjgl.glfw.*;
 import org.lwjgl.opengl.GL;
 
+import static org.lwjgl.opengl.GL11.*;
+import static org.lwjgl.opengl.GL13.*;
 import static org.lwjgl.glfw.Callbacks.glfwFreeCallbacks;
 import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.system.MemoryUtil.*;
 
 class Window {
+
+    private static Window ourInstance = new Window();
+
+    public static Window getInstance() {
+        return ourInstance;
+    }
 
     private static int WIDTH = 1280;
     private static int HEIGHT = 720;
@@ -80,9 +88,15 @@ class Window {
 
         glfwMakeContextCurrent(window);
 
+        GL.createCapabilities();
+
         glfwShowWindow(window);
 
-        GL.createCapabilities();
+        glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+
+        glEnable(GL_DEPTH_TEST);
+
+        glActiveTexture(GL_TEXTURE0);
     }
 
     /**
@@ -95,6 +109,8 @@ class Window {
             throw new IllegalStateException("Window is not created");
 
         glfwSwapBuffers(window);
+
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     }
 
     /**

@@ -10,6 +10,12 @@ import java.nio.FloatBuffer;
 
 public class Matrix4f {
 
+    private static Matrix4f ourInstance = new Matrix4f();
+
+    public static Matrix4f getInstance() {
+        return ourInstance;
+    }
+
     private static final int SIZE = 4 * 4;
 
     public float[] elements = new float[SIZE];
