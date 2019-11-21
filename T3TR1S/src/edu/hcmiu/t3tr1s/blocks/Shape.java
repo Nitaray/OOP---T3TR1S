@@ -5,7 +5,7 @@ import edu.hcmiu.t3tr1s.enums.Direction;
 
 import java.util.ArrayList;
 
-public class Shape {
+public abstract class Shape {
 
     protected ArrayList<Block> blocks = new ArrayList<>();
 
@@ -58,8 +58,5 @@ public class Shape {
             }
     }
 
-    private void update() {
-        blocks.clear();
-
-    }
+    public abstract void rotate(Direction direction);
 }

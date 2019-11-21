@@ -1,8 +1,16 @@
 package edu.hcmiu.t3tr1s.blocks;
 
+import edu.hcmiu.t3tr1s.enums.Direction;
+
+/**
+ * TODO: Implement rotation logic by Pham Hoang Minh using SRS
+ * https://tetris.fandom.com/wiki/SRS
+ */
+
 public class IShape extends Shape{
 
-    public IShape() {
-        grid = new boolean[4][4];
+    @Override
+    public void rotate(Direction direction) {
+
     }
 }

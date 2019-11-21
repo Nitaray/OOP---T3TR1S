@@ -6,6 +6,7 @@ import edu.hcmiu.t3tr1s.math.Vector3f;
 
 /**
  * The client to script and update the game.
+ * TODO: By Luu Minh Long
  */
 
 public class client {

@@ -5,6 +5,10 @@ import edu.hcmiu.t3tr1s.enums.Direction;
 import edu.hcmiu.t3tr1s.graphics.Rectangle;
 import edu.hcmiu.t3tr1s.math.Vector3f;
 
+/**
+ * The individual blocks that make up the tetriminoes.
+ */
+
 public class Block extends Rectangle {
 
     private float size;
@@ -19,6 +23,13 @@ public class Block extends Rectangle {
         super(topLeftPosition, 2.0f, 2.0f, shaderName);
         this.size = 2.0f;
     }
+
+    /**
+     * Custom block constructor.
+     * @param topLeftPosition the position of the top-left position of the block.
+     * @param size the size of the side of the block.
+     * @param shaderName Name of the shader of this block.
+     */
 
     public Block(Vector3f topLeftPosition, float size, String shaderName) {
         super(topLeftPosition, size, size, shaderName);
