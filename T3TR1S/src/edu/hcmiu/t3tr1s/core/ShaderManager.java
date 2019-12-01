@@ -5,7 +5,6 @@ import edu.hcmiu.t3tr1s.graphics.Texture;
 import edu.hcmiu.t3tr1s.math.Matrix4f;
 import edu.hcmiu.t3tr1s.utils.FileUtils;
 
-import javax.xml.soap.Text;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -66,9 +65,18 @@ public class ShaderManager {
     }
 
     static void loadAllTexture() {
-        // TODO: Implement a method to load all textures from paths given in texture.cfg
-        // TODO: By Nguyen Nhat Minh
-        // TODO: Similar to loadAllShader()
+        String cfg = FileUtils.loadAsString("config/texture.cfg");
+        Scanner scanner = new Scanner(cfg);
+        Scanner lineScanner;
+        while (scanner.hasNextLine()) {
+            String line = scanner.nextLine();
+            lineScanner = new Scanner(line);
+            String name = lineScanner.next();
+            lineScanner.next();
+            String texturePath = lineScanner.next();
+            ID.put(name, textures.size());
+            addTexture(texturePath);
+        }
     }
 
     /**
