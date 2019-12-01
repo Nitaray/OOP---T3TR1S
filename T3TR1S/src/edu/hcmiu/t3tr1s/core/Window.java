@@ -2,7 +2,6 @@ package edu.hcmiu.t3tr1s.core;
 
 import org.lwjgl.glfw.*;
 import org.lwjgl.opengl.GL;
-import org.lwjgl.system.CallbackI;
 
 import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.opengl.GL13.*;
@@ -24,8 +23,6 @@ class Window {
     private static long window;
 
     private static boolean created = false;
-
-    private static Input input = new Input();
 
     private Window() {}
 
@@ -53,7 +50,6 @@ class Window {
 
         if (window == NULL)
             throw new RuntimeException("Failed to create the GLFW window");
-        createCallbacks();
 
         GLFWVidMode vidMode = glfwGetVideoMode(glfwGetPrimaryMonitor());
         glfwSetWindowPos(
@@ -124,10 +120,5 @@ class Window {
 
     static boolean shouldClose() {
         return glfwWindowShouldClose(window);
-    }
-    private static void createCallbacks(){
-        GLFW.glfwSetMouseButtonCallback(window,input.getMouseButton());
-        GLFW.glfwSetCursorPosCallback(window,input.getMouseMove());
-        GLFW.glfwSetKeyCallback(window,input.getKeyboard());
     }
 }
