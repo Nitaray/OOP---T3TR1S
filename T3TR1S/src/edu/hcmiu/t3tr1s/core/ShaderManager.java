@@ -5,7 +5,6 @@ import edu.hcmiu.t3tr1s.graphics.Texture;
 import edu.hcmiu.t3tr1s.math.Matrix4f;
 import edu.hcmiu.t3tr1s.utils.FileUtils;
 
-import javax.xml.soap.Text;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;

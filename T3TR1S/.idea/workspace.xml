@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< .merge_file_a10992
     <list default="true" id="d9c78a22-e230-4028-93b1-e89d4a59d813" name="Default" comment="">
       <change afterPath="$PROJECT_DIR$/data/blocks/JShape.dat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/data/blocks/LShape.dat" afterDir="false" />
@@ -37,15 +38,21 @@
       <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/ZShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/ZShape.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/client.java" afterDir="false" />
     </list>
+=======
+    <list default="true" id="bec204b2-4468-4ad8-b7be-efe44241fad8" name="Default Changelist" comment="" />
+>>>>>>> .merge_file_a11720
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< .merge_file_a10992
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/T3TR1S$Run.ic" NAME="Run Coverage Results" MODIFIED="1571142312122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
+=======
+>>>>>>> .merge_file_a11720
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -55,6 +62,7 @@
       </list>
     </option>
   </component>
+<<<<<<< .merge_file_a10992
   <component name="FindInProjectRecents">
     <findStrings>
       <find>init</find>
@@ -79,20 +87,18 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+=======
+  <component name="ProjectId" id="1SyCgbUwMQe1l5g2eA18H5YVvqW" />
+>>>>>>> .merge_file_a11720
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
-    <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="Repository.Attach.Sources" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/lwjgl-zstd-natives-windows.jar!/" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="edu.hcmiu.t3tr1s.utils" />
-    </key>
+    <property name="Repository.Attach.Annotations" value="true" />
+    <property name="Repository.Attach.JavaDocs" value="true" />
+    <property name="Repository.Attach.Sources" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -106,11 +112,10 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="Run" type="Application" factoryName="Application">
-      <option name="ALTERNATIVE_JRE_PATH" value="C:/Program Files/Java/jdk1.8.0_221/jre" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+  <component name="RunManager" selected="Application.Test">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.hcmiu.t3tr1s.core.Main" />
+<<<<<<< .merge_file_a10992
       <module name="T3TR1S" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <method v="2">
@@ -127,34 +132,62 @@
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+=======
+      <module name="ProjectTetris" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.hcmiu.t3tr1s.core.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+>>>>>>> .merge_file_a11720
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< .merge_file_a10992
     <configuration default="true" type="TestNG">
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="VM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
       <listeners />
+=======
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.hcmiu.t3tr1s.block.Test" />
+      <module name="ProjectTetris" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.hcmiu.t3tr1s.block.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+>>>>>>> .merge_file_a11720
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d9c78a22-e230-4028-93b1-e89d4a59d813" name="Default" comment="" />
-      <created>1568293286401</created>
+      <changelist id="bec204b2-4468-4ad8-b7be-efe44241fad8" name="Default Changelist" comment="" />
+      <created>1572526560607</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1568293286401</updated>
+      <updated>1572526560607</updated>
     </task>
     <servers />
   </component>
+<<<<<<< .merge_file_a10992
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -243,4 +276,6 @@
       </state>
     </states>
   </component>
+=======
+>>>>>>> .merge_file_a11720
 </project>
