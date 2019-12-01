@@ -2,8 +2,10 @@ package edu.hcmiu.t3tr1s.core;
 
 import edu.hcmiu.t3tr1s.blocks.*;
 import edu.hcmiu.t3tr1s.enums.ShapeBoxSize;
+import edu.hcmiu.t3tr1s.utils.FileUtils;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class ShapeDataManager {
     private static ShapeDataManager ourInstance = new ShapeDataManager();
@@ -65,19 +67,19 @@ public class ShapeDataManager {
             return dataIShape.get(state);
         }
         if (shape instanceof OShape) {
-            return dataIShape.get(state);
+            return dataOShape.get(state);
         }
         if (shape instanceof LShape) {
-            return dataIShape.get(state);
+            return dataLShape.get(state);
         }
         if (shape instanceof JShape) {
-            return dataIShape.get(state);
+            return dataJShape.get(state);
         }
         if (shape instanceof SShape) {
-            return dataIShape.get(state);
+            return dataSShape.get(state);
         }
         if (shape instanceof ZShape) {
-            return dataIShape.get(state);
+            return dataZShape.get(state);
         }
         return dataTShape.get(state);
     }
