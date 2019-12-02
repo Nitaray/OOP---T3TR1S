@@ -77,6 +77,7 @@ public class ShaderManager {
             ID.put(name, textures.size());
             addTexture(texturePath);
         }
+        addTexture("T3TR1S/res/background.png");
     }
 
     /**
@@ -94,7 +95,7 @@ public class ShaderManager {
 
     static void init() {
         loadAllShader();
-        addTexture("res/background.png"); // This is temporary, it should be added in loadAllTexture
+//        addTexture("T3TR1S/res/background.png"); // This is temporary, it should be added in loadAllTexture
         loadAllTexture();
         setUniformAll();
     }
