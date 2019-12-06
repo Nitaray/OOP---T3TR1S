@@ -81,4 +81,26 @@ public class ShapeDataManager {
         }
         return dataTShape.get(state);
     }
+
+    public static boolean[][] getStateData(Shape shape, int state) {
+        if (shape instanceof IShape) {
+            return dataIShape.get(state);
+        }
+        if (shape instanceof OShape) {
+            return dataIShape.get(state);
+        }
+        if (shape instanceof LShape) {
+            return dataIShape.get(state);
+        }
+        if (shape instanceof JShape) {
+            return dataIShape.get(state);
+        }
+        if (shape instanceof SShape) {
+            return dataIShape.get(state);
+        }
+        if (shape instanceof ZShape) {
+            return dataIShape.get(state);
+        }
+        return dataTShape.get(state);
+    }
 }

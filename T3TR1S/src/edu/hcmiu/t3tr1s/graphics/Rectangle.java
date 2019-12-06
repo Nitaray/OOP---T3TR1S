@@ -55,7 +55,7 @@ public class Rectangle {
      */
 
     protected void translate(Vector3f v) {
-        float[] newVertices = vertices.clone();
+        float[] newVertices = vertices.clone(); // return copy of vertices
         for (int i = 0; i < 4; i++) {
             newVertices[i * 3 + 0] += v.x;
             newVertices[i * 3 + 1] += v.y;
