@@ -5,7 +5,6 @@ import edu.hcmiu.t3tr1s.graphics.Texture;
 import edu.hcmiu.t3tr1s.math.Matrix4f;
 import edu.hcmiu.t3tr1s.utils.FileUtils;
 
-import javax.xml.soap.Text;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -50,7 +49,7 @@ public class ShaderManager {
      */
 
     static void loadAllShader() {
-        String cfg = FileUtils.loadAsString("config/shader.cfg");
+        String cfg = FileUtils.loadAsString("T3TR1S/config/shader.cfg");
         Scanner s = new Scanner(cfg);
         Scanner lineScanner;
         while (s.hasNextLine()) {
@@ -66,9 +65,19 @@ public class ShaderManager {
     }
 
     static void loadAllTexture() {
-        // TODO: Implement a method to load all textures from paths given in texture.cfg
-        // TODO: By Nguyen Nhat Minh
-        // TODO: Similar to loadAllShader()
+        String cfg = FileUtils.loadAsString("T3TR1S/config/texture.cfg");
+        Scanner scanner = new Scanner(cfg);
+        Scanner lineScanner;
+        while (scanner.hasNextLine()) {
+            String line = scanner.nextLine();
+            lineScanner = new Scanner(line);
+            String name = lineScanner.next();
+            lineScanner.next();
+            String texturePath = lineScanner.next();
+            ID.put(name, textures.size());
+            addTexture(texturePath);
+        }
+        addTexture("T3TR1S/res/background.png");
     }
 
     /**
@@ -86,7 +95,7 @@ public class ShaderManager {
 
     static void init() {
         loadAllShader();
-        addTexture("res/background.png"); // This is temporary, it should be added in loadAllTexture
+//        addTexture("T3TR1S/res/background.png"); // This is temporary, it should be added in loadAllTexture
         loadAllTexture();
         setUniformAll();
     }
