@@ -101,13 +101,13 @@ public class ShapeDataManager {
         dataSShape = new ArrayList<>();
         dataZShape = new ArrayList<>();
         dataTShape = new ArrayList<>();
-        loadData(dataIShape, "T3TR1S/data/blocks/IShape.dat", ShapeBoxSize.FourByFour);
-        loadData(dataOShape, "T3TR1S/data/blocks/OShape.dat", ShapeBoxSize.FourByThree);
-        loadData(dataLShape, "T3TR1S/data/blocks/LShape.dat", ShapeBoxSize.ThreeByThree);
-        loadData(dataJShape, "T3TR1S/data/blocks/JShape.dat", ShapeBoxSize.ThreeByThree);
-        loadData(dataSShape, "T3TR1S/data/blocks/SShape.dat", ShapeBoxSize.ThreeByThree);
-        loadData(dataZShape, "T3TR1S/data/blocks/ZShape.dat", ShapeBoxSize.ThreeByThree);
-        loadData(dataTShape, "T3TR1S/data/blocks/TShape.dat", ShapeBoxSize.ThreeByThree);
+        loadData(dataIShape, "data/blocks/IShape.dat", ShapeBoxSize.FourByFour);
+        loadData(dataOShape, "data/blocks/OShape.dat", ShapeBoxSize.FourByThree);
+        loadData(dataLShape, "data/blocks/LShape.dat", ShapeBoxSize.ThreeByThree);
+        loadData(dataJShape, "data/blocks/JShape.dat", ShapeBoxSize.ThreeByThree);
+        loadData(dataSShape, "data/blocks/SShape.dat", ShapeBoxSize.ThreeByThree);
+        loadData(dataZShape, "data/blocks/ZShape.dat", ShapeBoxSize.ThreeByThree);
+        loadData(dataTShape, "data/blocks/TShape.dat", ShapeBoxSize.ThreeByThree);
     }
 
     /**
