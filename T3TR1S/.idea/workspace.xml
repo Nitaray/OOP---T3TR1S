@@ -2,40 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9c78a22-e230-4028-93b1-e89d4a59d813" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/data/blocks/JShape.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/blocks/LShape.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/blocks/SShape.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/blocks/TShape.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/blocks/ZShape.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP---T3TR1S/META-INF/OOP---T3TR1S.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP---T3TR1S/edu/hcmiu/t3tr1s/blocks/Rectangle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP---T3TR1S/edu/hcmiu/t3tr1s/client/client.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP---T3TR1S/edu/hcmiu/t3tr1s/core/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP---T3TR1S/edu/hcmiu/t3tr1s/core/Renderer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP---T3TR1S/edu/hcmiu/t3tr1s/core/ShaderManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP---T3TR1S/edu/hcmiu/t3tr1s/core/Window.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP---T3TR1S/edu/hcmiu/t3tr1s/graphics/Shader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP---T3TR1S/edu/hcmiu/t3tr1s/graphics/Texture.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP---T3TR1S/edu/hcmiu/t3tr1s/graphics/VertexArray.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP---T3TR1S/edu/hcmiu/t3tr1s/math/Matrix4f.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP---T3TR1S/edu/hcmiu/t3tr1s/math/Vector3f.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP---T3TR1S/edu/hcmiu/t3tr1s/utils/BufferUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP---T3TR1S/edu/hcmiu/t3tr1s/utils/FileUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP---T3TR1S/edu/hcmiu/t3tr1s/utils/ShadersUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/Block$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/Block$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/Block.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/Block.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/client.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/Block.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/IShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/IShape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/JShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/JShape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/LShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/LShape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/OShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/OShape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/SShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/SShape.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/Shape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/TShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/TShape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/ZShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/ZShape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/core/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/core/Renderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/core/ShaderManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/core/ShaderManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/graphics/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/graphics/Rectangle.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -83,7 +55,15 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/lwjgl-zstd-natives-windows.jar!/" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -152,8 +132,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1568293286401</updated>
+      <workItem from="1575950866998" duration="1178000" />
+      <workItem from="1576070872896" duration="389000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

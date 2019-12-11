@@ -1,5 +1,6 @@
 package edu.hcmiu.t3tr1s.core;
 
+import edu.hcmiu.t3tr1s.exceptions.InvalidObjectException;
 import edu.hcmiu.t3tr1s.graphics.Rectangle;
 
 import java.util.ArrayList;
@@ -25,6 +26,17 @@ public class Renderer {
                 onScreen.add(r);
         }
         else
+            throw new NullPointerException("Invalid object, suspecting uninitialized object");
+    }
+
+    public static void removeOnScreenObject(Rectangle r) throws InvalidObjectException {
+        if (r != null) {
+            if (onScreen.contains(r))
+                onScreen.remove(r);
+            else 
+                throw new InvalidObjectException("Object not in rendering!");
+        }
+        else 
             throw new NullPointerException("Invalid object, suspecting uninitialized object");
     }
 

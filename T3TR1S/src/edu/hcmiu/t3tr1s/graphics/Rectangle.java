@@ -16,6 +16,7 @@ public class Rectangle {
 
     private float[] vertices, tc;
     private byte[] indices;
+    private float[] pos;
 
     /**
      * Constructor for the rectangle class
@@ -43,6 +44,12 @@ public class Rectangle {
                 1, 0,
                 1, 1,
                 0, 1
+        };
+
+        pos = new float[] {
+                0, 0, 0,
+                0, 0, 0,
+                0, 0, 0
         };
 
         vertexArray = new VertexArray(vertices, indices, tc);
