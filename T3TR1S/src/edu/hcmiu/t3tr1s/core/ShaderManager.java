@@ -65,7 +65,7 @@ public class ShaderManager {
     }
 
     static void loadAllTexture() {
-        String cfg = FileUtils.loadAsString("T3TR1S/config/texture.cfg");
+        String cfg = FileUtils.loadAsString("config/texture.cfg");
         Scanner scanner = new Scanner(cfg);
         Scanner lineScanner;
         while (scanner.hasNextLine()) {
@@ -77,7 +77,6 @@ public class ShaderManager {
             ID.put(name, textures.size());
             addTexture(texturePath);
         }
-        addTexture("T3TR1S/res/background.png");
     }
 
     /**
