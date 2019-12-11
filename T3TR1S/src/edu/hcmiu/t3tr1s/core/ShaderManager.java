@@ -49,7 +49,7 @@ public class ShaderManager {
      */
 
     static void loadAllShader() {
-        String cfg = FileUtils.loadAsString("T3TR1S/config/shader.cfg");
+        String cfg = FileUtils.loadAsString("config/shader.cfg");
         Scanner s = new Scanner(cfg);
         Scanner lineScanner;
         while (s.hasNextLine()) {
