@@ -64,6 +64,10 @@ public class ShaderManager {
         }
     }
 
+    /**
+     * Load all the textures from the texture config file.
+     */
+
     static void loadAllTexture() {
         String cfg = FileUtils.loadAsString("config/texture.cfg");
         Scanner scanner = new Scanner(cfg);
@@ -86,6 +90,13 @@ public class ShaderManager {
     static void setUniformAll() {
         shaders.forEach(shader -> shader.setUniformMat4f("pr_matrix", projection_matrix));
         shaders.forEach(shader -> shader.setUniform1i("tex", 0));
+    }
+
+    public static void setUniformMat4f(int shaderID, String uniformMatrixName, Matrix4f matrix) {
+        if (shaderID >= 0 && shaderID < shaders.size())
+            shaders.get(shaderID).setUniformMat4f(uniformMatrixName, matrix);
+        else
+            System.err.println("Shader ID could not be found.");
     }
 
     /**
@@ -112,7 +123,7 @@ public class ShaderManager {
             texture.bind();
         }
         else
-            System.err.println("Shader ID could not be found");
+            System.err.println("Shader ID could not be found.");
     }
 
     /**

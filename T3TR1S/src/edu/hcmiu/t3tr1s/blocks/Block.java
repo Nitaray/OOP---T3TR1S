@@ -52,13 +52,13 @@ public class Block extends Rectangle {
         }
     }
 
-    public void show() {
-        Renderer.addOnScreenObject(this);
+    public void show(Renderer renderer) {
+        renderer.addOnScreenObject(this);
     }
 
-    public void hide() {
+    public void hide(Renderer renderer) {
         try {
-            Renderer.removeOnScreenObject(this);   
+            renderer.removeOnScreenObject(this);
         } catch (Exception e) {
             e.printStackTrace();
         }
