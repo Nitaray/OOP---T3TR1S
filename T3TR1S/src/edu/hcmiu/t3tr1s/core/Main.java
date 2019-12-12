@@ -45,7 +45,7 @@ public class Main implements Runnable{
             update();
             Renderer.render();
 
-            if (Window.shouldClose())
+            if (Window.shouldClose() || Input.isKeyDown(GLFW_KEY_ESCAPE))
                 running = false;
         }
 

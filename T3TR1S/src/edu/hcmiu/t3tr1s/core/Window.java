@@ -24,6 +24,8 @@ class Window {
 
     private static boolean created = false;
 
+    private static Input input;
+
     private Window() {}
 
     /**
@@ -51,12 +53,16 @@ class Window {
         if (window == NULL)
             throw new RuntimeException("Failed to create the GLFW window");
 
+        input = new Input();
+
         GLFWVidMode vidMode = glfwGetVideoMode(glfwGetPrimaryMonitor());
         glfwSetWindowPos(
                 window,
                 (vidMode.width() - WIDTH) / 2,
                 (vidMode.height() - HEIGHT) / 2
         );
+
+        createCallbacks();
 
         created = true;
     }
@@ -120,5 +126,11 @@ class Window {
 
     static boolean shouldClose() {
         return glfwWindowShouldClose(window);
+    }
+
+    static void createCallbacks(){
+        GLFW.glfwSetKeyCallback(window,input.getKeyboard());
+        GLFW.glfwSetCursorPosCallback(window,input.getMouseMove());
+        GLFW.glfwSetMouseButtonCallback(window,input.getMouseButton());
     }
 }
