@@ -55,4 +55,12 @@ public class Block extends Rectangle {
     public void show() {
         Renderer.addOnScreenObject(this);
     }
+
+    public void hide() {
+        try {
+            Renderer.removeOnScreenObject(this);   
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
