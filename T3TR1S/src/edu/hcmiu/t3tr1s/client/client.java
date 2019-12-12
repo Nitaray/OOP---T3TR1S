@@ -13,7 +13,8 @@ public class client {
     private client() {}
 
     public static void test() {
+        Renderer renderer = Renderer.getInstance();
         Rectangle r = new Rectangle(new Vector3f(0, 100.0f * 9.0f / 16.0f, 0.0f), 100.0f, 100.0f * 9.0f / 16.0f, "BACKGROUND");
-        Renderer.addOnScreenObject(r);
+        renderer.addOnScreenObject(r);
     }
 }

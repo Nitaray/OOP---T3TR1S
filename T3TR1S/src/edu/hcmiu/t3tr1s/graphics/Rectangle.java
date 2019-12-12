@@ -2,6 +2,7 @@ package edu.hcmiu.t3tr1s.graphics;
 
 import edu.hcmiu.t3tr1s.core.ShaderManager;
 import edu.hcmiu.t3tr1s.graphics.VertexArray;
+import edu.hcmiu.t3tr1s.math.Matrix4f;
 import edu.hcmiu.t3tr1s.math.Vector3f;
 
 /**
@@ -16,7 +17,9 @@ public class Rectangle {
 
     private float[] vertices, tc;
     private byte[] indices;
-    private float[] pos;
+    private Matrix4f model_mat;
+    private Matrix4f position_mat;
+    private Matrix4f rotation_mat;
 
     /**
      * Constructor for the rectangle class
@@ -46,11 +49,9 @@ public class Rectangle {
                 0, 1
         };
 
-        pos = new float[] {
-                0, 0, 0,
-                0, 0, 0,
-                0, 0, 0
-        };
+        model_mat = Matrix4f.identity();
+        position_mat = Matrix4f.translate(new Vector3f(0, 0, 0));
+        rotation_mat = Matrix4f.rotate(0);
 
         vertexArray = new VertexArray(vertices, indices, tc);
         shaderID = ShaderManager.getID(shaderName);
@@ -62,13 +63,16 @@ public class Rectangle {
      */
 
     protected void translate(Vector3f v) {
-        float[] newVertices = vertices.clone(); // return copy of vertices
-        for (int i = 0; i < 4; i++) {
-            newVertices[i * 3 + 0] += v.x;
-            newVertices[i * 3 + 1] += v.y;
-            newVertices[i * 3 + 2] += v.z;
-        }
-        vertexArray = new VertexArray(newVertices, indices, tc);
+        Matrix4f translate_matrix = Matrix4f.translate(v);
+        position_mat = position_mat.add(translate_matrix);
+    }
+
+    /**
+     * Update the model matrix of the rectangle.
+     */
+
+    protected void update() {
+        model_mat = position_mat.multiply(rotation_mat);
     }
 
     /**
@@ -77,6 +81,8 @@ public class Rectangle {
 
     public void render() {
         ShaderManager.enableShader(shaderID);
+        update();
+        ShaderManager.setUniformMat4f(shaderID, "model_matrix", model_mat);
         vertexArray.render();
         ShaderManager.disableShader(shaderID);
     }
