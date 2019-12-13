@@ -1,7 +1,6 @@
 package edu.hcmiu.t3tr1s.graphics;
 
 import edu.hcmiu.t3tr1s.core.ShaderManager;
-import edu.hcmiu.t3tr1s.graphics.VertexArray;
 import edu.hcmiu.t3tr1s.math.Matrix4f;
 import edu.hcmiu.t3tr1s.math.Vector3f;
 
@@ -13,7 +12,10 @@ public class Rectangle {
 
     private VertexArray vertexArray;
 
+    private ShaderManager shaderManager;
+
     private int shaderID;
+    private int textureID;
 
     private float[] vertices, tc;
     private byte[] indices;
@@ -29,7 +31,7 @@ public class Rectangle {
      * @param shaderName The name of the shader to draw in this rectangle.
      */
 
-    public Rectangle(Vector3f topLeft, float width, float height, String shaderName) {
+    public Rectangle(Vector3f topLeft, float width, float height, String shaderName, String textureName, ShaderManager shaderManager) {
         vertices = new float[] {
                 topLeft.x, topLeft.y, topLeft.z,
                 topLeft.x + width,  topLeft.y, topLeft.z,
@@ -53,8 +55,11 @@ public class Rectangle {
         position_mat = Matrix4f.translate(new Vector3f(0, 0, 0));
         rotation_mat = Matrix4f.rotate(0);
 
+        this.shaderManager = shaderManager;
+
         vertexArray = new VertexArray(vertices, indices, tc);
-        shaderID = ShaderManager.getID(shaderName);
+        shaderID = shaderManager.getShaderID(shaderName);
+        textureID = shaderManager.getTextureID(textureName);
     }
 
     /**
@@ -80,11 +85,11 @@ public class Rectangle {
      */
 
     public void render() {
-        ShaderManager.enableShader(shaderID);
+        shaderManager.enableShader(shaderID, textureID);
         update();
-        ShaderManager.setUniformMat4f(shaderID, "model_matrix", model_mat);
+        shaderManager.setUniformMat4f(shaderID, "model_matrix", model_mat);
         vertexArray.render();
-        ShaderManager.disableShader(shaderID);
+        shaderManager.disableShader(shaderID, textureID);
     }
 }
 

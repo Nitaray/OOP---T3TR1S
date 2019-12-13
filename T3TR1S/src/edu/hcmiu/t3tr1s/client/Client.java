@@ -1,8 +1,11 @@
 package edu.hcmiu.t3tr1s.client;
 
+import edu.hcmiu.t3tr1s.blocks.Block;
+import edu.hcmiu.t3tr1s.core.ShaderManager;
 import edu.hcmiu.t3tr1s.graphics.Rectangle;
 import edu.hcmiu.t3tr1s.core.Renderer;
 import edu.hcmiu.t3tr1s.math.Vector3f;
+import sun.security.provider.SHA;
 
 /**
  * The client to script and update the game.
@@ -14,19 +17,24 @@ public class Client {
 
     private static Client instance = new Client();
 
-    public static Client getInstance(Renderer renderer) {
+    public static Client getInstance(Renderer renderer, ShaderManager shaderManager) {
         instance.renderer = renderer;
+        instance.shaderManager = shaderManager;
         return instance;
     }
 
     private Renderer renderer;
 
+    private ShaderManager shaderManager;
+
     public void test() {
-        renderer = Renderer.getInstance();
-        Rectangle r = new Rectangle(new Vector3f(0, 100.0f * 9.0f / 16.0f, 0.0f), 100.0f, 100.0f * 9.0f / 16.0f, "BACKGROUND");
-        Rectangle rt = new Rectangle(new Vector3f(30, 90.0f * 9.0f / 16.0f, 0.1f), 40.0f, 40.0f * 285.0f / 412.0f, "TETRIS");
+        Rectangle r = new Rectangle(new Vector3f(0, 100.0f * 9.0f / 16.0f, 0.0f), 100.0f, 100.0f * 9.0f / 16.0f, "REGULAR_RECTANGLE", "BACKGROUND", shaderManager);
+        Rectangle rt = new Rectangle(new Vector3f(30, 90.0f * 9.0f / 16.0f, 0.1f), 40.0f, 40.0f * 285.0f / 412.0f, "REGULAR_RECTANGLE", "TETRIS", shaderManager);
         renderer.addOnScreenObject(rt);
         renderer.addOnScreenObject(r);
+        Block block = new Block(new Vector3f(50.0f, 50.0f, 1.0f), "SET1_BLUE", shaderManager);
+        block.show(renderer);
+        
         /**
          * Menu: Tetris title, Start Game, High Score, Quit Game, and Selecting arrow (SA) images
          * Initialize @param choose
