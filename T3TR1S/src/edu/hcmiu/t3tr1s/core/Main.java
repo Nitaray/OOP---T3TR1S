@@ -1,6 +1,6 @@
 package edu.hcmiu.t3tr1s.core;
 
-import edu.hcmiu.t3tr1s.client.client;
+import edu.hcmiu.t3tr1s.Client;
 import org.lwjgl.glfw.*;
 
 import static org.lwjgl.glfw.GLFW.*;
@@ -13,10 +13,14 @@ public class Main implements Runnable{
 
     private boolean running = false;
     private Thread thread;
+    private Renderer renderer;
+    private Client client;
 
     private void start() {
         running = true;
         thread = new Thread(this, "T3TR1S Thread");
+        renderer = Renderer.getInstance();
+        client = Client.getClient(renderer);
         thread.start();
     }
 
@@ -43,7 +47,7 @@ public class Main implements Runnable{
 
         while (running) {
             update();
-            Renderer.render();
+            renderer.render();
 
             if (Window.shouldClose())
                 running = false;

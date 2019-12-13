@@ -34,6 +34,12 @@ public class Renderer {
             throw new NullPointerException("Invalid object, suspecting uninitialized object");
     }
 
+    /**
+     * Remove a rectangle that is rendering on screen.
+     * @param r A rectangle to be remove.
+     * @throws InvalidObjectException The input rectangle is not in rendering.
+     */
+
     public void removeOnScreenObject(Rectangle r) throws InvalidObjectException {
         if (r != null) {
             if (onScreen.contains(r))
