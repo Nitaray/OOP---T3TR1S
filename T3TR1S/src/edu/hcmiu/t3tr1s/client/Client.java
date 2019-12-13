@@ -9,15 +9,24 @@ import edu.hcmiu.t3tr1s.math.Vector3f;
  * TODO: By Luu Minh Long
  */
 
-public class client {
-    private client() {}
+public class Client {
+    private Client() {}
 
-    public static void test() {
-        Renderer renderer = Renderer.getInstance();
+    private static Client instance = new Client();
+
+    public static Client getInstance(Renderer renderer) {
+        instance.renderer = renderer;
+        return instance;
+    }
+
+    private Renderer renderer;
+
+    public void test() {
+        renderer = Renderer.getInstance();
         Rectangle r = new Rectangle(new Vector3f(0, 100.0f * 9.0f / 16.0f, 0.0f), 100.0f, 100.0f * 9.0f / 16.0f, "BACKGROUND");
         Rectangle rt = new Rectangle(new Vector3f(30, 90.0f * 9.0f / 16.0f, 0.1f), 40.0f, 40.0f * 285.0f / 412.0f, "TETRIS");
-        Renderer.addOnScreenObject(rt);
-        Renderer.addOnScreenObject(r);
+        renderer.addOnScreenObject(rt);
+        renderer.addOnScreenObject(r);
         /**
          * Menu: Tetris title, Start Game, High Score, Quit Game, and Selecting arrow (SA) images
          * Initialize @param choose

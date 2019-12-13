@@ -64,6 +64,6 @@ public class Board {
 //    }
 
     public void show() {
-        blocks.forEach(Block::show);
+        blocks.forEach(Block -> show());
     }
 }
