@@ -67,16 +67,15 @@ public class Rectangle {
      * @param v a vector of floats containing the direction
      */
 
-    protected void translate(Vector3f v) {
-        Matrix4f translate_matrix = Matrix4f.translate(v);
-        position_mat = position_mat.add(translate_matrix);
+    public void translate(Vector3f v) {
+        position_mat.add_translation(v);
     }
 
     /**
      * Update the model matrix of the rectangle.
      */
 
-    protected void update() {
+    private void update() {
         model_mat = position_mat.multiply(rotation_mat);
     }
 
