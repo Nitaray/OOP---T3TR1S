@@ -39,10 +39,10 @@ public class Block extends Rectangle {
     public void move(Direction direction) {
         switch (direction) {
             case UP:
-                super.translate(new Vector3f(0, -size, 0));
+                super.translate(new Vector3f(0, size, 0));
                 break;
             case DOWN:
-                super.translate(new Vector3f(0, size, 0));
+                super.translate(new Vector3f(0, -size, 0));
                 break;
             case RIGHT:
                 super.translate(new Vector3f(size, 0, 0));

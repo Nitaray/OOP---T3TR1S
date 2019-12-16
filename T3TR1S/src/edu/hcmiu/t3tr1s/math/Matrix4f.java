@@ -159,4 +159,11 @@ public class Matrix4f {
 
         return result;
     }
+
+    public void add_translation(Vector3f translation_vector) {
+
+        elements[0 + 3 * 4] += translation_vector.x;
+        elements[1 + 3 * 4] += translation_vector.y;
+        elements[2 + 3 * 4] += translation_vector.z;
+    }
 }

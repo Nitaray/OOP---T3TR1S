@@ -70,15 +70,14 @@ public class Rectangle {
      */
 
     public void translate(Vector3f v) {
-        Matrix4f translate_matrix = Matrix4f.translate(v);
-        position_mat = position_mat.add(translate_matrix);
+        position_mat.add_translation(v);
     }
 
     /**
      * Update the model matrix of the rectangle.
      */
 
-    public void update() {
+    private void update() {
         model_mat = position_mat.multiply(rotation_mat);
     }
 
