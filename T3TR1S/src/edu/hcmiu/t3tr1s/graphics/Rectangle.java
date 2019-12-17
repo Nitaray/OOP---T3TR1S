@@ -23,6 +23,7 @@ public class Rectangle {
     private Matrix4f position_mat;
     private Matrix4f rotation_mat;
 
+
     /**
      * Constructor for the rectangle class
      * @param topLeft The 3D-coordinates for the top-left of the rectangle.
@@ -32,6 +33,7 @@ public class Rectangle {
      */
 
     public Rectangle(Vector3f topLeft, float width, float height, String shaderName, String textureName, ShaderManager shaderManager) {
+
         vertices = new float[] {
                 topLeft.x, topLeft.y, topLeft.z,
                 topLeft.x + width,  topLeft.y, topLeft.z,
@@ -67,7 +69,7 @@ public class Rectangle {
      * @param v a vector of floats containing the direction
      */
 
-    public void translate(Vector3f v) {
+    protected void translate(Vector3f v) {
         position_mat.add_translation(v);
     }
 
@@ -75,7 +77,7 @@ public class Rectangle {
      * Update the model matrix of the rectangle.
      */
 
-    private void update() {
+    protected void update() {
         model_mat = position_mat.multiply(rotation_mat);
     }
 
@@ -90,6 +92,8 @@ public class Rectangle {
         vertexArray.render();
         shaderManager.disableShader(shaderID, textureID);
     }
+
+
 }
 
 
