@@ -16,10 +16,10 @@ import static org.lwjgl.glfw.GLFW.*;
 public class    Main implements Runnable{
 
     private boolean running = false;
+
     private Thread thread;
     private Renderer renderer;
     private ShaderManager shaderManager;
-    private ShapeDataManager shapeDataManager;
     private Client client;
     private Updater updater;
 
@@ -28,7 +28,6 @@ public class    Main implements Runnable{
         thread = new Thread(this, "T3TR1S Thread");
         renderer = Renderer.getInstance();
         shaderManager = ShaderManager.getInstance(Matrix4f.orthographic(0, 100.0f, 0, 100.f * 9.0f / 16.0f, -1.0f, 1.0f));
-        shapeDataManager = ShapeDataManager.getInstance();
         client = Client.getInstance();
         updater = Updater.getInstance(60, client);
         thread.start();
@@ -47,7 +46,7 @@ public class    Main implements Runnable{
 
         shaderManager.init();
 
-        shapeDataManager.init();
+        ShapeDataManager.init();
 
         client.init(renderer, shaderManager);
     }
@@ -55,7 +54,6 @@ public class    Main implements Runnable{
     public void run() {
 
         init();
-        client.test();
 
         while (running) {
             update();

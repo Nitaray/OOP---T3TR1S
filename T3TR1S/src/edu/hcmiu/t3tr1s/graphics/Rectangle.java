@@ -1,5 +1,6 @@
 package edu.hcmiu.t3tr1s.graphics;
 
+import edu.hcmiu.t3tr1s.core.Renderer;
 import edu.hcmiu.t3tr1s.core.ShaderManager;
 import edu.hcmiu.t3tr1s.math.Matrix4f;
 import edu.hcmiu.t3tr1s.math.Vector3f;
@@ -17,8 +18,12 @@ public class Rectangle {
     private int shaderID;
     private int textureID;
 
+    private float WIDTH;
+    private float HEIGHT;
+
     private float[] vertices, tc;
     private byte[] indices;
+
     private Matrix4f model_mat;
     private Matrix4f position_mat;
     private Matrix4f rotation_mat;
@@ -53,6 +58,9 @@ public class Rectangle {
                 0, 1
         };
 
+        WIDTH = width;
+        HEIGHT = height;
+
         model_mat = Matrix4f.identity();
         position_mat = Matrix4f.translate(new Vector3f(0, 0, 0));
         rotation_mat = Matrix4f.rotate(0);
@@ -71,6 +79,31 @@ public class Rectangle {
 
     protected void translate(Vector3f v) {
         position_mat.add_translation(v);
+    }
+
+    /**
+     * Set the rectangle to a new topLeft position.
+     * @param newLocation the new position of the top-left corner of the rectangle.
+     */
+
+    protected void teleport(Vector3f newLocation) {
+        vertices = new float[] {
+                newLocation.x, newLocation.y, newLocation.z,
+                newLocation.x + WIDTH,  newLocation.y, newLocation.z,
+                newLocation.x + WIDTH,  newLocation.y - HEIGHT, newLocation.z,
+                newLocation.x, newLocation.y - HEIGHT, newLocation.z
+        };
+
+        vertexArray = new VertexArray(vertices, indices, tc);
+    }
+
+    /**
+     * Set a new texture to the rectangle.
+     * @param textureName the name of the texture to be set.
+     */
+
+    protected void setTexture(String textureName) {
+        textureID = shaderManager.getTextureID(textureName);
     }
 
     /**
@@ -93,7 +126,17 @@ public class Rectangle {
         shaderManager.disableShader(shaderID, textureID);
     }
 
+    public void show(Renderer renderer) {
+        renderer.addOnScreenObject(this);
+    }
 
+    public void hide(Renderer renderer) {
+        try {
+            renderer.removeOnScreenObject(this);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
 
 

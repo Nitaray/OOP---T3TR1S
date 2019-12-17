@@ -1,7 +1,6 @@
 package edu.hcmiu.t3tr1s.core;
 
 import edu.hcmiu.t3tr1s.exceptions.InvalidObjectException;
-import edu.hcmiu.t3tr1s.graphics.Button;
 import edu.hcmiu.t3tr1s.graphics.Rectangle;
 
 import java.util.ArrayList;
