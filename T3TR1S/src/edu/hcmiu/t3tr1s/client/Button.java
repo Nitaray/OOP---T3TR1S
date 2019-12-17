@@ -4,7 +4,7 @@ import edu.hcmiu.t3tr1s.core.ShaderManager;
 import edu.hcmiu.t3tr1s.graphics.Rectangle;
 import edu.hcmiu.t3tr1s.math.Vector3f;
 
-public class Button extends Rectangle {
+class Button extends Rectangle {
 
     private boolean isSelected;
 
@@ -21,7 +21,7 @@ public class Button extends Rectangle {
      * @param initialSelection      The initial selected value of this button.
      */
 
-    public Button(Vector3f topLeft, float width, float height, String shaderName, String normalTextureName, String selectedTextureName, ShaderManager shaderManager, boolean initialSelection) {
+    Button(Vector3f topLeft, float width, float height, String shaderName, String normalTextureName, String selectedTextureName, ShaderManager shaderManager, boolean initialSelection) {
         super(topLeft, width, height, shaderName, normalTextureName, shaderManager);
         this.normalTextureName = normalTextureName;
         this.selectedTextureName = selectedTextureName;
@@ -32,7 +32,7 @@ public class Button extends Rectangle {
      * Set the button's selected value to true.
      */
 
-    public void select() {
+    void select() {
         this.isSelected = true;
     }
 
@@ -40,7 +40,7 @@ public class Button extends Rectangle {
      * Set the button's selected value to false.
      */
 
-    public void deSelect() {
+    void deSelect() {
         this.isSelected = false;
     }
 
@@ -49,7 +49,7 @@ public class Button extends Rectangle {
      * @return whether the button is selected or not.
      */
 
-    public boolean isSelected() {
+    boolean isSelected() {
         return isSelected;
     }
 
@@ -58,7 +58,7 @@ public class Button extends Rectangle {
      * @param selected the designated selected value.
      */
 
-    public void setSelected(boolean selected) {
+    void setSelected(boolean selected) {
         isSelected = selected;
     }
 
@@ -66,7 +66,7 @@ public class Button extends Rectangle {
      * Update the button graphics and (possibly) more.
      */
 
-    public void update() {
+    void update() {
         if (isSelected) {
             super.setTexture(selectedTextureName);
         }

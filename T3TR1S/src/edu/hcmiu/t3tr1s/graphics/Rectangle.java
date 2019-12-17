@@ -110,7 +110,7 @@ public class Rectangle {
      * Update the model matrix of the rectangle.
      */
 
-    protected void update() {
+    protected void updateModel() {
         model_mat = position_mat.multiply(rotation_mat);
     }
 
@@ -120,7 +120,7 @@ public class Rectangle {
 
     public void render() {
         shaderManager.enableShader(shaderID, textureID);
-        update();
+        updateModel();
         shaderManager.setUniformMat4f(shaderID, "model_matrix", model_mat);
         vertexArray.render();
         shaderManager.disableShader(shaderID, textureID);

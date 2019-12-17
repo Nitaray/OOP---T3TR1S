@@ -2,20 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9c78a22-e230-4028-93b1-e89d4a59d813" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Conan.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/MainMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/Scene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/Block.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/Block.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/texture.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/config/texture.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/Button.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/Button.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/core/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/core/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/core/Renderer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/core/Renderer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/graphics/Button.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/graphics/Rectangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/graphics/Rectangle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/Block.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/Button.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/Button.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/core/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/core/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/core/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/core/Renderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/graphics/Button.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/Button.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/Scoreboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/Scoreboard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/graphics/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/graphics/Rectangle.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +73,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -156,7 +152,7 @@
       <workItem from="1576509029694" duration="198000" />
       <workItem from="1576509253833" duration="3076000" />
       <workItem from="1576553817995" duration="2647000" />
-      <workItem from="1576560640734" duration="3734000" />
+      <workItem from="1576560640734" duration="10489000" />
     </task>
     <servers />
   </component>
@@ -177,26 +173,30 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1876" height="274" key="GridCell.Tab.0.bottom" timestamp="1576563578207">
+    <state x="765" y="243" key="#com.intellij.ide.util.MemberChooser" timestamp="1576568294362">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="274" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1576563578207" />
-    <state width="1876" height="274" key="GridCell.Tab.0.center" timestamp="1576563578207">
+    <state x="765" y="243" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1576568294362" />
+    <state width="1876" height="274" key="GridCell.Tab.0.bottom" timestamp="1576570988767">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="274" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1576563578207" />
-    <state width="1876" height="274" key="GridCell.Tab.0.left" timestamp="1576563578207">
+    <state width="1876" height="274" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1576570988767" />
+    <state width="1876" height="274" key="GridCell.Tab.0.center" timestamp="1576570988767">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="274" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1576563578207" />
-    <state width="1876" height="274" key="GridCell.Tab.0.right" timestamp="1576563578207">
+    <state width="1876" height="274" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1576570988767" />
+    <state width="1876" height="274" key="GridCell.Tab.0.left" timestamp="1576570988767">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="274" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1576563578207" />
-    <state x="384" y="88" key="SettingsEditor" timestamp="1576562982324">
+    <state width="1876" height="274" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1576570988767" />
+    <state width="1876" height="274" key="GridCell.Tab.0.right" timestamp="1576570988767">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="384" y="88" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1576562982324" />
+    <state width="1876" height="274" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1576570988767" />
+    <state x="384" y="88" key="SettingsEditor" timestamp="1576569027582">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="384" y="88" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1576569027582" />
     <state x="661" y="363" key="com.intellij.ide.util.TipDialog" timestamp="1576509264587">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

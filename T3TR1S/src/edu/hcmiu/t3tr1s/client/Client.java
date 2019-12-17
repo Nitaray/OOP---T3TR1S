@@ -1,12 +1,11 @@
 package edu.hcmiu.t3tr1s.client;
 
-import edu.hcmiu.t3tr1s.core.Input;
 import edu.hcmiu.t3tr1s.core.ShaderManager;
 import edu.hcmiu.t3tr1s.graphics.Rectangle;
 import edu.hcmiu.t3tr1s.core.Renderer;
 import edu.hcmiu.t3tr1s.math.Vector3f;
 
-import static org.lwjgl.glfw.GLFW.*;
+import java.util.ArrayList;
 
 /**
  * The client to script and update the game.
@@ -21,26 +20,40 @@ public class Client {
     }
 
     private boolean running;
-    private int key_pressed;
 
-    private Button startGame;
-    private Button quitGame;
+    private Button startGameButton;
+    private Button quitGameButton;
 
-    private Rectangle background;
-    private Rectangle logo;
+    private Rectangle main_menu_background;
+    private Rectangle main_menu_logo;
+
+    private Scene currentScene;
+
+    private ArrayList<Scene> scenes;
 
     public void init(Renderer renderer, ShaderManager shaderManager) {
         running = true;
 
-        startGame = new Button(new Vector3f(40, 25.0f * 9.0f / 16.0f, 0.1f), 20.0f, 20.0f * 209.0f / 1563.0f,
-                "REGULAR_RECTANGLE", "START", "START", shaderManager, false);
-        quitGame = new Button(new Vector3f(40, 15.0f * 9.0f / 16.0f, 0.1f), 20.0f, 20.0f * 255.0f / 1431.0f,
-                "REGULAR_RECTANGLE", "QUIT", "QUIT", shaderManager, false);
+        startGameButton = new Button(new Vector3f(40, 25.0f * 9.0f / 16.0f, 0.1f), 20.0f, 20.0f * 209.0f / 1563.0f,
+                "REGULAR_RECTANGLE", "START", "QUIT", shaderManager, false);
+        quitGameButton = new Button(new Vector3f(40, 15.0f * 9.0f / 16.0f, 0.1f), 20.0f, 20.0f * 255.0f / 1431.0f,
+                "REGULAR_RECTANGLE", "QUIT", "START", shaderManager, false);
 
-        background = new Rectangle(new Vector3f(0, 100.0f * 9.0f / 16.0f, 0.0f), 100.0f, 100.0f * 9.0f / 16.0f,
+        main_menu_background = new Rectangle(new Vector3f(0, 100.0f * 9.0f / 16.0f, 0.0f), 100.0f, 100.0f * 9.0f / 16.0f,
                 "REGULAR_RECTANGLE", "BACKGROUND", shaderManager);
-        logo = new Rectangle(new Vector3f(30, 90.0f * 9.0f / 16.0f, 0.1f), 40.0f, 40.0f * 285.0f / 412.0f,
+        main_menu_logo = new Rectangle(new Vector3f(30, 90.0f * 9.0f / 16.0f, 0.1f), 40.0f, 40.0f * 285.0f / 412.0f,
                 "REGULAR_RECTANGLE", "TETRIS", shaderManager);
+
+        Scene mainMenu = new MainMenu(main_menu_background, main_menu_logo);
+
+        ((MainMenu) mainMenu).addButton(startGameButton);
+        ((MainMenu) mainMenu).addButton(quitGameButton);
+
+        scenes = new ArrayList<>();
+
+        scenes.add(mainMenu);
+
+        currentScene = mainMenu;
 
         show(renderer);
     }
@@ -51,11 +64,7 @@ public class Client {
      */
 
     public void show(Renderer renderer) {
-        background.show(renderer);
-        logo.show(renderer);
-
-        startGame.show(renderer);
-        quitGame.show(renderer);
+        currentScene.show(renderer);
     }
 
     /**
@@ -64,29 +73,15 @@ public class Client {
      */
 
     public void hide(Renderer renderer) {
-        background.hide(renderer);
-        logo.hide(renderer);
+        main_menu_background.hide(renderer);
+        main_menu_logo.hide(renderer);
 
-        startGame.hide(renderer);
-        quitGame.hide(renderer);
+        startGameButton.hide(renderer);
+        quitGameButton.hide(renderer);
     }
 
     public void update() {
-//        Vector3f v = new Vector3f(0,6.0f,0.0f);
-//        // Move arrow down
-//        if((Input.isKeyDown(GLFW_KEY_DOWN)) && (key_pressed != GLFW_KEY_DOWN)){
-//            ra.translate(v);
-//            key_pressed = GLFW_KEY_DOWN;
-//        }
-//        // Move arrow up
-//        else if((Input.isKeyDown(GLFW_KEY_UP)) && (key_pressed != GLFW_KEY_UP)){
-//            ra.translate(v);
-//            key_pressed = GLFW_KEY_UP;
-//        }
-//        // Quit if user presses Enter when choosing Quit
-//        if((Input.isKeyDown(GLFW_KEY_ENTER)) && ra.getSelection()==1){
-//            running = false;
-//        }
+        currentScene.update();
     }
 
     public boolean shouldQuit() {
