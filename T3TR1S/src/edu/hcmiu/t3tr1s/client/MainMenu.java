@@ -9,15 +9,12 @@ import java.util.ArrayList;
 import static org.lwjgl.glfw.GLFW.*;
 
 class MainMenu extends Scene {
-    private Rectangle logo;
-
     private ArrayList<Button> buttons;
 
     private int currentButtonSelection;
 
-    MainMenu(Rectangle background, Rectangle logo) {
-        this.background = background;
-        this.logo = logo;
+    MainMenu(String name, Rectangle background) {
+        super(name, background);
         buttons = new ArrayList<>();
         currentButtonSelection = 0;
     }
@@ -29,19 +26,18 @@ class MainMenu extends Scene {
             throw new NullPointerException("Null button encountered!");
     }
 
-    public void setLogo(Rectangle logo) {
-        if (logo != null)
-            this.logo = logo;
-        else
-            throw new NullPointerException("Null logo encountered!");
-    }
-
     @Override
     public void show(Renderer renderer) {
         background.show(renderer);
-        logo.show(renderer);
 
         buttons.forEach(button -> button.show(renderer));
+    }
+
+    @Override
+    public void hide(Renderer renderer) {
+        background.hide(renderer);
+
+        buttons.forEach(button -> button.hide(renderer));
     }
 
     private void selectCurrentButton(int buttonID) {
@@ -67,9 +63,25 @@ class MainMenu extends Scene {
         }
     }
 
+    private void handleSelection(Client client) {
+        switch (currentButtonSelection) {
+            case 0:
+                client.switchScene("GAME");
+                break;
+            case 1:
+                client.stop();
+                break;
+            default:
+                break;
+        }
+    }
+
     @Override
-    public void update() {
+    public void update(Client client) {
         updateSelection();
         buttons.forEach(Button::update);
+
+        if (Input.isKeyDown(GLFW_KEY_ENTER))
+            handleSelection(client);
     }
 }
