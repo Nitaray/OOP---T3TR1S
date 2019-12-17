@@ -53,7 +53,7 @@ public class Input {
     }
 
     public void setMouseX(double mouseX) {
-        this.mouseX = mouseX;
+        Input.mouseX = mouseX;
     }
 
     public static double getMouseY() {
@@ -61,7 +61,7 @@ public class Input {
     }
 
     public void setMouseY(double mouseY) {
-        this.mouseY = mouseY;
+        Input.mouseY = mouseY;
     }
 
     public GLFWKeyCallback getKeyboard() {

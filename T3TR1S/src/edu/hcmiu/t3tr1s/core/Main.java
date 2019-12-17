@@ -5,18 +5,21 @@ import edu.hcmiu.t3tr1s.graphics.Shader;
 import edu.hcmiu.t3tr1s.math.Matrix4f;
 import org.lwjgl.glfw.*;
 
+import java.util.Objects;
+
 import static org.lwjgl.glfw.GLFW.*;
 
 /**
  * Main class of the program, starting point of the entire program.
  */
 
-public class Main implements Runnable{
+public class    Main implements Runnable{
 
     private boolean running = false;
     private Thread thread;
     private Renderer renderer;
     private ShaderManager shaderManager;
+    private ShapeDataManager shapeDataManager;
     private Client client;
     private Updater updater;
 
@@ -25,7 +28,8 @@ public class Main implements Runnable{
         thread = new Thread(this, "T3TR1S Thread");
         renderer = Renderer.getInstance();
         shaderManager = ShaderManager.getInstance(Matrix4f.orthographic(0, 100.0f, 0, 100.f * 9.0f / 16.0f, -1.0f, 1.0f));
-        client = Client.getInstance(renderer, shaderManager);
+        shapeDataManager = ShapeDataManager.getInstance();
+        client = Client.getInstance();
         updater = Updater.getInstance(60, client);
         thread.start();
     }
@@ -43,7 +47,9 @@ public class Main implements Runnable{
 
         shaderManager.init();
 
-        ShapeDataManager.init();
+        shapeDataManager.init();
+
+        client.init(renderer, shaderManager);
     }
 
     public void run() {
@@ -55,14 +61,14 @@ public class Main implements Runnable{
             update();
             renderer.render();
 
-            if (Window.shouldClose() || (Input.isKeyDown(GLFW_KEY_LEFT_ALT) && Input.isKeyDown(GLFW_KEY_F4)))
+            if (Window.shouldClose())
                 running = false;
         }
 
         Window.destroy();
 
         glfwTerminate();
-        glfwSetErrorCallback(null).free();
+        Objects.requireNonNull(glfwSetErrorCallback(null)).free();
     }
 
     private void update() {
