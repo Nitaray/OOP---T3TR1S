@@ -31,18 +31,19 @@ public class Client {
 
     private boolean running;
 
+    private int key_pressed;
+    
+    private Button ra;
+
     public void init(Renderer renderer, ShaderManager shaderManager) {
         this.renderer = renderer;
         this.shaderManager = shaderManager;
+        running = true;
     }
-    private int key_pressed;
-    private Button ra;
-
 
     public void test() {
         Rectangle r = new Rectangle(new Vector3f(0, 100.0f * 9.0f / 16.0f, 0.0f), 100.0f, 100.0f * 9.0f / 16.0f, "REGULAR_RECTANGLE", "BACKGROUND", shaderManager);
         Rectangle rt = new Rectangle(new Vector3f(30, 90.0f * 9.0f / 16.0f, 0.1f), 40.0f, 40.0f * 285.0f / 412.0f, "REGULAR_RECTANGLE", "TETRIS", shaderManager);
-        block = new Block(new Vector3f(50.0f, 50.0f, 1.0f), "SET1_BLUE", shaderManager);
         Rectangle rs = new Rectangle(new Vector3f(40, 25.0f * 9.0f / 16.0f, 0.1f), 20.0f, 20.0f * 209.0f / 1563.0f, "REGULAR_RECTANGLE", "START", shaderManager);
         Rectangle rq = new Rectangle(new Vector3f(40, 15.0f * 9.0f / 16.0f, 0.1f), 20.0f, 20.0f * 255.0f / 1431.0f, "REGULAR_RECTANGLE", "QUIT", shaderManager);
         ra = new Button(new Vector3f(35, 25.0f * 9.0f / 16.0f, 0.1f), 2.67f, 2.67f * 265.0f / 252.0f, "REGULAR_RECTANGLE", "ARROW", shaderManager,0);
@@ -51,7 +52,6 @@ public class Client {
         renderer.addOnScreenObject(rs);
         renderer.addOnScreenObject(rq);
         renderer.addOnScreenObject(r);
-        block.show(renderer);
         key_pressed = GLFW_KEY_UP; // To prevent user moves arrow up when it is pointing at Start Game
 
     }
@@ -70,7 +70,7 @@ public class Client {
         }
         // Quit if user presses Enter when choosing Quit
         if((Input.isKeyDown(GLFW_KEY_ENTER)) && ra.getSelection()==1){
-            quit = true;
+            running = false;
         }
 
 //        if (Input.isKeyDown(GLFW_KEY_DOWN) && key_pressed != GLFW_KEY_DOWN) {

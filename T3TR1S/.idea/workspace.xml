@@ -4,41 +4,7 @@
     <list default="true" id="d9c78a22-e230-4028-93b1-e89d4a59d813" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/core/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/core/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tetris/edu/hcmiu/t3tr1s/blocks/Block$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tetris/edu/hcmiu/t3tr1s/blocks/Block.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tetris/edu/hcmiu/t3tr1s/blocks/IShape.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tetris/edu/hcmiu/t3tr1s/blocks/JShape.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tetris/edu/hcmiu/t3tr1s/blocks/LShape.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tetris/edu/hcmiu/t3tr1s/blocks/OShape.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tetris/edu/hcmiu/t3tr1s/blocks/SShape.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tetris/edu/hcmiu/t3tr1s/blocks/Shape$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tetris/edu/hcmiu/t3tr1s/blocks/Shape.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tetris/edu/hcmiu/t3tr1s/blocks/TShape.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tetris/edu/hcmiu/t3tr1s/blocks/ZShape.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tetris/edu/hcmiu/t3tr1s/client/Board$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tetris/edu/hcmiu/t3tr1s/client/Board.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tetris/edu/hcmiu/t3tr1s/client/DefautBoard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tetris/edu/hcmiu/t3tr1s/client/client.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tetris/edu/hcmiu/t3tr1s/core/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tetris/edu/hcmiu/t3tr1s/core/Renderer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tetris/edu/hcmiu/t3tr1s/core/ShaderManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tetris/edu/hcmiu/t3tr1s/core/ShapeDataManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tetris/edu/hcmiu/t3tr1s/core/Window.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tetris/edu/hcmiu/t3tr1s/enums/Direction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tetris/edu/hcmiu/t3tr1s/enums/ShapeBoxSize.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tetris/edu/hcmiu/t3tr1s/graphics/Rectangle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tetris/edu/hcmiu/t3tr1s/graphics/Shader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tetris/edu/hcmiu/t3tr1s/graphics/Texture.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tetris/edu/hcmiu/t3tr1s/graphics/VertexArray.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tetris/edu/hcmiu/t3tr1s/math/Matrix4f.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tetris/edu/hcmiu/t3tr1s/math/Vector3f.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tetris/edu/hcmiu/t3tr1s/utils/BufferUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tetris/edu/hcmiu/t3tr1s/utils/FileUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tetris/edu/hcmiu/t3tr1s/utils/ShadersUtils.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/core/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/core/Input.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/core/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/core/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/core/ShapeDataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/core/ShapeDataManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +142,7 @@
       <workItem from="1576508638761" duration="265000" />
       <workItem from="1576509029694" duration="198000" />
       <workItem from="1576509253833" duration="3076000" />
-      <workItem from="1576553817995" duration="1108000" />
+      <workItem from="1576553817995" duration="1408000" />
     </task>
     <servers />
   </component>
@@ -197,22 +163,22 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1876" height="274" key="GridCell.Tab.0.bottom" timestamp="1576556514517">
+    <state width="1876" height="274" key="GridCell.Tab.0.bottom" timestamp="1576556777864">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="274" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1576556514517" />
-    <state width="1876" height="274" key="GridCell.Tab.0.center" timestamp="1576556514517">
+    <state width="1876" height="274" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1576556777864" />
+    <state width="1876" height="274" key="GridCell.Tab.0.center" timestamp="1576556777863">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="274" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1576556514517" />
-    <state width="1876" height="274" key="GridCell.Tab.0.left" timestamp="1576556514517">
+    <state width="1876" height="274" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1576556777863" />
+    <state width="1876" height="274" key="GridCell.Tab.0.left" timestamp="1576556777863">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="274" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1576556514517" />
-    <state width="1876" height="274" key="GridCell.Tab.0.right" timestamp="1576556514517">
+    <state width="1876" height="274" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1576556777863" />
+    <state width="1876" height="274" key="GridCell.Tab.0.right" timestamp="1576556777863">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="274" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1576556514517" />
+    <state width="1876" height="274" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1576556777863" />
     <state x="482" y="188" key="SettingsEditor" timestamp="1576513248361">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
