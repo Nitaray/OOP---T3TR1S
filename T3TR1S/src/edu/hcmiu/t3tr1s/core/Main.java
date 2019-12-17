@@ -55,7 +55,7 @@ public class Main implements Runnable{
             update();
             renderer.render();
 
-            if (Window.shouldClose() || (Input.isKeyDown(GLFW_KEY_LEFT_ALT) && Input.isKeyDown(GLFW_KEY_F4)))
+            if (Window.shouldClose() || client.shouldQuit() || (Input.isKeyDown(GLFW_KEY_LEFT_ALT) && Input.isKeyDown(GLFW_KEY_F4)))
                 running = false;
         }
 

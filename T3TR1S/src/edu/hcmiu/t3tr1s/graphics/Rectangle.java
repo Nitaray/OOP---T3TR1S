@@ -69,7 +69,7 @@ public class Rectangle {
      * @param v a vector of floats containing the direction
      */
 
-    public void translate(Vector3f v) {
+    protected void translate(Vector3f v) {
         position_mat.add_translation(v);
     }
 
@@ -77,7 +77,7 @@ public class Rectangle {
      * Update the model matrix of the rectangle.
      */
 
-    private void update() {
+    protected void update() {
         model_mat = position_mat.multiply(rotation_mat);
     }
 
@@ -92,7 +92,6 @@ public class Rectangle {
         vertexArray.render();
         shaderManager.disableShader(shaderID, textureID);
     }
-
 
 
 }

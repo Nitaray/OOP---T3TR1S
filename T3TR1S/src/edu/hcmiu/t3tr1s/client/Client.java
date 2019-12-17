@@ -4,6 +4,7 @@ import edu.hcmiu.t3tr1s.blocks.Block;
 import edu.hcmiu.t3tr1s.core.Input;
 import edu.hcmiu.t3tr1s.core.ShaderManager;
 import edu.hcmiu.t3tr1s.enums.Direction;
+import edu.hcmiu.t3tr1s.graphics.Button;
 import edu.hcmiu.t3tr1s.graphics.Rectangle;
 import edu.hcmiu.t3tr1s.core.Renderer;
 import edu.hcmiu.t3tr1s.math.Vector3f;
@@ -33,6 +34,9 @@ public class Client {
     private Block block;
 
     private int key_pressed;
+    private Button ra;
+    private boolean quit = false;
+
 
     public void test() {
         Rectangle r = new Rectangle(new Vector3f(0, 100.0f * 9.0f / 16.0f, 0.0f), 100.0f, 100.0f * 9.0f / 16.0f, "REGULAR_RECTANGLE", "BACKGROUND", shaderManager);
@@ -40,48 +44,54 @@ public class Client {
         block = new Block(new Vector3f(50.0f, 50.0f, 1.0f), "SET1_BLUE", shaderManager);
         Rectangle rs = new Rectangle(new Vector3f(40, 25.0f * 9.0f / 16.0f, 0.1f), 20.0f, 20.0f * 209.0f / 1563.0f, "REGULAR_RECTANGLE", "START", shaderManager);
         Rectangle rq = new Rectangle(new Vector3f(40, 15.0f * 9.0f / 16.0f, 0.1f), 20.0f, 20.0f * 255.0f / 1431.0f, "REGULAR_RECTANGLE", "QUIT", shaderManager);
-        Rectangle ra = new Rectangle(new Vector3f(35, 25.0f * 9.0f / 16.0f, 0.1f), 2.67f, 2.67f * 265.0f / 252.0f, "REGULAR_RECTANGLE", "ARROW", shaderManager);
+        ra = new Button(new Vector3f(35, 25.0f * 9.0f / 16.0f, 0.1f), 2.67f, 2.67f * 265.0f / 252.0f, "REGULAR_RECTANGLE", "ARROW", shaderManager,0);
+        renderer.addOnScreenObject(ra);
         renderer.addOnScreenObject(rt);
         renderer.addOnScreenObject(rs);
         renderer.addOnScreenObject(rq);
-        renderer.addOnScreenObject(ra);
         renderer.addOnScreenObject(r);
         block.show(renderer);
-
-        key_pressed = 0;
-        
-        /**
-         * Menu: Tetris title, Start Game, High Score, Quit Game, and Selecting arrow (SA) images
-         * Initialize @param choose
-         * If UP/DOWN button is pressed, remove SA and render it again at the selected image. @param choose++ or --
-         * Start game => Remove all images, then:
-         * Render board, blocks, score, and Pause, Quit with SA
-         * If ESC is pressed => Pause game, render Continue, Quit
-         * If user choose Continue => Continue game
-         * If user choose Quit => Quit game, remove all, re-render main menu (no need to ask for Are you sure I think)
-         * 
-         */
+        key_pressed = GLFW_KEY_UP; // To prevent user moves arrow up when it is pointing at Start Game
 
     }
 
     public void update() {
-        if (Input.isKeyDown(GLFW_KEY_DOWN) && key_pressed != GLFW_KEY_DOWN) {
-            block.move(Direction.DOWN);
+        Vector3f v = new Vector3f(0,6.0f,0.0f);
+        // Move arrow down
+        if((Input.isKeyDown(GLFW_KEY_DOWN)) && (key_pressed != GLFW_KEY_DOWN)){
+            ra.translate(v);
             key_pressed = GLFW_KEY_DOWN;
         }
-        else if (Input.isKeyDown(GLFW_KEY_UP) && key_pressed != GLFW_KEY_UP) {
-            block.move(Direction.UP);
+        // Move arrow up
+        else if((Input.isKeyDown(GLFW_KEY_UP)) && (key_pressed != GLFW_KEY_UP)){
+            ra.translate(v);
             key_pressed = GLFW_KEY_UP;
         }
-        else if (Input.isKeyDown(GLFW_KEY_LEFT) && key_pressed != GLFW_KEY_LEFT) {
-            block.move(Direction.LEFT);
-            key_pressed = GLFW_KEY_LEFT;
+        // Quit if user presses Enter when choosing Quit
+        if((Input.isKeyDown(GLFW_KEY_ENTER)) && ra.getSelection()==1){
+            quit = true;
         }
-        else if (Input.isKeyDown(GLFW_KEY_RIGHT) && key_pressed != GLFW_KEY_RIGHT) {
-            block.move(Direction.RIGHT);
-            key_pressed = GLFW_KEY_RIGHT;
-        }
-        else
-            key_pressed = 0;
+
+//        if (Input.isKeyDown(GLFW_KEY_DOWN) && key_pressed != GLFW_KEY_DOWN) {
+//            block.move(Direction.DOWN);
+//            key_pressed = GLFW_KEY_DOWN;
+//        }
+//        else if (Input.isKeyDown(GLFW_KEY_UP) && key_pressed != GLFW_KEY_UP) {
+//            block.move(Direction.UP);
+//            key_pressed = GLFW_KEY_UP;
+//        }
+//        else if (Input.isKeyDown(GLFW_KEY_LEFT) && key_pressed != GLFW_KEY_LEFT) {
+//            block.move(Direction.LEFT);
+//            key_pressed = GLFW_KEY_LEFT;
+//        }
+//        else if (Input.isKeyDown(GLFW_KEY_RIGHT) && key_pressed != GLFW_KEY_RIGHT) {
+//            block.move(Direction.RIGHT);
+//            key_pressed = GLFW_KEY_RIGHT;
+//        }
+//        else
+//            key_pressed = 0;
+    }
+    public boolean shouldQuit(){
+        return quit;
     }
 }
