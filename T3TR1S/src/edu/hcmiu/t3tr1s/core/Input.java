@@ -6,7 +6,8 @@ import org.lwjgl.glfw.GLFWKeyCallback;
 import org.lwjgl.glfw.GLFWMouseButtonCallback;
 
 public class Input {
-    private static boolean[] keys = new boolean[GLFW.GLFW_KEY_LAST]; // store info on keyboard, whether it is pressed or not
+    private static boolean[] held_key = new boolean[GLFW.GLFW_KEY_LAST]; // store info on keyboard, whether it is pressed or not
+    private static boolean[] pressed_key = new boolean[GLFW.GLFW_KEY_LAST];
     private static boolean[] buttons = new boolean[GLFW.GLFW_MOUSE_BUTTON_LAST]; // store info on mouse button, whether it is pressed or not
     private static double mouseX, mouseY; // store info on the coordinate of mouse pointer on the screen
 
@@ -20,7 +21,8 @@ public class Input {
             @Override
             // every time a button on keyboard is pressed, this function is executed
             public void invoke(long window, int key, int scancode, int action, int mods) {
-                keys[key] = (action != GLFW.GLFW_RELEASE); // check whether a key is pressed;
+                held_key[key] = (action != GLFW.GLFW_RELEASE); // check whether a key is pressed;
+                pressed_key[key] = (action == GLFW.GLFW_PRESS);
             }
         };
 
@@ -40,8 +42,12 @@ public class Input {
         };
     }
 
-    public static boolean isKeyDown(int key){
-        return keys[key];
+    public static boolean isKeyHeld(int key){
+        return held_key[key];
+    }
+
+    public static boolean isKeyPress(int key) {
+        return pressed_key[key];
     }
 
     public static boolean isButtonDown(int button){

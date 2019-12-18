@@ -29,14 +29,12 @@ class MainMenu extends Scene {
     @Override
     public void show(Renderer renderer) {
         background.show(renderer);
-
         buttons.forEach(button -> button.show(renderer));
     }
 
     @Override
     public void hide(Renderer renderer) {
         background.hide(renderer);
-
         buttons.forEach(button -> button.hide(renderer));
     }
 
@@ -51,12 +49,12 @@ class MainMenu extends Scene {
     }
 
     private void updateSelection() {
-        if (Input.isKeyDown(GLFW_KEY_DOWN) && currentButtonSelection < buttons.size() - 1) {
+        if (Input.isKeyPress(GLFW_KEY_DOWN) && currentButtonSelection < buttons.size() - 1) {
             deSelectCurrentButton(currentButtonSelection);
             currentButtonSelection++;
             selectCurrentButton(currentButtonSelection);
         }
-        if (Input.isKeyDown(GLFW_KEY_UP) && currentButtonSelection > 0) {
+        if (Input.isKeyPress(GLFW_KEY_UP) && currentButtonSelection > 0) {
             deSelectCurrentButton(currentButtonSelection);
             currentButtonSelection--;
             selectCurrentButton(currentButtonSelection);
@@ -72,7 +70,7 @@ class MainMenu extends Scene {
         updateSelection();
         buttons.forEach(Button::update);
 
-        if (Input.isKeyDown(GLFW_KEY_ENTER))
+        if (Input.isKeyPress(GLFW_KEY_ENTER))
             handleSelection(client);
     }
 }
