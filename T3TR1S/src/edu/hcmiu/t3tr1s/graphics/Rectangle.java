@@ -87,14 +87,9 @@ public class Rectangle {
      */
 
     protected void teleport(Vector3f newLocation) {
-        vertices = new float[] {
-                newLocation.x, newLocation.y, newLocation.z,
-                newLocation.x + WIDTH,  newLocation.y, newLocation.z,
-                newLocation.x + WIDTH,  newLocation.y - HEIGHT, newLocation.z,
-                newLocation.x, newLocation.y - HEIGHT, newLocation.z
-        };
-
-        vertexArray = new VertexArray(vertices, indices, tc);
+        Vector3f currentLocation = new Vector3f(position_mat.elements[0 + 3 * 4], position_mat.elements[1 + 3 * 4], position_mat.elements[2 + 3 * 4]);
+        Vector3f differenceVector = newLocation.subtract(currentLocation);
+        position_mat.add_translation(differenceVector);
     }
 
     /**

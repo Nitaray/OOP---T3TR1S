@@ -64,16 +64,7 @@ class MainMenu extends Scene {
     }
 
     private void handleSelection(Client client) {
-        switch (currentButtonSelection) {
-            case 0:
-                client.switchScene("GAME");
-                break;
-            case 1:
-                client.stop();
-                break;
-            default:
-                break;
-        }
+        buttons.get(currentButtonSelection).action(client);
     }
 
     @Override

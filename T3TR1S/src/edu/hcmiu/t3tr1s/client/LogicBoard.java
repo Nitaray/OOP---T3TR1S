@@ -3,25 +3,23 @@ package edu.hcmiu.t3tr1s.client;
 import edu.hcmiu.t3tr1s.blocks.Block;
 import edu.hcmiu.t3tr1s.enums.Direction;
 import edu.hcmiu.t3tr1s.blocks.Shape;
-import edu.hcmiu.t3tr1s.core.ShapeDataManager;
+import javafx.util.Pair;
 
 import java.util.ArrayList;
 
-public class Board {
+public class LogicBoard {
 
-    protected int WIDTH, HEIGHT;
+    private int WIDTH, HEIGHT;
 
-    protected ArrayList<Block> blocks = new ArrayList<>();
+    private boolean[][] Grid;
 
-    protected boolean Grid[][];
-
-    protected Board() {
+    public LogicBoard() {
         WIDTH = 10;
         HEIGHT = 23;
         Grid = new boolean[23][10];
     }
 
-    protected Board(int WIDTH, int HEIGHT) {
+    public LogicBoard(int WIDTH, int HEIGHT) {
         this.WIDTH = WIDTH;
         this.HEIGHT = HEIGHT;
         Grid = new boolean[HEIGHT][WIDTH];
@@ -62,8 +60,14 @@ public class Board {
 //            case CLOCKWISE:
 //        }
 //    }
-
-    public void show() {
-        blocks.forEach(Block -> show());
+    public ArrayList<Pair<Integer, Integer>> getSolidBlocks() {
+        ArrayList<Pair<Integer, Integer>> result = new ArrayList<>();
+        for (int x = 0; x < WIDTH; x++) {
+            for (int y = 0; y < HEIGHT; y++) {
+                if (Grid[x][y])
+                    result.add(new Pair<Integer, Integer>(x, y));
+            }
+        }
+        return result;
     }
 }
