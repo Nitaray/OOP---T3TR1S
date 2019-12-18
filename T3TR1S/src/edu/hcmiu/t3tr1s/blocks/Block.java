@@ -1,6 +1,7 @@
 package edu.hcmiu.t3tr1s.blocks;
 
 import edu.hcmiu.t3tr1s.core.Renderer;
+import edu.hcmiu.t3tr1s.core.ShaderManager;
 import edu.hcmiu.t3tr1s.enums.Direction;
 import edu.hcmiu.t3tr1s.graphics.Rectangle;
 import edu.hcmiu.t3tr1s.math.Vector3f;
@@ -16,11 +17,11 @@ public class Block extends Rectangle {
     /**
      * Default block constructor.
      * @param topLeftPosition The position of the block.
-     * @param shaderName Name of the shader of this block.
+     * @param textureName Name of the shader of this block.
      */
 
-    public Block(Vector3f topLeftPosition, String shaderName) {
-        super(topLeftPosition, 2.0f, 2.0f, shaderName);
+    public Block(Vector3f topLeftPosition, String textureName, ShaderManager shaderManager) {
+        super(topLeftPosition, 2.0f, 2.0f, "REGULAR_RECTANGLE", textureName, shaderManager);
         this.size = 2.0f;
     }
 
@@ -28,11 +29,11 @@ public class Block extends Rectangle {
      * Custom block constructor.
      * @param topLeftPosition the position of the top-left position of the block.
      * @param size the size of the side of the block.
-     * @param shaderName Name of the shader of this block.
+     * @param textureName Name of the shader of this block.
      */
 
-    public Block(Vector3f topLeftPosition, float size, String shaderName) {
-        super(topLeftPosition, size, size, shaderName);
+    public Block(Vector3f topLeftPosition, float size, String textureName, ShaderManager shaderManager) {
+        super(topLeftPosition, size, size, "REGULAR_RECTANGLE", textureName, shaderManager);
     }
 
     public void move(Direction direction) {
@@ -52,7 +53,15 @@ public class Block extends Rectangle {
         }
     }
 
-    public void show() {
-        Renderer.addOnScreenObject(this);
+    public void show(Renderer renderer) {
+        renderer.addOnScreenObject(this);
+    }
+
+    public void hide(Renderer renderer) {
+        try {
+            renderer.removeOnScreenObject(this);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

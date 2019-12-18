@@ -53,6 +53,10 @@ public class Board {
         return false;
     }
 
+    public boolean ValidPosition(Shape shape, int x, int y){
+        return isFreeSpace(shape,x,y);
+    }
+
 //    public boolean freeToRotate(Shape shape, Direction direction) {
 //        switch (direction) {
 //            case CLOCKWISE:
@@ -60,6 +64,6 @@ public class Board {
 //    }
 
     public void show() {
-        blocks.forEach(Block::show);
+        blocks.forEach(Block -> show());
     }
 }

@@ -11,7 +11,7 @@ public abstract class Shape {
 
     protected int x, y;
     protected int state;
-
+    protected int[][][] offsetTransition;
     protected boolean[][] grid;
 
 
@@ -58,5 +58,26 @@ public abstract class Shape {
             }
     }
 
-    public abstract void rotate(Direction direction);
+    protected boolean offset(int oldstate, int newstate, Board board) {
+        for (int i = 0; i < offsetTransition[oldstate].length; ++i) {
+            int transX = offsetTransition[newstate][i][0] - offsetTransition[oldstate][i][0];
+            int transY = offsetTransition[newstate][i][1] - offsetTransition[oldstate][i][1];
+            if(board.ValidPosition(this, x + transX, y + transY)){
+                x += transX;
+                y += transY;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public abstract void rotate(Direction direction, Board board, boolean shouldOffset);
+
+    public void show() {
+        blocks.forEach(Block -> show());
+    }
+
+    public void hide() {
+        blocks.forEach(Block -> hide());
+    }
 }

@@ -1,7 +1,7 @@
 package edu.hcmiu.t3tr1s.graphics;
 
 import edu.hcmiu.t3tr1s.core.ShaderManager;
-import edu.hcmiu.t3tr1s.graphics.VertexArray;
+import edu.hcmiu.t3tr1s.math.Matrix4f;
 import edu.hcmiu.t3tr1s.math.Vector3f;
 
 /**
@@ -12,10 +12,16 @@ public class Rectangle {
 
     private VertexArray vertexArray;
 
+    private ShaderManager shaderManager;
+
     private int shaderID;
+    private int textureID;
 
     private float[] vertices, tc;
     private byte[] indices;
+    private Matrix4f model_mat;
+    private Matrix4f position_mat;
+    private Matrix4f rotation_mat;
 
     /**
      * Constructor for the rectangle class
@@ -25,7 +31,7 @@ public class Rectangle {
      * @param shaderName The name of the shader to draw in this rectangle.
      */
 
-    public Rectangle(Vector3f topLeft, float width, float height, String shaderName) {
+    public Rectangle(Vector3f topLeft, float width, float height, String shaderName, String textureName, ShaderManager shaderManager) {
         vertices = new float[] {
                 topLeft.x, topLeft.y, topLeft.z,
                 topLeft.x + width,  topLeft.y, topLeft.z,
@@ -45,8 +51,15 @@ public class Rectangle {
                 0, 1
         };
 
+        model_mat = Matrix4f.identity();
+        position_mat = Matrix4f.translate(new Vector3f(0, 0, 0));
+        rotation_mat = Matrix4f.rotate(0);
+
+        this.shaderManager = shaderManager;
+
         vertexArray = new VertexArray(vertices, indices, tc);
-        shaderID = ShaderManager.getID(shaderName);
+        shaderID = shaderManager.getShaderID(shaderName);
+        textureID = shaderManager.getTextureID(textureName);
     }
 
     /**
@@ -55,13 +68,16 @@ public class Rectangle {
      */
 
     protected void translate(Vector3f v) {
-        float[] newVertices = vertices.clone();
-        for (int i = 0; i < 4; i++) {
-            newVertices[i * 3 + 0] += v.x;
-            newVertices[i * 3 + 1] += v.y;
-            newVertices[i * 3 + 2] += v.z;
-        }
-        vertexArray = new VertexArray(newVertices, indices, tc);
+        Matrix4f translate_matrix = Matrix4f.translate(v);
+        position_mat = position_mat.add(translate_matrix);
+    }
+
+    /**
+     * Update the model matrix of the rectangle.
+     */
+
+    protected void update() {
+        model_mat = position_mat.multiply(rotation_mat);
     }
 
     /**
@@ -69,9 +85,11 @@ public class Rectangle {
      */
 
     public void render() {
-        ShaderManager.enableShader(shaderID);
+        shaderManager.enableShader(shaderID, textureID);
+        update();
+        shaderManager.setUniformMat4f(shaderID, "model_matrix", model_mat);
         vertexArray.render();
-        ShaderManager.disableShader(shaderID);
+        shaderManager.disableShader(shaderID, textureID);
     }
 }
 

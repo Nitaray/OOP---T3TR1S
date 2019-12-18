@@ -93,7 +93,7 @@ public class Matrix4f {
         result.elements[2 + 3 * 4] = vector.z;
 
         return result;
-    }
+}
 
     /**
      * Create and return a rotation matrix used for rotating objects' coordinates.
@@ -143,6 +143,19 @@ public class Matrix4f {
 
                 result.elements[x + y * 4] = sum;
             }
+
+        return result;
+    }
+
+    public Matrix4f add(Matrix4f matrix) {
+
+        Matrix4f result = new Matrix4f();
+
+        for (int x = 0; x < 4; x++) {
+            for (int y = 0; y < 4; y++) {
+                result.elements[x + y * 4] = elements[x + y * 4] + matrix.elements[x + y * 4];
+            }
+        }
 
         return result;
     }

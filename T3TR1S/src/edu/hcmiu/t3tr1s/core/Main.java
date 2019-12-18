@@ -1,6 +1,8 @@
 package edu.hcmiu.t3tr1s.core;
 
-import edu.hcmiu.t3tr1s.client.client;
+import edu.hcmiu.t3tr1s.client.Client;
+import edu.hcmiu.t3tr1s.graphics.Shader;
+import edu.hcmiu.t3tr1s.math.Matrix4f;
 import org.lwjgl.glfw.*;
 
 import static org.lwjgl.glfw.GLFW.*;
@@ -13,10 +15,16 @@ public class Main implements Runnable{
 
     private boolean running = false;
     private Thread thread;
+    private Renderer renderer;
+    private Client client;
+    private ShaderManager shaderManager;
 
     private void start() {
         running = true;
         thread = new Thread(this, "T3TR1S Thread");
+        renderer = Renderer.getInstance();
+        shaderManager = ShaderManager.getInstance(Matrix4f.orthographic(0, 100.0f, 0, 100.f * 9.0f / 16.0f, -1.0f, 1.0f));
+        client = Client.getInstance(renderer, shaderManager);
         thread.start();
     }
 
@@ -31,7 +39,7 @@ public class Main implements Runnable{
 
         Window.show();
 
-        ShaderManager.init();
+        shaderManager.init();
 
         ShapeDataManager.init();
     }
@@ -43,9 +51,9 @@ public class Main implements Runnable{
 
         while (running) {
             update();
-            Renderer.render();
+            renderer.render();
 
-            if (Window.shouldClose())
+            if (Window.shouldClose() || Input.isKeyDown(GLFW_KEY_ESCAPE))
                 running = false;
         }
 

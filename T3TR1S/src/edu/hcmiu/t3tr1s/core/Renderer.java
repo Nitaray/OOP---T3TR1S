@@ -1,5 +1,6 @@
 package edu.hcmiu.t3tr1s.core;
 
+import edu.hcmiu.t3tr1s.exceptions.InvalidObjectException;
 import edu.hcmiu.t3tr1s.graphics.Rectangle;
 
 import java.util.ArrayList;
@@ -10,6 +11,11 @@ import java.util.ArrayList;
 
 public class Renderer {
 
+    private static Renderer renderer = new Renderer();
+
+    public static Renderer getInstance() {
+        return renderer;
+    }
     private static ArrayList<Rectangle> onScreen = new ArrayList<>();
 
     private Renderer() {}
@@ -19,7 +25,7 @@ public class Renderer {
      * @param r An initialized rectangle to be added.
      */
 
-    public static void addOnScreenObject(Rectangle r) {
+    public void addOnScreenObject(Rectangle r) {
         if (r != null) {
             if (!onScreen.contains(r))
                 onScreen.add(r);
@@ -29,10 +35,27 @@ public class Renderer {
     }
 
     /**
+     * Remove a rectangle that is rendering on screen.
+     * @param r A rectangle to be remove.
+     * @throws InvalidObjectException The input rectangle is not in rendering.
+     */
+
+    public void removeOnScreenObject(Rectangle r) throws InvalidObjectException {
+        if (r != null) {
+            if (onScreen.contains(r))
+                onScreen.remove(r);
+            else 
+                throw new InvalidObjectException("Object not in rendering!");
+        }
+        else 
+            throw new NullPointerException("Invalid object, suspecting uninitialized object");
+    }
+
+    /**
      * Render all rendering processes.
      */
 
-    static void render() {
+    void render() {
         Window.render();
 
         onScreen.forEach(Rectangle::render);
