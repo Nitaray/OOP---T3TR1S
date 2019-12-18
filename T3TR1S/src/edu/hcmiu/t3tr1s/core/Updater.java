@@ -2,7 +2,7 @@ package edu.hcmiu.t3tr1s.core;
 
 import edu.hcmiu.t3tr1s.client.Client;
 
-public class Updater {
+class Updater {
     private static Updater thisInstance = new Updater();
 
     private static final int NANO = 1000000000;

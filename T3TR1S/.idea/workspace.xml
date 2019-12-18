@@ -2,18 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9c78a22-e230-4028-93b1-e89d4a59d813" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/ShapeRandomizer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/ShapeRandomizer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/texture.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/config/texture.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/MainMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/Scene.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/Scene.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/core/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/core/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/background.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/Scene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/core/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/core/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/core/Updater.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/core/Updater.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/menu/background.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/menu/background.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/Scoreboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/Scoreboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/core/Updater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/core/Updater.java" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,8 +23,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Singleton" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -73,12 +70,24 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="edu.hcmiu.t3tr1s.utils" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager">
     <configuration name="Run" type="Application" factoryName="Application">
@@ -116,18 +125,6 @@
       </method>
     </configuration>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -153,6 +150,8 @@
       <workItem from="1576509253833" duration="3076000" />
       <workItem from="1576553817995" duration="2647000" />
       <workItem from="1576560640734" duration="10489000" />
+      <workItem from="1576632386887" duration="964000" />
+      <workItem from="1576633375014" duration="516000" />
     </task>
     <servers />
   </component>
