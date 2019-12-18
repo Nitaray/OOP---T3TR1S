@@ -33,6 +33,7 @@ public class Client {
         this.renderer = renderer;
 
         Scene mainMenu = initMainMenu(shaderManager);
+        Scene game = Pause(shaderManager);
 
         currentScene = mainMenu;
 
@@ -40,6 +41,7 @@ public class Client {
         sceneID = new HashMap<>();
 
         addScene(mainMenu);
+        addScene(game);
 
         show();
     }
@@ -68,6 +70,19 @@ public class Client {
         mainMenu.addButton(quitGameButton);
 
         return  mainMenu;
+    }
+    private Scene Pause(ShaderManager shaderManager){
+        Button continueGameButton = new StartButton(new Vector3f(62.0f,45.0f,0.1f),36.0f,12.0f,
+                "REGULAR_RECTANGLE", "CONTINUE","CONTINUE", shaderManager,true);
+        Button quitGameButton = new QuitButton(new Vector3f(62.0f,33.0f,0.1f),36.0f,12.0f,
+                "REGULAR_RECTANGLE", "QUIT_BUTTON","QUIT_BUTTON_SELECTED", shaderManager,false);
+        Rectangle game_background = new Rectangle(new Vector3f(0, 90.0f, 0.0f), 160.0f, 90.0f,
+                "REGULAR_RECTANGLE", "MENU_BACKGROUND", shaderManager);
+
+        Pause pause = new Pause("GAME",game_background); //name should be: PAUSE
+        pause.addButton(continueGameButton);
+        pause.addButton(quitGameButton);
+        return pause;
     }
 
     /**
