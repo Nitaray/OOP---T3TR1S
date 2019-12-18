@@ -1,7 +1,7 @@
 package edu.hcmiu.t3tr1s.core;
 
 import edu.hcmiu.t3tr1s.client.Client;
-import edu.hcmiu.t3tr1s.graphics.Shader;
+import edu.hcmiu.t3tr1s.client.ShapeDataManager;
 import edu.hcmiu.t3tr1s.math.Matrix4f;
 import org.lwjgl.glfw.*;
 

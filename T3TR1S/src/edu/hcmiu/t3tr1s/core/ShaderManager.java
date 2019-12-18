@@ -105,7 +105,7 @@ public class ShaderManager {
         if (shaderID >= 0 && shaderID < shaders.size())
             shaders.get(shaderID).setUniformMat4f(uniformMatrixName, matrix);
         else
-            System.err.println("Shader shadersID could not be found.");
+            System.err.println("Shader" +  shaderID + "could not be found.");
     }
 
     /**

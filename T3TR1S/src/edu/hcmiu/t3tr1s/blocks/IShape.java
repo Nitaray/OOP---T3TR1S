@@ -1,7 +1,7 @@
 package edu.hcmiu.t3tr1s.blocks;
 
-import edu.hcmiu.t3tr1s.client.Board;
-import edu.hcmiu.t3tr1s.core.ShapeDataManager;
+import edu.hcmiu.t3tr1s.client.LogicBoard;
+import edu.hcmiu.t3tr1s.client.ShapeDataManager;
 import edu.hcmiu.t3tr1s.enums.Direction;
 
 /**
@@ -22,24 +22,24 @@ public class IShape extends Shape{
     }
 
     @Override
-    public void rotate(Direction direction, Board board, boolean shouldOffset) {
+    public void rotate(Direction direction, LogicBoard logicBoard, boolean shouldOffset) {
         boolean canOffset = false;
         if(direction==Direction.CLOCKWISE){
             grid = ShapeDataManager.getStateData(this,(state + 1) % 4);
             if(shouldOffset){
-                canOffset = offset(state, (state + 1) % 4, board);
+                canOffset = offset(state, (state + 1) % 4, logicBoard);
             }
             if(!canOffset){
-                rotate(Direction.COUNTER_CLOCKWISE, board, false);
+                rotate(Direction.COUNTER_CLOCKWISE, logicBoard, false);
             }
         }
         else{
             grid = ShapeDataManager.getStateData(this,(state - 1) % 4);
             if(shouldOffset){
-                canOffset = offset(state, (state - 1) % 4, board);
+                canOffset = offset(state, (state - 1) % 4, logicBoard);
             }
             if(!canOffset){
-                rotate(Direction.CLOCKWISE, board, false);
+                rotate(Direction.CLOCKWISE, logicBoard, false);
             }
         }
     }

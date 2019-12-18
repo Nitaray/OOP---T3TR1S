@@ -1,6 +1,6 @@
 package edu.hcmiu.t3tr1s.blocks;
 
-import edu.hcmiu.t3tr1s.client.Board;
+import edu.hcmiu.t3tr1s.client.LogicBoard;
 import edu.hcmiu.t3tr1s.enums.Direction;
 
 import java.util.ArrayList;
@@ -36,8 +36,8 @@ public abstract class Shape {
         return blocks;
     }
 
-    public void move(Direction direction, Board board) {
-        if (board.freeToMove(this, direction))
+    public void move(Direction direction, LogicBoard logicBoard) {
+        if (logicBoard.freeToMove(this, direction))
             switch (direction) {
                 case LEFT:
                     x--;
@@ -58,11 +58,11 @@ public abstract class Shape {
             }
     }
 
-    protected boolean offset(int oldstate, int newstate, Board board) {
-        for (int i = 0; i < offsetTransition[oldstate].length; ++i) {
-            int transX = offsetTransition[newstate][i][0] - offsetTransition[oldstate][i][0];
-            int transY = offsetTransition[newstate][i][1] - offsetTransition[oldstate][i][1];
-            if(board.ValidPosition(this, x + transX, y + transY)){
+    protected boolean offset(int oldState, int newState, LogicBoard logicBoard) {
+        for (int i = 0; i < offsetTransition[oldState].length; ++i) {
+            int transX = offsetTransition[newState][i][0] - offsetTransition[oldState][i][0];
+            int transY = offsetTransition[newState][i][1] - offsetTransition[oldState][i][1];
+            if(logicBoard.ValidPosition(this, x + transX, y + transY)){
                 x += transX;
                 y += transY;
                 return true;
@@ -71,7 +71,7 @@ public abstract class Shape {
         return false;
     }
 
-    public abstract void rotate(Direction direction, Board board, boolean shouldOffset);
+    public abstract void rotate(Direction direction, LogicBoard logicBoard, boolean shouldOffset);
 
     public void show() {
         blocks.forEach(Block -> show());
