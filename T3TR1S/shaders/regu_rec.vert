@@ -12,6 +12,6 @@ out DATA {
 
 
 void main() {
-    gl_Position = pr_matrix * pos * model_matrix;
+    gl_Position = pr_matrix * model_matrix * pos;
     vs_out.tc = tc;
 }

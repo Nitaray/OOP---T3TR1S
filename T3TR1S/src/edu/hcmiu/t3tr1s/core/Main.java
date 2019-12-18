@@ -5,26 +5,31 @@ import edu.hcmiu.t3tr1s.graphics.Shader;
 import edu.hcmiu.t3tr1s.math.Matrix4f;
 import org.lwjgl.glfw.*;
 
+import java.util.Objects;
+
 import static org.lwjgl.glfw.GLFW.*;
 
 /**
  * Main class of the program, starting point of the entire program.
  */
 
-public class Main implements Runnable{
+public class    Main implements Runnable{
 
     private boolean running = false;
+
     private Thread thread;
     private Renderer renderer;
-    private Client client;
     private ShaderManager shaderManager;
+    private Client client;
+    private Updater updater;
 
     private void start() {
         running = true;
         thread = new Thread(this, "T3TR1S Thread");
         renderer = Renderer.getInstance();
-        shaderManager = ShaderManager.getInstance(Matrix4f.orthographic(0, 100.0f, 0, 100.f * 9.0f / 16.0f, -1.0f, 1.0f));
-        client = Client.getInstance(renderer, shaderManager);
+        shaderManager = ShaderManager.getInstance(Matrix4f.orthographic(0, 160.0f, 0, 90.0f, -1.0f, 1.0f));
+        client = Client.getInstance();
+        updater = Updater.getInstance(60, client);
         thread.start();
     }
 
@@ -42,29 +47,31 @@ public class Main implements Runnable{
         shaderManager.init();
 
         ShapeDataManager.init();
+
+        client.init(renderer, shaderManager);
     }
 
     public void run() {
 
         init();
-        client.test();
 
         while (running) {
             update();
             renderer.render();
 
-            if (Window.shouldClose() || Input.isKeyDown(GLFW_KEY_ESCAPE))
+            if (Window.shouldClose() || client.shouldQuit() || (Input.isKeyDown(GLFW_KEY_LEFT_ALT) && Input.isKeyDown(GLFW_KEY_F4)))
                 running = false;
         }
 
         Window.destroy();
 
         glfwTerminate();
-        glfwSetErrorCallback(null).free();
+        Objects.requireNonNull(glfwSetErrorCallback(null)).free();
     }
 
     private void update() {
         glfwPollEvents();
+        updater.update_prompt();
     }
 
     public static void main(String[] args) {
