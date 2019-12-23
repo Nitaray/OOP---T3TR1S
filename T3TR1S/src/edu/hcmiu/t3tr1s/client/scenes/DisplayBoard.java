@@ -20,7 +20,8 @@ public class DisplayBoard extends Scene {
     }
 
     public void drawLogicBoard() {
-
+        int[][] grid = logicBoard.getGrid();
+        for (int x = 0; x < )
     }
 
     @Override

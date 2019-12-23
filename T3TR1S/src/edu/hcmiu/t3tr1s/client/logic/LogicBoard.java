@@ -12,18 +12,18 @@ public class LogicBoard {
 
     private int WIDTH, HEIGHT;
 
-    private boolean[][] Grid;
+    private int[][] Grid;
 
     public LogicBoard() {
         WIDTH = 10;
         HEIGHT = 23;
-        Grid = new boolean[23][10];
+        Grid = new int[23][10];
     }
 
     public LogicBoard(int WIDTH, int HEIGHT) {
         this.WIDTH = WIDTH;
         this.HEIGHT = HEIGHT;
-        Grid = new boolean[HEIGHT][WIDTH];
+        Grid = new int[HEIGHT][WIDTH];
     }
 
     private boolean isFreeSpace(Shape shape, int x, int y) {
@@ -32,7 +32,7 @@ public class LogicBoard {
         boolean[][] shapeData = ShapeDataManager.getStateData(shape);
         for (int i = x; i < x + shapeData.length && isFree; i++)
             for (int j = y; j < y + shapeData[i].length && isFree; j++)
-                if (Grid[i][j] && shapeData[i - x][j - y])
+                if (Grid[i][j] > 0 && shapeData[i - x][j - y])
                     isFree = false;
 
         return isFree;
@@ -56,19 +56,15 @@ public class LogicBoard {
         return isFreeSpace(shape,x,y);
     }
 
-//    public boolean freeToRotate(Shape shape, Direction direction) {
-//        switch (direction) {
-//            case CLOCKWISE:
-//        }
-//    }
-    public ArrayList<Pair<Integer, Integer>> getSolidBlocks() {
-        ArrayList<Pair<Integer, Integer>> result = new ArrayList<>();
-        for (int x = 0; x < WIDTH; x++) {
-            for (int y = 0; y < HEIGHT; y++) {
-                if (Grid[x][y])
-                    result.add(new Pair<Integer, Integer>(x, y));
-            }
-        }
-        return result;
+    public int[][] getGrid() {
+        return Grid;
+    }
+
+    public int getWIDTH() {
+        return WIDTH;
+    }
+
+    public int getHEIGHT() {
+        return HEIGHT;
     }
 }
