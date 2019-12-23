@@ -1,5 +1,6 @@
-package edu.hcmiu.t3tr1s.client;
+package edu.hcmiu.t3tr1s.client.scenes;
 
+import edu.hcmiu.t3tr1s.client.Client;
 import edu.hcmiu.t3tr1s.core.Renderer;
 import edu.hcmiu.t3tr1s.graphics.Rectangle;
 
@@ -10,25 +11,25 @@ public abstract class Scene {
 
     protected String name;
 
-    Scene(String name, Rectangle background) {
+    public Scene(String name, Rectangle background) {
         this.name = name;
         this.background = background;
     };
 
-    void setBackground(Rectangle background) {
+    public void setBackground(Rectangle background) {
         if (background != null)
             this.background = background;
         else
             throw new NullPointerException("Null background encountered!");
     }
 
-    String getName() {
+    public String getName() {
         return name;
     }
 
-    abstract void show(Renderer renderer);
+    public abstract void show(Renderer renderer);
 
-    abstract void hide(Renderer renderer);
+    public abstract void hide(Renderer renderer);
 
-    abstract void update(Client client);
+    public abstract void update(Client client);
 }

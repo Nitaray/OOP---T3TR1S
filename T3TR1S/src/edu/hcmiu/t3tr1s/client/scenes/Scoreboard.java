@@ -1,5 +1,6 @@
-package edu.hcmiu.t3tr1s.client;
+package edu.hcmiu.t3tr1s.client.scenes;
 
+import edu.hcmiu.t3tr1s.client.Client;
 import edu.hcmiu.t3tr1s.core.Renderer;
 import edu.hcmiu.t3tr1s.graphics.Rectangle;
 
@@ -15,17 +16,17 @@ public class Scoreboard extends Scene{
     }
 
     @Override
-    void show(Renderer renderer) {
+    public void show(Renderer renderer) {
 
     }
 
     @Override
-    void hide(Renderer renderer) {
+    public void hide(Renderer renderer) {
 
     }
 
     @Override
-    void update(Client client) {
+    public void update(Client client) {
 
     }
 }

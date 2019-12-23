@@ -1,10 +1,11 @@
-package edu.hcmiu.t3tr1s.client;
+package edu.hcmiu.t3tr1s.client.buttons;
 
+import edu.hcmiu.t3tr1s.client.Client;
 import edu.hcmiu.t3tr1s.core.ShaderManager;
 import edu.hcmiu.t3tr1s.graphics.Rectangle;
 import edu.hcmiu.t3tr1s.math.Vector3f;
 
-abstract class Button extends Rectangle {
+public abstract class Button extends Rectangle {
 
     private boolean isSelected;
 
@@ -25,7 +26,7 @@ abstract class Button extends Rectangle {
      */
 
 
-    Button(Vector3f topLeft, float width, float height, String shaderName, String normalTextureName, String selectedTextureName, ShaderManager shaderManager, boolean initialSelection) {
+    public Button(Vector3f topLeft, float width, float height, String shaderName, String normalTextureName, String selectedTextureName, ShaderManager shaderManager, boolean initialSelection) {
         super(topLeft, width, height, shaderName, normalTextureName, shaderManager);
         this.normalTextureName = normalTextureName;
         this.selectedTextureName = selectedTextureName;
@@ -36,7 +37,7 @@ abstract class Button extends Rectangle {
      * Set the button's selected value to true.
      */
 
-    void select() {
+    public void select() {
         this.isSelected = true;
     }
 
@@ -44,7 +45,7 @@ abstract class Button extends Rectangle {
      * Set the button's selected value to false.
      */
 
-    void deSelect() {
+    public void deSelect() {
         this.isSelected = false;
     }
 
@@ -53,7 +54,7 @@ abstract class Button extends Rectangle {
      * @return whether the button is selected or not.
      */
 
-    boolean isSelected() {
+    public boolean isSelected() {
         return isSelected;
     }
 
@@ -62,7 +63,7 @@ abstract class Button extends Rectangle {
      * @param selected the designated selected value.
      */
 
-    void setSelected(boolean selected) {
+    public void setSelected(boolean selected) {
         isSelected = selected;
     }
 
@@ -70,7 +71,7 @@ abstract class Button extends Rectangle {
      * Update the button graphics and (possibly) more.
      */
 
-    void update() {
+    public void update() {
         if (isSelected) {
             super.setTexture(selectedTextureName);
         }
@@ -79,5 +80,5 @@ abstract class Button extends Rectangle {
         }
     }
 
-    abstract void action(Client client);
+    public abstract void action(Client client);
 }

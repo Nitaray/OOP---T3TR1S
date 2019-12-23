@@ -1,5 +1,7 @@
-package edu.hcmiu.t3tr1s.client;
+package edu.hcmiu.t3tr1s.client.scenes;
 
+import edu.hcmiu.t3tr1s.client.Client;
+import edu.hcmiu.t3tr1s.client.buttons.Button;
 import edu.hcmiu.t3tr1s.core.Input;
 import edu.hcmiu.t3tr1s.core.Renderer;
 import edu.hcmiu.t3tr1s.graphics.Rectangle;
@@ -8,12 +10,12 @@ import java.util.ArrayList;
 
 import static org.lwjgl.glfw.GLFW.*;
 
-class MainMenu extends Scene {
+public class MainMenu extends Scene {
     private ArrayList<Button> buttons;
 
     private int currentButtonSelection;
 
-    MainMenu(String name, Rectangle background) {
+    public MainMenu(String name, Rectangle background) {
         super(name, background);
         buttons = new ArrayList<>();
         currentButtonSelection = 0;

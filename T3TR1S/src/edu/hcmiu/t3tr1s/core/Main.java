@@ -13,7 +13,7 @@ import static org.lwjgl.glfw.GLFW.*;
  * Main class of the program, starting point of the entire program.
  */
 
-public class    Main implements Runnable{
+public class Main implements Runnable{
 
     private boolean running = false;
 
