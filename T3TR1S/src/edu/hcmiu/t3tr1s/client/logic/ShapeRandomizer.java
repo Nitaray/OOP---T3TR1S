@@ -1,4 +1,4 @@
-package edu.hcmiu.t3tr1s.client;
+package edu.hcmiu.t3tr1s.client.logic;
 
 import edu.hcmiu.t3tr1s.blocks.Shape;
 

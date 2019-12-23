@@ -24,6 +24,8 @@ public class Rectangle {
     private float[] vertices, tc;
     private byte[] indices;
 
+    private Vector3f topLeft;
+
     private Matrix4f model_mat;
     private Matrix4f position_mat;
     private Matrix4f rotation_mat;
@@ -61,6 +63,8 @@ public class Rectangle {
         WIDTH = width;
         HEIGHT = height;
 
+        this.topLeft = topLeft;
+
         model_mat = Matrix4f.identity();
         position_mat = Matrix4f.translate(new Vector3f(0, 0, 0));
         rotation_mat = Matrix4f.rotate(0);
@@ -70,6 +74,10 @@ public class Rectangle {
         vertexArray = new VertexArray(vertices, indices, tc);
         shaderID = shaderManager.getShaderID(shaderName);
         textureID = shaderManager.getTextureID(textureName);
+    }
+
+    public Vector3f getTopLeft() {
+        return topLeft;
     }
 
     /**

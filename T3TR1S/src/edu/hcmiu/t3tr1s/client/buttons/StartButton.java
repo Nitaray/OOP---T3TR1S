@@ -1,5 +1,6 @@
-package edu.hcmiu.t3tr1s.client;
+package edu.hcmiu.t3tr1s.client.buttons;
 
+import edu.hcmiu.t3tr1s.client.Client;
 import edu.hcmiu.t3tr1s.core.ShaderManager;
 import edu.hcmiu.t3tr1s.math.Vector3f;
 
@@ -16,12 +17,12 @@ public class StartButton extends Button{
      * @param shaderManager       The shader manager to handle shaders' names.
      * @param initialSelection    The initial selected value of this button.
      */
-    StartButton(Vector3f topLeft, float width, float height, String shaderName, String normalTextureName, String selectedTextureName, ShaderManager shaderManager, boolean initialSelection) {
+    public StartButton(Vector3f topLeft, float width, float height, String shaderName, String normalTextureName, String selectedTextureName, ShaderManager shaderManager, boolean initialSelection) {
         super(topLeft, width, height, shaderName, normalTextureName, selectedTextureName, shaderManager, initialSelection);
     }
 
     @Override
-    void action(Client client) {
+    public void action(Client client) {
         client.switchScene("GAME");
     }
 }

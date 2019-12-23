@@ -1,5 +1,10 @@
 package edu.hcmiu.t3tr1s.client;
 
+import edu.hcmiu.t3tr1s.client.buttons.Button;
+import edu.hcmiu.t3tr1s.client.buttons.QuitButton;
+import edu.hcmiu.t3tr1s.client.buttons.StartButton;
+import edu.hcmiu.t3tr1s.client.scenes.MainMenu;
+import edu.hcmiu.t3tr1s.client.scenes.Scene;
 import edu.hcmiu.t3tr1s.core.ShaderManager;
 import edu.hcmiu.t3tr1s.graphics.Rectangle;
 import edu.hcmiu.t3tr1s.core.Renderer;
@@ -91,7 +96,7 @@ public class Client {
      * @param sceneName the name of the next scene to switch to.
      */
 
-    void switchScene(String sceneName) {
+    public void switchScene(String sceneName) {
         if (sceneID.containsKey(sceneName)) {
             currentScene.hide(renderer);
             currentScene = scenes.get(sceneID.get(sceneName));
@@ -122,7 +127,7 @@ public class Client {
      * Stop the client. Kill all client's processes.
      */
 
-    void stop() {
+    public void stop() {
         running = false;
     }
 }

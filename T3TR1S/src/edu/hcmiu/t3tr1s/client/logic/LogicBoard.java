@@ -1,6 +1,7 @@
-package edu.hcmiu.t3tr1s.client;
+package edu.hcmiu.t3tr1s.client.logic;
 
 import edu.hcmiu.t3tr1s.blocks.Block;
+import edu.hcmiu.t3tr1s.client.ShapeDataManager;
 import edu.hcmiu.t3tr1s.enums.Direction;
 import edu.hcmiu.t3tr1s.blocks.Shape;
 import javafx.util.Pair;
