@@ -7,6 +7,9 @@ import edu.hcmiu.t3tr1s.core.Renderer;
 import edu.hcmiu.t3tr1s.graphics.Rectangle;
 import edu.hcmiu.t3tr1s.utils.FileUtils;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -18,7 +21,7 @@ import static org.lwjgl.glfw.GLFW.GLFW_KEY_ENTER;
  * TODO: Implement by Nguyen Nhat Minh.
  */
 
-public class Scoreboard extends Scene{
+public class Scoreboard extends Scene {
     private Button button;
 
     private static ArrayList<Integer> playerScores;
@@ -36,6 +39,26 @@ public class Scoreboard extends Scene{
             playerScores.add(Integer.parseInt(score));
         }
         Collections.sort(playerScores, Collections.reverseOrder());
+    }
+
+    public static void saveData(ArrayList<Integer> playerScores) {
+        BufferedWriter writer = null;
+        try {
+            writer = new BufferedWriter(new FileWriter("data/client/score.dat"));
+
+            for (Integer score : playerScores) {
+                writer.write(score.toString() + '\n');
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (writer != null) {
+                try {
+                    writer.close();
+                } catch (IOException ioe) {
+                }
+            }
+        }
     }
 
     static void initScoreList() {
