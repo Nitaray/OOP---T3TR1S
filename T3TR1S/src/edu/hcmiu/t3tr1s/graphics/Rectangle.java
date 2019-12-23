@@ -24,11 +24,10 @@ public class Rectangle {
     private float[] vertices, tc;
     private byte[] indices;
 
-    private Vector3f topLeft;
-
     private Matrix4f model_mat;
     private Matrix4f position_mat;
     private Matrix4f rotation_mat;
+    private Vector3f topLeft;
 
 
     /**
@@ -40,7 +39,7 @@ public class Rectangle {
      */
 
     public Rectangle(Vector3f topLeft, float width, float height, String shaderName, String textureName, ShaderManager shaderManager) {
-
+        this.topLeft = topLeft;
         vertices = new float[] {
                 topLeft.x, topLeft.y, topLeft.z,
                 topLeft.x + width,  topLeft.y, topLeft.z,
@@ -63,8 +62,6 @@ public class Rectangle {
         WIDTH = width;
         HEIGHT = height;
 
-        this.topLeft = topLeft;
-
         model_mat = Matrix4f.identity();
         position_mat = Matrix4f.translate(new Vector3f(0, 0, 0));
         rotation_mat = Matrix4f.rotate(0);
@@ -78,6 +75,10 @@ public class Rectangle {
 
     public Vector3f getTopLeft() {
         return topLeft;
+    }
+
+    public void setTopLeft(float x, float y, float z){
+        topLeft.setXYZ(x,y,z);
     }
 
     /**

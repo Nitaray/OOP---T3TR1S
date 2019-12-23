@@ -36,6 +36,10 @@ public class Block extends Rectangle {
         super(topLeftPosition, size, size, "REGULAR_RECTANGLE", textureName, shaderManager);
     }
 
+    public float getSize() {
+        return size;
+    }
+
     public void move(Direction direction) {
         switch (direction) {
             case UP:

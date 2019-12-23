@@ -1,6 +1,6 @@
 package edu.hcmiu.t3tr1s.blocks;
 
-import edu.hcmiu.t3tr1s.client.logic.LogicBoard;
+import edu.hcmiu.t3tr1s.client.LogicBoard;
 import edu.hcmiu.t3tr1s.client.ShapeDataManager;
 import edu.hcmiu.t3tr1s.enums.Direction;
 
@@ -9,9 +9,24 @@ import edu.hcmiu.t3tr1s.enums.Direction;
  * https://tetris.fandom.com/wiki/SRS
  */
 
+/**
+ * TODO: Implement createBlocks() methods
+ */
+
 public class IShape extends Shape{
-    public IShape(){
-        state = 0;
+    public IShape(LogicBoard logicBoard){
+        super(logicBoard);
+        offsetTransition = new int[][][]{
+                {{0,0},{-1,0},{2,0},{-1,0},{2,0}},
+                {{-1,0},{0,0},{0,0},{0,1},{0,-2}},
+                {{-1,1},{1,1},{-2,1},{1,0},{-2,0}},
+                {{0,1},{0,1},{0,1},{0,-1},{0,2}}
+        };
+        grid = ShapeDataManager.getStateData(this);
+    }
+
+    public IShape(int x, int y, LogicBoard logicBoard){
+        super(x, y, logicBoard);
         offsetTransition = new int[][][]{
                 {{0,0},{-1,0},{2,0},{-1,0},{2,0}},
                 {{-1,0},{0,0},{0,0},{0,1},{0,-2}},
@@ -22,25 +37,36 @@ public class IShape extends Shape{
     }
 
     @Override
-    public void rotate(Direction direction, LogicBoard logicBoard, boolean shouldOffset) {
-        boolean canOffset = false;
+    public void rotate(Direction direction, boolean shouldOffset) {
+        boolean canOffset;
         if(direction==Direction.CLOCKWISE){
             grid = ShapeDataManager.getStateData(this,(state + 1) % 4);
             if(shouldOffset){
                 canOffset = offset(state, (state + 1) % 4, logicBoard);
-            }
-            if(!canOffset){
-                rotate(Direction.COUNTER_CLOCKWISE, logicBoard, false);
+                if(!canOffset){
+                    rotate(Direction.COUNTER_CLOCKWISE, false);
+                }
+                else{
+                    for(Block block: blocks){
+                        rotateBlock(block, direction);
+                    }
+                }
             }
         }
         else{
             grid = ShapeDataManager.getStateData(this,(state - 1) % 4);
             if(shouldOffset){
                 canOffset = offset(state, (state - 1) % 4, logicBoard);
+                if(!canOffset){
+                    rotate(Direction.CLOCKWISE, false);
+                }
+                else{
+                    for(Block block: blocks){
+                        rotateBlock(block, direction);
+                    }
+                }
             }
-            if(!canOffset){
-                rotate(Direction.CLOCKWISE, logicBoard, false);
-            }
+
         }
     }
 }
