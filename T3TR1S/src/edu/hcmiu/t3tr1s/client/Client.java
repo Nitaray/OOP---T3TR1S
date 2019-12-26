@@ -3,6 +3,7 @@ package edu.hcmiu.t3tr1s.client;
 import edu.hcmiu.t3tr1s.client.buttons.Button;
 import edu.hcmiu.t3tr1s.client.buttons.QuitButton;
 import edu.hcmiu.t3tr1s.client.buttons.StartButton;
+import edu.hcmiu.t3tr1s.client.scenes.Game;
 import edu.hcmiu.t3tr1s.client.scenes.MainMenu;
 import edu.hcmiu.t3tr1s.client.scenes.Scene;
 import edu.hcmiu.t3tr1s.core.ShaderManager;
@@ -37,7 +38,9 @@ public class Client {
         running = true;
         this.renderer = renderer;
 
-        Scene mainMenu = initMainMenu(shaderManager);
+        Scene mainMenu = new MainMenu("MENU", shaderManager);
+
+        Scene gameScene = new Game("GAME", shaderManager);
 
         currentScene = mainMenu;
 
@@ -45,6 +48,7 @@ public class Client {
         sceneID = new HashMap<>();
 
         addScene(mainMenu);
+        addScene(gameScene);
 
         show();
     }
@@ -56,14 +60,6 @@ public class Client {
         }
         else
             throw new NullPointerException("Null scene encountered!");
-    }
-
-    private Scene initMainMenu(ShaderManager shaderManager) {
-        Rectangle main_menu_background = new Rectangle(new Vector3f(0, 90.0f, 0.0f), 160.0f, 90.0f,
-                "REGULAR_RECTANGLE", "MENU_BACKGROUND", shaderManager);
-
-        MainMenu mainMenu = new MainMenu("MENU", main_menu_background, shaderManager);
-        return  mainMenu;
     }
 
     /**

@@ -18,8 +18,13 @@ public class MainMenu extends Scene {
     private Button startButton;
     private Button quitButton;
 
-    public MainMenu(String name, Rectangle background, ShaderManager shaderManager) {
-        super(name, background);
+    public MainMenu(String name, ShaderManager shaderManager) {
+        super(name, shaderManager);
+
+        Rectangle background = new Rectangle(new Vector3f(0, 90.0f, 0.0f), 160.0f, 90.0f,
+                "REGULAR_RECTANGLE", "MENU_BACKGROUND", shaderManager);
+        setBackground(background);
+
         startButton = new StartButton(new Vector3f(120.0f, 35.0f, 0.1f), 36.0f, 12.0f,
                 "REGULAR_RECTANGLE", "START_BUTTON", "START_BUTTON_SELECTED", shaderManager, true);
         quitButton = new QuitButton(new Vector3f(120.0f, 25.0f, 0.1f), 36.0f, 12.0f,

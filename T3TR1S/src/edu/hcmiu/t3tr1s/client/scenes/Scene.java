@@ -4,14 +4,16 @@ import edu.hcmiu.t3tr1s.client.Client;
 import edu.hcmiu.t3tr1s.client.buttons.Button;
 import edu.hcmiu.t3tr1s.core.Input;
 import edu.hcmiu.t3tr1s.core.Renderer;
+import edu.hcmiu.t3tr1s.core.ShaderManager;
 import edu.hcmiu.t3tr1s.graphics.Rectangle;
+import edu.hcmiu.t3tr1s.graphics.Showable;
 
 import java.util.ArrayList;
 
 import static org.lwjgl.glfw.GLFW.GLFW_KEY_DOWN;
 import static org.lwjgl.glfw.GLFW.GLFW_KEY_UP;
 
-public abstract class Scene {
+public abstract class Scene implements Showable {
     protected Rectangle background;
     protected String name;
     protected ArrayList<Button> buttons;
@@ -21,9 +23,8 @@ public abstract class Scene {
 
     private long lastKeyPress;
 
-    public Scene(String name, Rectangle background) {
+    public Scene(String name, ShaderManager shaderManager) {
         this.name = name;
-        this.background = background;
         this.buttons = new ArrayList<>();
         this.currentButtonSelection = 0;
         this.lastKeyPress = System.nanoTime();
