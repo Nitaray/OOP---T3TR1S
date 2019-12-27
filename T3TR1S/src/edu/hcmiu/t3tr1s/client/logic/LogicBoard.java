@@ -11,16 +11,22 @@ public class LogicBoard {
 
     private int[][] Grid;
 
-    public LogicBoard() {
+    private static LogicBoard instance = new LogicBoard();
+
+    private LogicBoard() {
         WIDTH = 10;
         HEIGHT = 23;
         Grid = new int[23][10];
     }
 
-    public LogicBoard(int WIDTH, int HEIGHT) {
+    private LogicBoard(int WIDTH, int HEIGHT) {
         this.WIDTH = WIDTH;
         this.HEIGHT = HEIGHT;
         Grid = new int[HEIGHT][WIDTH];
+    }
+
+    public static LogicBoard getInstance(){
+        return instance;
     }
 
     public boolean isFreeSpace(Shape shape, int x, int y) {

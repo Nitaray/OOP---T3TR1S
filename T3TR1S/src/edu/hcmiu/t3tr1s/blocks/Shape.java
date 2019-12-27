@@ -16,10 +16,14 @@ public abstract class Shape implements Showable {
     protected int[][][] offsetTransition;
     protected boolean[][] grid;
 
+    protected float size = 2.0f;
+
+    protected LogicBoard logicBoard = LogicBoard.getInstance();
 
     public Shape() {
         x = 0;
         y = 0;
+        state = 0;
     }
 
     public int getX() {
@@ -38,8 +42,8 @@ public abstract class Shape implements Showable {
         return blocks;
     }
 
-    public void move(Direction direction, LogicBoard logicBoard) {
-        if (logicBoard.freeToMove(this, direction))
+    public void move(Direction direction) {
+//        if (logicBoard.freeToMove(this, direction))
             switch (direction) {
                 case LEFT:
                     x--;
@@ -60,7 +64,7 @@ public abstract class Shape implements Showable {
             }
     }
 
-    protected boolean offset(int oldState, int newState, LogicBoard logicBoard) {
+    protected boolean offset(int oldState, int newState) {
         for (int i = 0; i < offsetTransition[oldState].length; ++i) {
             int transX = offsetTransition[newState][i][0] - offsetTransition[oldState][i][0];
             int transY = offsetTransition[newState][i][1] - offsetTransition[oldState][i][1];
@@ -73,7 +77,7 @@ public abstract class Shape implements Showable {
         return false;
     }
 
-    public abstract void rotate(Direction direction, LogicBoard logicBoard, boolean shouldOffset);
+    public abstract void rotate(Direction direction, boolean shouldOffset);
 
     public void show(Renderer renderer) {
         blocks.forEach(Block -> Block.show(renderer));

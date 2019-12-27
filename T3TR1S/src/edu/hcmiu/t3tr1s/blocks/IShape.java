@@ -10,7 +10,7 @@ import edu.hcmiu.t3tr1s.enums.Direction;
  */
 
 public class IShape extends Shape{
-    public IShape(){
+    public IShape(LogicBoard logicBoard){
         state = 0;
         offsetTransition = new int[][][]{
                 {{0,0},{-1,0},{2,0},{-1,0},{2,0}},
@@ -22,24 +22,24 @@ public class IShape extends Shape{
     }
 
     @Override
-    public void rotate(Direction direction, LogicBoard logicBoard, boolean shouldOffset) {
+    public void rotate(Direction direction, boolean shouldOffset) {
         boolean canOffset = false;
         if(direction==Direction.CLOCKWISE){
             grid = ShapeDataManager.getStateData(this,(state + 1) % 4);
             if(shouldOffset){
-                canOffset = offset(state, (state + 1) % 4, logicBoard);
+                canOffset = offset(state, (state + 1) % 4);
             }
             if(!canOffset){
-                rotate(Direction.COUNTER_CLOCKWISE, logicBoard, false);
+                rotate(Direction.COUNTER_CLOCKWISE,  false);
             }
         }
         else{
             grid = ShapeDataManager.getStateData(this,(state - 1) % 4);
             if(shouldOffset){
-                canOffset = offset(state, (state - 1) % 4, logicBoard);
+                canOffset = offset(state, (state - 1) % 4);
             }
             if(!canOffset){
-                rotate(Direction.CLOCKWISE, logicBoard, false);
+                rotate(Direction.CLOCKWISE, false);
             }
         }
     }
