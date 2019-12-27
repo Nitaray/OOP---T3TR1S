@@ -1,11 +1,13 @@
 package edu.hcmiu.t3tr1s.blocks;
 
-import edu.hcmiu.t3tr1s.client.LogicBoard;
+import edu.hcmiu.t3tr1s.client.logic.LogicBoard;
+import edu.hcmiu.t3tr1s.core.Renderer;
 import edu.hcmiu.t3tr1s.enums.Direction;
-import edu.hcmiu.t3tr1s.math.Vector3f;
+import edu.hcmiu.t3tr1s.graphics.Showable;
+
 import java.util.ArrayList;
 
-public abstract class Shape {
+public abstract class Shape implements Showable {
 
     protected ArrayList<Block> blocks = new ArrayList<>();
 
@@ -81,7 +83,7 @@ public abstract class Shape {
         for (int i = 0; i < offsetTransition[oldState].length; ++i) {
             int transX = offsetTransition[newState][i][0] - offsetTransition[oldState][i][0];
             int transY = offsetTransition[newState][i][1] - offsetTransition[oldState][i][1];
-            if(logicBoard.ValidPosition(this, x + transX, y + transY)){
+            if(logicBoard.isFreeSpace(this, x + transX, y + transY)){
                 x += transX;
                 y += transY;
                 return true;
@@ -125,11 +127,11 @@ public abstract class Shape {
 
     public abstract void rotate(Direction direction, boolean shouldOffset);
 
-    public void show() {
-        blocks.forEach(Block -> show());
+    public void show(Renderer renderer) {
+        blocks.forEach(Block -> Block.show(renderer));
     }
 
-    public void hide() {
-        blocks.forEach(Block -> hide());
+    public void hide(Renderer renderer) {
+        blocks.forEach(Block -> Block.hide(renderer));
     }
 }

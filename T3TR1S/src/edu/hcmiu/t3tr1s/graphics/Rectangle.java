@@ -9,7 +9,7 @@ import edu.hcmiu.t3tr1s.math.Vector3f;
  * A rectangle that can be rendered on screen.
  */
 
-public class Rectangle {
+public class Rectangle implements Showable{
 
     private VertexArray vertexArray;
 
@@ -79,6 +79,14 @@ public class Rectangle {
 
     public void setTopLeft(float x, float y, float z){
         topLeft.setXYZ(x,y,z);
+    }
+
+    public float getHEIGHT() {
+        return HEIGHT;
+    }
+
+    public float getWIDTH() {
+        return WIDTH;
     }
 
     /**

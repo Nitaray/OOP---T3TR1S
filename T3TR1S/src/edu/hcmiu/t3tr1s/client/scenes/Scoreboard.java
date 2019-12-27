@@ -2,6 +2,7 @@ package edu.hcmiu.t3tr1s.client.scenes;
 
 import edu.hcmiu.t3tr1s.client.Client;
 import edu.hcmiu.t3tr1s.core.Renderer;
+import edu.hcmiu.t3tr1s.core.ShaderManager;
 import edu.hcmiu.t3tr1s.graphics.Rectangle;
 
 /**
@@ -11,8 +12,8 @@ import edu.hcmiu.t3tr1s.graphics.Rectangle;
 
 public class Scoreboard extends Scene{
 
-    Scoreboard(String name, Rectangle background) {
-        super(name, background);
+    Scoreboard(String name, ShaderManager shaderManager) {
+        super(name, shaderManager);
     }
 
     @Override
