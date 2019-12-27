@@ -126,9 +126,14 @@ public class Scoreboard extends Scene {
         playerScores.removeIf(score -> playerScores.indexOf(score) >= 10);
     }
 
-    static void initScoreList() {
+    private static void initScoreList() {
         playerScores = new ArrayList<>();
         loadData();
+    }
+
+    public static void addScore(int score) {
+        playerScores.add(score);
+        saveData();
     }
 
     private void handleSelection(Client client) {
