@@ -2,6 +2,7 @@ package edu.hcmiu.t3tr1s.client.scenes;
 
 import edu.hcmiu.t3tr1s.client.Client;
 import edu.hcmiu.t3tr1s.client.buttons.Button;
+import edu.hcmiu.t3tr1s.client.buttons.ReturnButton;
 import edu.hcmiu.t3tr1s.core.Input;
 import edu.hcmiu.t3tr1s.core.Renderer;
 import edu.hcmiu.t3tr1s.core.ShaderManager;
@@ -24,15 +25,19 @@ import static org.lwjgl.glfw.GLFW.GLFW_KEY_ENTER;
  */
 
 public class Scoreboard extends Scene {
-    private Button button;
+    private final Button button;
 
     private ArrayList<ArrayList<Rectangle>> showScoresOnScreen;
 
     private static ArrayList<Integer> playerScores;
 
-    Scoreboard(String name, Rectangle background) {
+    public Scoreboard(String name, Rectangle background, ShaderManager shaderManager) {
         super(name, background);
+        //TODO: need texture for this button
+        button = new ReturnButton(new Vector3f(120.0f, 35.0f, 0.1f), 36.0f, 12.0f,
+                "REGULAR_RECTANGLE", "START_BUTTON", "START_BUTTON_SELECTED", shaderManager, true);
         initScoreList();
+        initScoreboard(shaderManager);
     }
 
     private Rectangle addDigit(int score, Vector3f topLeft, float width, float height, ShaderManager shaderManager) {
@@ -99,7 +104,7 @@ public class Scoreboard extends Scene {
         refreshScoreList();
     }
 
-    public static void saveData() {
+    private static void saveData() {
         refreshScoreList();
         BufferedWriter writer = null;
         try {
@@ -131,8 +136,13 @@ public class Scoreboard extends Scene {
         loadData();
     }
 
-    public static void addScore(int score) {
+    public static void addPlayerScore(int score) {
         playerScores.add(score);
+        saveData();
+    }
+
+    public static void setPlayerScores(ArrayList<Integer> playerScores) {
+        Scoreboard.playerScores = playerScores;
         saveData();
     }
 
@@ -144,12 +154,20 @@ public class Scoreboard extends Scene {
     public void show(Renderer renderer) {
         background.show(renderer);
         button.show(renderer);
+
+        showScoresOnScreen.forEach(score -> {
+            score.forEach(digit -> digit.show(renderer));
+        });
     }
 
     @Override
     public void hide(Renderer renderer) {
         background.hide(renderer);
         button.hide(renderer);
+
+        showScoresOnScreen.forEach(score -> {
+            score.forEach(digit -> digit.hide(renderer));
+        });
     }
 
     @Override
