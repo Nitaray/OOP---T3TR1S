@@ -52,6 +52,20 @@ public class LogicBoard {
         return false;
     }
 
+    public boolean setGridElement(int x, int y, int value) {
+        if (x < 0 || x >= WIDTH || y < 0 || y >= HEIGHT) {
+            System.err.println("Grid index out of bound!");
+            return false;
+        }
+        Grid[x][y] = value;
+        return true;
+    }
+
+    public void setGridUsingShape(Shape shape) {
+        int x = shape.getX(), y = shape.getY();
+        // WIP
+    }
+
     public int[][] getGrid() {
         return Grid;
     }

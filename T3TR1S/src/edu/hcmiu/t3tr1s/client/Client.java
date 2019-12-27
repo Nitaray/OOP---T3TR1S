@@ -92,6 +92,7 @@ public class Client {
             currentScene.hide(renderer);
             currentScene = scenes.get(sceneID.get(sceneName));
             currentScene.show(renderer);
+            currentScene.heatKey();
         }
         else
             System.err.println("Scene not found! Please check scene name!");

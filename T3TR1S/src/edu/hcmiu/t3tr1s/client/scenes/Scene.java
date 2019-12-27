@@ -68,6 +68,12 @@ public abstract class Scene implements Showable {
         return name;
     }
 
+    /**
+     * Check if the time since last input is greater than keyCoolDown.
+     * @param keyCoolDown Time in nanoseconds
+     * @return true if the time since last input is greater than keyCoolDown, false otherwise.
+     */
+
     protected boolean keyCooled(long keyCoolDown) {
         long now = System.nanoTime();
         if (now - lastKeyPress > keyCoolDown) {
@@ -75,6 +81,14 @@ public abstract class Scene implements Showable {
             return true;
         }
         return false;
+    }
+
+    /**
+     * Reset key cool down, use for soft-locking input.
+     */
+
+    public void heatKey() {
+        lastKeyPress = System.nanoTime();
     }
 
     public abstract void show(Renderer renderer);

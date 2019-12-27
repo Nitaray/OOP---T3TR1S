@@ -2,26 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9c78a22-e230-4028-93b1-e89d4a59d813" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/graphics/Showable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/Shape$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/Shape$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/Shape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/Shape.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/logic/LogicBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/logic/LogicBoard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/scenes/DisplayBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/scenes/DisplayBoard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/scenes/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/scenes/MainMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/scenes/Scene.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/scenes/Scene.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/scenes/Scoreboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/scenes/Scoreboard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/graphics/Rectangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/graphics/Rectangle.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/Shape.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/logic/LogicBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/logic/LogicBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/DisplayBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/DisplayBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/Scene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/Scoreboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/Scoreboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/graphics/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/graphics/Rectangle.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +72,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -176,6 +162,8 @@
       <workItem from="1576892916076" duration="644000" />
       <workItem from="1577237531753" duration="51000" />
       <workItem from="1577341287625" duration="7550000" />
+      <workItem from="1577414371104" duration="1544000" />
+      <workItem from="1577417722340" duration="3275000" />
     </task>
     <servers />
   </component>

@@ -22,6 +22,11 @@ public abstract class Shape implements Showable {
         y = 0;
     }
 
+    public Shape(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
     public int getX() {
         return x;
     }
