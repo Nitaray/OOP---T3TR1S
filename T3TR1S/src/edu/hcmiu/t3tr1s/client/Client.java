@@ -5,6 +5,7 @@ import edu.hcmiu.t3tr1s.client.buttons.QuitButton;
 import edu.hcmiu.t3tr1s.client.buttons.StartButton;
 import edu.hcmiu.t3tr1s.client.scenes.Game;
 import edu.hcmiu.t3tr1s.client.scenes.MainMenu;
+import edu.hcmiu.t3tr1s.client.scenes.Pause;
 import edu.hcmiu.t3tr1s.client.scenes.Scene;
 import edu.hcmiu.t3tr1s.core.ShaderManager;
 import edu.hcmiu.t3tr1s.graphics.Rectangle;
@@ -42,6 +43,8 @@ public class Client {
 
         Scene gameScene = new Game("GAME", shaderManager);
 
+        Scene pauseScene = new Pause("PAUSE",shaderManager);
+
         currentScene = mainMenu;
 
         scenes = new ArrayList<>();
@@ -49,6 +52,7 @@ public class Client {
 
         addScene(mainMenu);
         addScene(gameScene);
+        addScene(pauseScene);
 
         show();
     }
