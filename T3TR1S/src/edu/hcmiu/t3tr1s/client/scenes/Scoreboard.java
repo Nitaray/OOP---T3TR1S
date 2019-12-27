@@ -89,17 +89,18 @@ public class Scoreboard extends Scene {
         });
     }
 
-    private static void loadData(ArrayList<Integer> playerScores) {
+    private static void loadData() {
         String dat = FileUtils.loadAsString("data/client/score.dat");
         Scanner scanner = new Scanner(dat);
         while (scanner.hasNextLine()) {
             String score = scanner.nextLine();
             playerScores.add(Integer.parseInt(score));
         }
-        Collections.sort(playerScores, Collections.reverseOrder());
+        refreshScoreList();
     }
 
-    public static void saveData(ArrayList<Integer> playerScores) {
+    public static void saveData() {
+        refreshScoreList();
         BufferedWriter writer = null;
         try {
             writer = new BufferedWriter(new FileWriter("data/client/score.dat"));
@@ -107,6 +108,7 @@ public class Scoreboard extends Scene {
             for (Integer score : playerScores) {
                 writer.write(score.toString() + '\n');
             }
+
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -119,9 +121,14 @@ public class Scoreboard extends Scene {
         }
     }
 
+    private static void refreshScoreList() {
+        Collections.sort(playerScores, Collections.reverseOrder());
+        playerScores.removeIf(score -> playerScores.indexOf(score) >= 10);
+    }
+
     static void initScoreList() {
         playerScores = new ArrayList<>();
-        loadData(playerScores);
+        loadData();
     }
 
     private void handleSelection(Client client) {
