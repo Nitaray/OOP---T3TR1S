@@ -87,7 +87,7 @@ public class Client {
      * @param sceneName the name of the next scene to switch to.
      */
 
-    void switchScene(String sceneName) {
+    public void switchScene(String sceneName) {
         if (sceneID.containsKey(sceneName)) {
             currentScene.hide(renderer);
             currentScene = scenes.get(sceneID.get(sceneName));
@@ -119,7 +119,7 @@ public class Client {
      * Stop the client. Kill all client's processes.
      */
 
-    void stop() {
+    public void stop() {
         running = false;
     }
 }

@@ -50,7 +50,7 @@ public class LogicBoard {
                 return isFreeSpace(shape, shape.getX() - 1, shape.getY());
         }
         return false;
-    }
+    }   
 
     public boolean setGridElement(int x, int y, int value) {
         if (x < 0 || x >= WIDTH || y < 0 || y >= HEIGHT) {

@@ -4,6 +4,7 @@ import edu.hcmiu.t3tr1s.client.logic.LogicBoard;
 import edu.hcmiu.t3tr1s.core.Renderer;
 import edu.hcmiu.t3tr1s.enums.Direction;
 import edu.hcmiu.t3tr1s.graphics.Showable;
+import edu.hcmiu.t3tr1s.math.Vector3f;
 
 import java.util.ArrayList;
 

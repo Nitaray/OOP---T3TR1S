@@ -3,11 +3,56 @@
   <component name="ChangeListManager">
     <list default="true" id="d9c78a22-e230-4028-93b1-e89d4a59d813" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/META-INF/T3TR1S.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/Block$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/Block.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/IShape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/JShape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/LShape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/OShape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/SShape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/Shape$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/Shape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/TShape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/ZShape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/QuitButton.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/ShapeDataManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/StartButton.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/buttons/ContinueButton.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/buttons/QuitButton.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/buttons/StartButton.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/logic/LogicBoard$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/logic/LogicBoard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/logic/ShapeRandomizer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/scenes/DisplayBoard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/scenes/Game.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/scenes/MainMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/scenes/Pause.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/scenes/Scoreboard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/core/Input$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/core/Input$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/core/Input$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/core/Input.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/core/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/core/ShaderManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/core/ShaderManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/core/Updater.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/core/Window.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/enums/Direction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/graphics/Rectangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/graphics/Rectangle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/math/Vector3f.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/math/Vector3f.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/utils/BufferUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/utils/FileUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/utils/ShadersUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/IShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/IShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/JShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/JShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/LShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/LShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/OShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/OShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/SShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/SShape.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/Shape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/TShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/TShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/ZShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/ZShape.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/logic/LogicBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/logic/LogicBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/Scene.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

@@ -1,6 +1,6 @@
 package edu.hcmiu.t3tr1s.blocks;
 
-import edu.hcmiu.t3tr1s.client.LogicBoard;
+import edu.hcmiu.t3tr1s.client.logic.LogicBoard;
 import edu.hcmiu.t3tr1s.client.ShapeDataManager;
 import edu.hcmiu.t3tr1s.enums.Direction;
 
