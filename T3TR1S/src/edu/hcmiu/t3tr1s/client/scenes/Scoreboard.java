@@ -1,6 +1,5 @@
 package edu.hcmiu.t3tr1s.client.scenes;
 
-import edu.hcmiu.t3tr1s.client.Client;
 import edu.hcmiu.t3tr1s.core.ShaderManager;
 
 /**
@@ -25,7 +24,7 @@ public class Scoreboard extends Scene{
     }
 
     @Override
-    public void update(Client client) {
+    public void update() {
 
     }
 }

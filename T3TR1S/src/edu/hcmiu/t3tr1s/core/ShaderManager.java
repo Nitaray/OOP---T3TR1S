@@ -31,6 +31,7 @@ public class ShaderManager {
 
     private ShaderManager() {
         projection_matrix = Matrix4f.orthographic(0, 160.0f, 0, 90.f, -1.0f, 1.0f);
+        init();
     }
 
     /**
@@ -111,7 +112,7 @@ public class ShaderManager {
      * Initialize the ShaderManager
      */
 
-    void init() {
+    private void init() {
         loadAllShader();
         loadAllTexture();
         setUniformAll();

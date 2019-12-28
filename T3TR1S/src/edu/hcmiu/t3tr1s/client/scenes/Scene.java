@@ -1,6 +1,5 @@
 package edu.hcmiu.t3tr1s.client.scenes;
 
-import edu.hcmiu.t3tr1s.client.Client;
 import edu.hcmiu.t3tr1s.client.buttons.Button;
 import edu.hcmiu.t3tr1s.core.Input;
 import edu.hcmiu.t3tr1s.graphics.Rectangle;
@@ -59,8 +58,8 @@ public abstract class Scene implements Showable {
         }
     }
 
-    protected void handleSelection(Client client) {
-        buttons.get(currentButtonSelection).action(client);
+    protected void handleSelection() {
+        buttons.get(currentButtonSelection).action();
     }
     public String getName() {
         return name;
@@ -79,5 +78,5 @@ public abstract class Scene implements Showable {
 
     public abstract void hide();
 
-    public abstract void update(Client client);
+    public abstract void update();
 }

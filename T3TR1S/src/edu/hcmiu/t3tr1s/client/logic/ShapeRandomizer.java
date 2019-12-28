@@ -1,6 +1,6 @@
 package edu.hcmiu.t3tr1s.client.logic;
 
-import edu.hcmiu.t3tr1s.blocks.Shape;
+import edu.hcmiu.t3tr1s.blocks.logic.LogicShape;
 
 import java.util.ArrayList;
 
@@ -12,10 +12,10 @@ import java.util.ArrayList;
  */
 
 class ShapeRandomizer {
-    private ArrayList<Shape> bag;
+    private ArrayList<LogicShape> bag;
     private int length;
 
-    ShapeRandomizer(ArrayList<Shape> bag, int length) {
+    ShapeRandomizer(ArrayList<LogicShape> bag, int length) {
         this.bag = bag;
         this.length = length;
     }
@@ -42,19 +42,19 @@ class ShapeRandomizer {
 
     /**
      * Add another shape to the bag.
-     * @param shape the shape to be removed.
+     * @param logicShape the shape to be removed.
      */
 
-    void addShape(Shape shape) {
+    void addShape(LogicShape logicShape) {
 
     }
 
     /**
      * Remove a shape from the bag.
-     * @param shape the shape to be removed.
+     * @param logicShape the shape to be removed.
      */
 
-    void removeShape(Shape shape) {
+    void removeShape(LogicShape logicShape) {
 
     }
 }

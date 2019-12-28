@@ -1,6 +1,5 @@
 package edu.hcmiu.t3tr1s.client.buttons;
 
-import edu.hcmiu.t3tr1s.client.Client;
 import edu.hcmiu.t3tr1s.graphics.Rectangle;
 import edu.hcmiu.t3tr1s.math.Vector3f;
 
@@ -77,5 +76,5 @@ public abstract class Button extends Rectangle {
         }
     }
 
-    public abstract void action(Client client);
+    public abstract void action();
 }

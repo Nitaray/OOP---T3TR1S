@@ -1,6 +1,5 @@
 package edu.hcmiu.t3tr1s.blocks;
 
-import edu.hcmiu.t3tr1s.core.ShaderManager;
 import edu.hcmiu.t3tr1s.enums.Direction;
 import edu.hcmiu.t3tr1s.graphics.Rectangle;
 import edu.hcmiu.t3tr1s.math.Vector3f;
@@ -31,8 +30,9 @@ public class Block extends Rectangle {
      * @param textureName Name of the shader of this block.
      */
 
-    public Block(Vector3f topLeftPosition, float size, String textureName, ShaderManager shaderManager) {
+    public Block(Vector3f topLeftPosition, float size, String textureName) {
         super(topLeftPosition, size, size, "REGULAR_RECTANGLE", textureName);
+        this.size = size;
     }
 
     public void move(Direction direction) {

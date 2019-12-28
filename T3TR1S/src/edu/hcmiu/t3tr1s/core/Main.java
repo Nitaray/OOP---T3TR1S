@@ -41,10 +41,6 @@ public class Main implements Runnable{
 
         Window.show();
 
-        ShaderManager.getInstance().init();
-
-        ShapeDataManager.init();
-
         client.init();
     }
 

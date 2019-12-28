@@ -1,9 +1,8 @@
 package edu.hcmiu.t3tr1s.client.scenes;
 
-import edu.hcmiu.t3tr1s.client.Client;
 import edu.hcmiu.t3tr1s.client.buttons.Button;
-import edu.hcmiu.t3tr1s.client.buttons.QuitButton;
-import edu.hcmiu.t3tr1s.client.buttons.StartButton;
+import edu.hcmiu.t3tr1s.client.buttons.MenuQuitButton;
+import edu.hcmiu.t3tr1s.client.buttons.MenuStartButton;
 import edu.hcmiu.t3tr1s.core.Input;
 import edu.hcmiu.t3tr1s.graphics.Rectangle;
 import edu.hcmiu.t3tr1s.math.Vector3f;
@@ -21,9 +20,9 @@ public class MainMenu extends Scene {
                 "REGULAR_RECTANGLE", "MENU_BACKGROUND");
         setBackground(background);
 
-        startButton = new StartButton(new Vector3f(120.0f, 35.0f, 0.1f), 36.0f, 12.0f,
+        startButton = new MenuStartButton(new Vector3f(120.0f, 35.0f, 0.1f), 36.0f, 12.0f,
                 "REGULAR_RECTANGLE", "START_BUTTON", "START_BUTTON_SELECTED", true);
-        quitButton = new QuitButton(new Vector3f(120.0f, 25.0f, 0.1f), 36.0f, 12.0f,
+        quitButton = new MenuQuitButton(new Vector3f(120.0f, 25.0f, 0.1f), 36.0f, 12.0f,
                 "REGULAR_RECTANGLE", "QUIT_BUTTON", "QUIT_BUTTON_SELECTED", false);
 
         buttons.add(startButton);
@@ -46,11 +45,11 @@ public class MainMenu extends Scene {
 
 
     @Override
-    public void update(Client client) {
+    public void update() {
         updateSelection();
         buttons.forEach(Button::update);
 
         if (Input.isKeyDown(GLFW_KEY_ENTER) && keyCooled(300 * MILLISECONDS))
-            handleSelection(client);
+            handleSelection();
     }
 }

@@ -1,10 +1,10 @@
 package edu.hcmiu.t3tr1s.client;
 
-import edu.hcmiu.t3tr1s.client.logic.LogicBoard;
-import edu.hcmiu.t3tr1s.client.scenes.DisplayBoard;
+import edu.hcmiu.t3tr1s.client.scenes.GameScene;
 import edu.hcmiu.t3tr1s.client.scenes.MainMenu;
 import edu.hcmiu.t3tr1s.client.scenes.Scene;
 import edu.hcmiu.t3tr1s.core.Renderer;
+import edu.hcmiu.t3tr1s.graphics.Showable;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,7 +14,7 @@ import java.util.HashMap;
  * TODO: By Luu Minh Long
  */
 
-public class Client {
+public class Client implements Showable {
     private Client() {}
     private static Client instance = new Client();
     public static Client getInstance() {
@@ -22,25 +22,19 @@ public class Client {
     }
 
     private boolean running;
-    private Renderer renderer;
 
     private Scene currentScene;
 
     private ArrayList<Scene> scenes;
     private HashMap<String, Integer> sceneID;
 
-    private LogicBoard logicBoard;
-
     public void init() {
         running = true;
 
-        this.renderer = Renderer.getInstance();
-
-        logicBoard = new LogicBoard();
 
         Scene mainMenu = new MainMenu("MENU");
 
-        Scene gameScene = new DisplayBoard("GAME", logicBoard);
+        Scene gameScene = new GameScene("GAME");
         // TEST MOVING
 
         currentScene = mainMenu;
@@ -76,7 +70,7 @@ public class Client {
      */
 
     public void hide() {
-        scenes.forEach(scene -> scene.hide());
+        scenes.forEach(Scene::hide);
     }
 
     /**
@@ -99,7 +93,7 @@ public class Client {
      */
 
     public void update() {
-        currentScene.update(this);
+        currentScene.update();
     }
 
     /**

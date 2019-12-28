@@ -1,8 +1,8 @@
 package edu.hcmiu.t3tr1s.client.scenes;
 
-import edu.hcmiu.t3tr1s.blocks.Shape;
-import edu.hcmiu.t3tr1s.blocks.TShape;
-import edu.hcmiu.t3tr1s.client.Client;
+import edu.hcmiu.t3tr1s.blocks.display.DisplayShape;
+import edu.hcmiu.t3tr1s.blocks.logic.LogicShape;
+import edu.hcmiu.t3tr1s.blocks.logic.TLogicShape;
 import edu.hcmiu.t3tr1s.client.logic.LogicBoard;
 import edu.hcmiu.t3tr1s.core.Input;
 import edu.hcmiu.t3tr1s.enums.Direction;
@@ -14,16 +14,16 @@ public class DisplayBoard extends Scene {
     private LogicBoard logicBoard;
 
     private Vector3f topLeft;
-    private Vector3f offSet;
 
-    private Shape shape;
+    private LogicShape logicShape;
+    private DisplayShape displayShape;
 
 
     public DisplayBoard(String name, LogicBoard logicBoard) {
         super(name);
         this.logicBoard = logicBoard;
-        Rectangle background = new Rectangle(new Vector3f(0, 90.0f, 0.0f), 160.0f, 90.0f,
-                "REGULAR_RECTANGLE", "MENU_BACKGROUND");
+        Rectangle background = new Rectangle(new Vector3f(62.5f, 85.0f, 0.1f), 35.0f, 80.5f,
+                "REGULAR_RECTANGLE", "GAME_DISPLAYBOARD_BACKGROUND");
         setBackground(background);
         this.topLeft = background.getTopLeft();
     }
@@ -41,31 +41,30 @@ public class DisplayBoard extends Scene {
     @Override
     public void show() {
         background.show();
-        shape = new TShape(logicBoard);
-        shape.show();
+        logicShape = new TLogicShape(0, 22, logicBoard);
+        displayShape = new DisplayShape(logicShape, new Vector3f(topLeft.x, topLeft.y, 0.5f), 3.5f);
+        displayShape.show();
     }
 
     @Override
     public void hide() {
         background.hide();
-        shape.hide();
     }
 
-    @Override
-    public void update(Client client) {
-        if(Input.isKeyDown(GLFW.GLFW_KEY_RIGHT) && keyCooled(300 * MILLISECONDS)){
-            shape.move(Direction.RIGHT);
+    public void update() {
+        if(Input.isKeyDown(GLFW.GLFW_KEY_RIGHT) && keyCooled(100 * MILLISECONDS)){
+            displayShape.move(Direction.RIGHT);
         }
-        if(Input.isKeyDown(GLFW.GLFW_KEY_LEFT) && keyCooled(300 * MILLISECONDS)){
-            shape.move(Direction.LEFT);
+        if(Input.isKeyDown(GLFW.GLFW_KEY_LEFT) && keyCooled(100 * MILLISECONDS)){
+            displayShape.move(Direction.LEFT);
         }
-        if(Input.isKeyDown(GLFW.GLFW_KEY_UP) && keyCooled(300 * MILLISECONDS)){
-            shape.move(Direction.UP);
+        if(Input.isKeyDown(GLFW.GLFW_KEY_UP) && keyCooled(100 * MILLISECONDS)){
+            displayShape.move(Direction.UP);
         }
-        if(Input.isKeyDown(GLFW.GLFW_KEY_DOWN) && keyCooled(300 * MILLISECONDS)){
-            shape.move(Direction.DOWN);
+        if(Input.isKeyDown(GLFW.GLFW_KEY_DOWN) && keyCooled(100 * MILLISECONDS)){
+            displayShape.move(Direction.DOWN);
         }
-        if (Input.isKeyDown(GLFW.GLFW_KEY_R) && keyCooled(300 * MILLISECONDS))
-            shape.rotate(Direction.CLOCKWISE, true);
+        if (Input.isKeyDown(GLFW.GLFW_KEY_R) && keyCooled(100 * MILLISECONDS))
+            logicShape.rotate(Direction.CLOCKWISE);
     }
 }

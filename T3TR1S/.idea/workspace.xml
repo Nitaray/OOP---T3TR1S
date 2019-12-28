@@ -2,54 +2,61 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9c78a22-e230-4028-93b1-e89d4a59d813" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/config/blocksID.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/display/DisplayShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Conan.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Conan.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/META-INF/T3TR1S.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/IShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/IShape.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/JShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/JShape.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/LShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/LShape.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/OShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/OShape.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/SShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/SShape.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/Shape$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/Shape$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/Shape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/Shape.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/TShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/TShape.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/ZShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/ZShape.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/Button.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/DisplayBoard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/MainMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/QuitButton.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/StartButton.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/texture.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/config/texture.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/IShape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/JShape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/LShape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/OShape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/SShape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/Shape$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/Shape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/TShape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/ZShape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/buttons/Button.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/buttons/Button.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/buttons/QuitButton.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/buttons/StartButton.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/logic/LogicBoard$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/logic/LogicBoard$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/logic/LogicBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/logic/LogicBoard.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/scenes/DisplayBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/scenes/DisplayBoard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/core/ShaderManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/core/ShaderManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/math/Vector3f.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/math/Vector3f.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/scenes/Game.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/scenes/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/scenes/MainMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/scenes/Scene.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/scenes/Scene.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/scenes/Scoreboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/scenes/Scoreboard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/continue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/menu/background.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/menu/background.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/quit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/start.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/tetris.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/Block.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/IShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/IShape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/JShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/JShape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/LShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/LShape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/OShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/OShape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/SShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/SShape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/Shape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/TShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/TShape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/ZShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/ZShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/IShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/logic/ILogicShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/JShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/logic/JLogicShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/LShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/logic/LLogicShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/OShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/logic/OLogicShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/SShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/logic/SLogicShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/logic/LogicShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/TShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/logic/TLogicShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/ZShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/logic/ZLogicShape.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/ShapeDataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/ShapeDataManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/buttons/Button.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/buttons/Button.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/buttons/QuitButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/buttons/QuitButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/buttons/StartButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/buttons/StartButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/buttons/QuitButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/buttons/MenuQuitButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/buttons/StartButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/buttons/MenuStartButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/logic/LogicBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/logic/LogicBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/logic/ShapeRandomizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/logic/ShapeRandomizer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/DisplayBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/DisplayBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/GameScene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/MainMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/Scene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/Scoreboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/Scoreboard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/core/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/core/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/core/ShaderManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/core/ShaderManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/core/Updater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/core/Updater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/graphics/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/graphics/Rectangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/graphics/Showable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/graphics/Showable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/core/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/core/Window.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,6 +78,16 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GroovyConsoleState">
+    <option name="list">
+      <list>
+        <Entry>
+          <option name="moduleName" value="T3TR1S" />
+          <option name="url" value="file://$APPLICATION_CONFIG_DIR$/consoles/groovy/groovy_console.groovy" />
+        </Entry>
+      </list>
+    </option>
   </component>
   <component name="ProjectId" id="1SdkrrrmJh01Umw9rmBCuKsD4uG" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -108,18 +125,6 @@
       <recent name="edu.hcmiu.t3tr1s.utils" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration name="Run" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="C:/Program Files/Java/jdk1.8.0_221/jre" />
@@ -155,6 +160,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -192,6 +209,8 @@
       <workItem from="1577237531753" duration="51000" />
       <workItem from="1577341287625" duration="7550000" />
       <workItem from="1577499910005" duration="5784000" />
+      <workItem from="1577542208777" duration="5368000" />
+      <workItem from="1577556774126" duration="8031000" />
     </task>
     <servers />
   </component>
@@ -212,70 +231,81 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="765" y="243" key="#com.intellij.ide.util.MemberChooser" timestamp="1576578590129">
+    <state x="765" y="243" key="#com.intellij.ide.util.MemberChooser" timestamp="1577562170400">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="765" y="243" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1576578590129" />
-    <state x="690" y="286" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1576579566499">
+    <state x="765" y="243" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1577562170400" />
+    <state x="636" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1577557682644">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="690" y="286" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1576579566499" />
-    <state width="1876" height="274" key="GridCell.Tab.0.bottom" timestamp="1576580978731">
+    <state x="636" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1577557682644" />
+    <state x="690" y="286" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1577558815561">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="274" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1576580978731" />
-    <state width="1876" height="274" key="GridCell.Tab.0.center" timestamp="1576580978731">
+    <state x="690" y="286" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1577558815561" />
+    <state width="1876" height="274" key="GridCell.Tab.0.bottom" timestamp="1577564823624">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="274" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1576580978731" />
-    <state width="1876" height="274" key="GridCell.Tab.0.left" timestamp="1576580978730">
+    <state width="1876" height="274" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1577564823624" />
+    <state width="1876" height="274" key="GridCell.Tab.0.center" timestamp="1577564823624">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="274" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1576580978730" />
-    <state width="1876" height="274" key="GridCell.Tab.0.right" timestamp="1576580978731">
+    <state width="1876" height="274" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1577564823624" />
+    <state width="1876" height="274" key="GridCell.Tab.0.left" timestamp="1577564823624">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="274" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1576580978731" />
-    <state width="1876" height="341" key="GridCell.Tab.1.bottom" timestamp="1576580375349">
+    <state width="1876" height="274" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1577564823624" />
+    <state width="1876" height="274" key="GridCell.Tab.0.right" timestamp="1577564823624">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="341" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1576580375349" />
-    <state width="1876" height="341" key="GridCell.Tab.1.center" timestamp="1576580375349">
+    <state width="1876" height="274" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1577564823624" />
+    <state width="1876" height="341" key="GridCell.Tab.1.bottom" timestamp="1577564823622">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="341" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1576580375349" />
-    <state width="1876" height="341" key="GridCell.Tab.1.left" timestamp="1576580375349">
+    <state width="1876" height="341" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1577564823622" />
+    <state width="1876" height="341" key="GridCell.Tab.1.center" timestamp="1577564823622">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="341" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1576580375349" />
-    <state width="1876" height="341" key="GridCell.Tab.1.right" timestamp="1576580375349">
+    <state width="1876" height="341" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1577564823622" />
+    <state width="1876" height="341" key="GridCell.Tab.1.left" timestamp="1577564823622">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="341" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1576580375349" />
-    <state x="384" y="88" key="SettingsEditor" timestamp="1576569027582">
+    <state width="1876" height="341" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1577564823622" />
+    <state width="1876" height="341" key="GridCell.Tab.1.right" timestamp="1577564823622">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="384" y="88" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1576569027582" />
+    <state width="1876" height="341" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1577564823622" />
+    <state x="384" y="88" key="SettingsEditor" timestamp="1577545209498">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="384" y="88" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1577545209498" />
     <state x="661" y="363" key="com.intellij.ide.util.TipDialog" timestamp="1576509264587">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="661" y="363" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1576509264587" />
+    <state x="661" y="137" key="refactoring.ChangeSignatureDialog" timestamp="1577562830992">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="661" y="137" key="refactoring.ChangeSignatureDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1577562830992" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/Block.java</url>
+          <line>37</line>
+          <properties class="edu.hcmiu.t3tr1s.blocks.Block" method="move">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/logic/LogicBoard.java</url>
-          <line>25</line>
+          <line>24</line>
           <properties class="edu.hcmiu.t3tr1s.client.logic.LogicBoard" method="isFreeSpace">
             <option name="EMULATED" value="true" />
           </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/TShape.java</url>
-          <line>69</line>
-          <option name="timeStamp" value="2" />
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

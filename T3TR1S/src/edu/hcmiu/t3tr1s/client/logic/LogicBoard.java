@@ -1,9 +1,8 @@
 package edu.hcmiu.t3tr1s.client.logic;
 
-import edu.hcmiu.t3tr1s.blocks.Block;
 import edu.hcmiu.t3tr1s.client.ShapeDataManager;
 import edu.hcmiu.t3tr1s.enums.Direction;
-import edu.hcmiu.t3tr1s.blocks.Shape;
+import edu.hcmiu.t3tr1s.blocks.logic.LogicShape;
 
 public class LogicBoard {
 
@@ -23,33 +22,33 @@ public class LogicBoard {
         Grid = new int[HEIGHT][WIDTH];
     }
 
-    public boolean isFreeSpace(Shape shape, int x, int y) {
+    public boolean isFreeSpace(LogicShape logicShape, int x, int y) {
         boolean isFree = true;
 
-        boolean[][] shapeData = ShapeDataManager.getStateData(shape);
-        for (int i = x; i < x + shapeData.length && isFree; i++)
-            for (int j = y; j < y + shapeData[i - x].length && isFree; j++) {
-                if ((i >= WIDTH) || (j >= HEIGHT) || (i < 0) || (j < 0)) {
-                    if (shapeData[i - x][j - y])
+        boolean[][] shapeData = ShapeDataManager.getInstance().getStateData(logicShape);
+        for (int i = y; i > y - shapeData.length && isFree; i--)
+            for (int j = x; j < x + shapeData[y - i].length && isFree; j++) {
+                if ((j >= WIDTH) || (i >= HEIGHT) || (i < 0) || (j < 0)) {
+                    if (shapeData[y - i][j - x])
                         isFree = false;
                 }
-                else if (Grid[i][j] > 0 && shapeData[i - x][j - y])
+                else if (Grid[i][j] > 0 && shapeData[y - i][j - x])
                     isFree = false;
             }
 
         return isFree;
     }
 
-    public boolean freeToMove(Shape shape, Direction direction) {
+    public boolean freeToMove(LogicShape logicShape, Direction direction) {
         switch (direction) {
             case UP:
-                return isFreeSpace(shape, shape.getX(), shape.getY() + 1);
+                return isFreeSpace(logicShape, logicShape.getX(), logicShape.getY() + 1);
             case DOWN:
-                return isFreeSpace(shape, shape.getX(), shape.getY() - 1);
+                return isFreeSpace(logicShape, logicShape.getX(), logicShape.getY() - 1);
             case RIGHT:
-                return isFreeSpace(shape, shape.getX() + 1, shape.getY());
+                return isFreeSpace(logicShape, logicShape.getX() + 1, logicShape.getY());
             case LEFT:
-                return isFreeSpace(shape, shape.getX() - 1, shape.getY());
+                return isFreeSpace(logicShape, logicShape.getX() - 1, logicShape.getY());
         }
         return false;
     }
