@@ -1,9 +1,7 @@
 package edu.hcmiu.t3tr1s.client.scenes;
 
 import edu.hcmiu.t3tr1s.client.Client;
-import edu.hcmiu.t3tr1s.core.Renderer;
 import edu.hcmiu.t3tr1s.core.ShaderManager;
-import edu.hcmiu.t3tr1s.graphics.Rectangle;
 
 /**
  * The scoreboard scene for displaying past scores and high scores.
@@ -13,16 +11,16 @@ import edu.hcmiu.t3tr1s.graphics.Rectangle;
 public class Scoreboard extends Scene{
 
     Scoreboard(String name, ShaderManager shaderManager) {
-        super(name, shaderManager);
+        super(name);
     }
 
     @Override
-    public void show(Renderer renderer) {
+    public void show() {
 
     }
 
     @Override
-    public void hide(Renderer renderer) {
+    public void hide() {
 
     }
 

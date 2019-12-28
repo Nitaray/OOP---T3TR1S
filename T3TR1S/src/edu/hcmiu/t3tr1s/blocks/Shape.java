@@ -1,7 +1,6 @@
 package edu.hcmiu.t3tr1s.blocks;
 
 import edu.hcmiu.t3tr1s.client.logic.LogicBoard;
-import edu.hcmiu.t3tr1s.core.Renderer;
 import edu.hcmiu.t3tr1s.enums.Direction;
 import edu.hcmiu.t3tr1s.graphics.Showable;
 
@@ -14,16 +13,18 @@ public abstract class Shape implements Showable {
     protected int x, y;
     protected int state;
     protected int[][][] offsetTransition;
+
     protected boolean[][] grid;
 
     protected float size = 2.0f;
 
-    protected LogicBoard logicBoard = LogicBoard.getInstance();
+    protected LogicBoard logicBoard;
 
-    public Shape() {
+    public Shape(LogicBoard logicBoard) {
         x = 0;
         y = 0;
         state = 0;
+        this.logicBoard = logicBoard;
     }
 
     public int getX() {
@@ -79,11 +80,11 @@ public abstract class Shape implements Showable {
 
     public abstract void rotate(Direction direction, boolean shouldOffset);
 
-    public void show(Renderer renderer) {
-        blocks.forEach(Block -> Block.show(renderer));
+    public void show() {
+        blocks.forEach(Block -> Block.show());
     }
 
-    public void hide(Renderer renderer) {
-        blocks.forEach(Block -> Block.hide(renderer));
+    public void hide() {
+        blocks.forEach(Block -> Block.hide());
     }
 }

@@ -11,6 +11,7 @@ import edu.hcmiu.t3tr1s.enums.Direction;
 
 public class IShape extends Shape{
     public IShape(LogicBoard logicBoard){
+        super(logicBoard);
         state = 0;
         offsetTransition = new int[][][]{
                 {{0,0},{-1,0},{2,0},{-1,0},{2,0}},

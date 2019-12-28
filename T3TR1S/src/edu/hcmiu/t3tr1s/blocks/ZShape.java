@@ -1,7 +1,7 @@
 package edu.hcmiu.t3tr1s.blocks;
 
-import edu.hcmiu.t3tr1s.client.logic.LogicBoard;
 import edu.hcmiu.t3tr1s.client.ShapeDataManager;
+import edu.hcmiu.t3tr1s.client.logic.LogicBoard;
 import edu.hcmiu.t3tr1s.enums.Direction;
 
 /**
@@ -11,7 +11,8 @@ import edu.hcmiu.t3tr1s.enums.Direction;
 
 public class ZShape extends Shape {
 
-    public ZShape(){
+    public ZShape(LogicBoard logicBoard){
+        super(logicBoard);
         state = 0;
         offsetTransition = new int[][][]{
                 {{0,0},{0,0},{0,0},{0,0},{0,0}},
@@ -22,7 +23,8 @@ public class ZShape extends Shape {
         grid = ShapeDataManager.getStateData(this);
     }
 
-    public ZShape(int x, int y){
+    public ZShape(int x, int y, LogicBoard logicBoard){
+        super(logicBoard);
         this.x = x;
         this.y = y;
         state = 0;

@@ -11,9 +11,7 @@ public class LogicBoard {
 
     private int[][] Grid;
 
-    private static LogicBoard instance = new LogicBoard();
-
-    private LogicBoard() {
+    public LogicBoard() {
         WIDTH = 10;
         HEIGHT = 23;
         Grid = new int[23][10];
@@ -25,18 +23,16 @@ public class LogicBoard {
         Grid = new int[HEIGHT][WIDTH];
     }
 
-    public static LogicBoard getInstance(){
-        return instance;
-    }
-
     public boolean isFreeSpace(Shape shape, int x, int y) {
         boolean isFree = true;
 
         boolean[][] shapeData = ShapeDataManager.getStateData(shape);
         for (int i = x; i < x + shapeData.length && isFree; i++)
-            for (int j = y; j < y + shapeData[i].length && isFree; j++) {
-                if (shapeData[i - x][j - y] && ((i == WIDTH) || (j == HEIGHT) || (i == -1) || (j == -1)))
-                    isFree = false;
+            for (int j = y; j < y + shapeData[i - x].length && isFree; j++) {
+                if ((i >= WIDTH) || (j >= HEIGHT) || (i < 0) || (j < 0)) {
+                    if (shapeData[i - x][j - y])
+                        isFree = false;
+                }
                 else if (Grid[i][j] > 0 && shapeData[i - x][j - y])
                     isFree = false;
             }

@@ -11,17 +11,24 @@ class Updater {
 
     private Updater() {}
 
-    static Updater getInstance(int updatePerSecond, Client client) {
-        thisInstance.UPS = updatePerSecond;
+    private int UPS;
+    private long lastTime;
+
+    static Updater getInstance(Client client) {
+        thisInstance.UPS = 60;
         thisInstance.lastTime = System.nanoTime();
         thisInstance.client = client;
         return thisInstance;
     }
 
-    private int UPS;
-    private long lastTime;
+    void setUPS(int updatePerSecond) {
+        if (UPS > 0)
+            this.UPS = updatePerSecond;
+        else
+            System.err.println("UPS cannot be zero");
+    }
 
-    void update() {
+    private void update() {
         client.update();
     }
 

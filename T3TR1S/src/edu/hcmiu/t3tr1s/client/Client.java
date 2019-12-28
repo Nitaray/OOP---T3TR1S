@@ -1,24 +1,11 @@
 package edu.hcmiu.t3tr1s.client;
 
-import edu.hcmiu.t3tr1s.blocks.Shape;
-import edu.hcmiu.t3tr1s.blocks.TShape;
-import edu.hcmiu.t3tr1s.client.buttons.Button;
-import edu.hcmiu.t3tr1s.client.buttons.QuitButton;
-import edu.hcmiu.t3tr1s.client.buttons.StartButton;
 import edu.hcmiu.t3tr1s.client.logic.LogicBoard;
 import edu.hcmiu.t3tr1s.client.scenes.DisplayBoard;
-import edu.hcmiu.t3tr1s.client.scenes.Game;
 import edu.hcmiu.t3tr1s.client.scenes.MainMenu;
 import edu.hcmiu.t3tr1s.client.scenes.Scene;
-import edu.hcmiu.t3tr1s.core.Input;
-import edu.hcmiu.t3tr1s.core.ShaderManager;
-import edu.hcmiu.t3tr1s.enums.Direction;
-import edu.hcmiu.t3tr1s.graphics.Rectangle;
 import edu.hcmiu.t3tr1s.core.Renderer;
-import edu.hcmiu.t3tr1s.math.Vector3f;
-import org.lwjgl.glfw.GLFW;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -42,14 +29,18 @@ public class Client {
     private ArrayList<Scene> scenes;
     private HashMap<String, Integer> sceneID;
 
+    private LogicBoard logicBoard;
 
-    public void init(Renderer renderer, ShaderManager shaderManager) {
+    public void init() {
         running = true;
-        this.renderer = renderer;
 
-        Scene mainMenu = new MainMenu("MENU", shaderManager);
+        this.renderer = Renderer.getInstance();
 
-        Scene gameScene = new DisplayBoard("GAME", shaderManager);
+        logicBoard = new LogicBoard();
+
+        Scene mainMenu = new MainMenu("MENU");
+
+        Scene gameScene = new DisplayBoard("GAME", logicBoard);
         // TEST MOVING
 
         currentScene = mainMenu;
@@ -77,7 +68,7 @@ public class Client {
      */
 
     public void show() {
-        currentScene.show(renderer);
+        currentScene.show();
     }
 
     /**
@@ -85,7 +76,7 @@ public class Client {
      */
 
     public void hide() {
-        scenes.forEach(scene -> scene.hide(renderer));
+        scenes.forEach(scene -> scene.hide());
     }
 
     /**
@@ -95,9 +86,9 @@ public class Client {
 
     public void switchScene(String sceneName) {
         if (sceneID.containsKey(sceneName)) {
-            currentScene.hide(renderer);
+            currentScene.hide();
             currentScene = scenes.get(sceneID.get(sceneName));
-            currentScene.show(renderer);
+            currentScene.show();
         }
         else
             System.err.println("Scene not found! Please check scene name!");

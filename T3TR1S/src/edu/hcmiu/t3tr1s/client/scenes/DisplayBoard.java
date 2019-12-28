@@ -5,8 +5,6 @@ import edu.hcmiu.t3tr1s.blocks.TShape;
 import edu.hcmiu.t3tr1s.client.Client;
 import edu.hcmiu.t3tr1s.client.logic.LogicBoard;
 import edu.hcmiu.t3tr1s.core.Input;
-import edu.hcmiu.t3tr1s.core.Renderer;
-import edu.hcmiu.t3tr1s.core.ShaderManager;
 import edu.hcmiu.t3tr1s.enums.Direction;
 import edu.hcmiu.t3tr1s.graphics.Rectangle;
 import edu.hcmiu.t3tr1s.math.Vector3f;
@@ -21,21 +19,13 @@ public class DisplayBoard extends Scene {
     private Shape shape;
 
 
-//    public DisplayBoard(String name, LogicBoard logicBoard, ShaderManager shaderManager) {
-//        super(name, shaderManager);
-//        this.logicBoard = logicBoard;
-////        this.topLeft = background.getTopLeft();
-//        Rectangle background = new Rectangle(new Vector3f(0, 90.0f, 0.0f), 160.0f, 90.0f,
-//                "REGULAR_RECTANGLE", "MENU_BACKGROUND", shaderManager);
-//        setBackground(background);
-//    }
-
-    public DisplayBoard(String name, ShaderManager shaderManager){
-        super(name, shaderManager);
-        this.logicBoard = LogicBoard.getInstance();
+    public DisplayBoard(String name, LogicBoard logicBoard) {
+        super(name);
+        this.logicBoard = logicBoard;
         Rectangle background = new Rectangle(new Vector3f(0, 90.0f, 0.0f), 160.0f, 90.0f,
-                "REGULAR_RECTANGLE", "MENU_BACKGROUND", shaderManager);
+                "REGULAR_RECTANGLE", "MENU_BACKGROUND");
         setBackground(background);
+        this.topLeft = background.getTopLeft();
     }
 
 //    public void drawLogicBoard() {
@@ -49,16 +39,16 @@ public class DisplayBoard extends Scene {
 //    }
 
     @Override
-    public void show(Renderer renderer) {
-        background.show(renderer);
-        shape = new TShape();
-        shape.show(renderer);
+    public void show() {
+        background.show();
+        shape = new TShape(logicBoard);
+        shape.show();
     }
 
     @Override
-    public void hide(Renderer renderer) {
-        background.hide(renderer);
-        shape.hide(renderer);
+    public void hide() {
+        background.hide();
+        shape.hide();
     }
 
     @Override
@@ -66,14 +56,16 @@ public class DisplayBoard extends Scene {
         if(Input.isKeyDown(GLFW.GLFW_KEY_RIGHT) && keyCooled(300 * MILLISECONDS)){
             shape.move(Direction.RIGHT);
         }
-        else if(Input.isKeyDown(GLFW.GLFW_KEY_LEFT) && keyCooled(300 * MILLISECONDS)){
+        if(Input.isKeyDown(GLFW.GLFW_KEY_LEFT) && keyCooled(300 * MILLISECONDS)){
             shape.move(Direction.LEFT);
         }
-        else if(Input.isKeyDown(GLFW.GLFW_KEY_UP) && keyCooled(300 * MILLISECONDS)){
+        if(Input.isKeyDown(GLFW.GLFW_KEY_UP) && keyCooled(300 * MILLISECONDS)){
             shape.move(Direction.UP);
         }
-        else if(Input.isKeyDown(GLFW.GLFW_KEY_DOWN) && keyCooled(300 * MILLISECONDS)){
+        if(Input.isKeyDown(GLFW.GLFW_KEY_DOWN) && keyCooled(300 * MILLISECONDS)){
             shape.move(Direction.DOWN);
         }
+        if (Input.isKeyDown(GLFW.GLFW_KEY_R) && keyCooled(300 * MILLISECONDS))
+            shape.rotate(Direction.CLOCKWISE, true);
     }
 }

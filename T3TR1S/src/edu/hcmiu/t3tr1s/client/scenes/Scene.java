@@ -3,8 +3,6 @@ package edu.hcmiu.t3tr1s.client.scenes;
 import edu.hcmiu.t3tr1s.client.Client;
 import edu.hcmiu.t3tr1s.client.buttons.Button;
 import edu.hcmiu.t3tr1s.core.Input;
-import edu.hcmiu.t3tr1s.core.Renderer;
-import edu.hcmiu.t3tr1s.core.ShaderManager;
 import edu.hcmiu.t3tr1s.graphics.Rectangle;
 import edu.hcmiu.t3tr1s.graphics.Showable;
 
@@ -23,7 +21,7 @@ public abstract class Scene implements Showable {
 
     private long lastKeyPress;
 
-    public Scene(String name, ShaderManager shaderManager) {
+    public Scene(String name) {
         this.name = name;
         this.buttons = new ArrayList<>();
         this.currentButtonSelection = 0;
@@ -77,9 +75,9 @@ public abstract class Scene implements Showable {
         return false;
     }
 
-    public abstract void show(Renderer renderer);
+    public abstract void show();
 
-    public abstract void hide(Renderer renderer);
+    public abstract void hide();
 
     public abstract void update(Client client);
 }

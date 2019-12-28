@@ -2,7 +2,6 @@ package edu.hcmiu.t3tr1s.core;
 
 import edu.hcmiu.t3tr1s.client.Client;
 import edu.hcmiu.t3tr1s.client.ShapeDataManager;
-import edu.hcmiu.t3tr1s.math.Matrix4f;
 import org.lwjgl.glfw.*;
 
 import java.util.Objects;
@@ -19,7 +18,6 @@ public class Main implements Runnable{
 
     private Thread thread;
     private Renderer renderer;
-    private ShaderManager shaderManager;
     private Client client;
     private Updater updater;
 
@@ -27,9 +25,8 @@ public class Main implements Runnable{
         running = true;
         thread = new Thread(this, "T3TR1S Thread");
         renderer = Renderer.getInstance();
-        shaderManager = ShaderManager.getInstance(Matrix4f.orthographic(0, 160.0f, 0, 90.0f, -1.0f, 1.0f));
         client = Client.getInstance();
-        updater = Updater.getInstance(60, client);
+        updater = Updater.getInstance(client);
         thread.start();
     }
 
@@ -44,11 +41,11 @@ public class Main implements Runnable{
 
         Window.show();
 
-        shaderManager.init();
+        ShaderManager.getInstance().init();
 
         ShapeDataManager.init();
 
-        client.init(renderer, shaderManager);
+        client.init();
     }
 
     public void run() {

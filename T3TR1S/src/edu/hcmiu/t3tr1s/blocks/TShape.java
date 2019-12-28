@@ -1,8 +1,7 @@
 package edu.hcmiu.t3tr1s.blocks;
 
-import edu.hcmiu.t3tr1s.client.logic.LogicBoard;
 import edu.hcmiu.t3tr1s.client.ShapeDataManager;
-import edu.hcmiu.t3tr1s.core.ShaderManager;
+import edu.hcmiu.t3tr1s.client.logic.LogicBoard;
 import edu.hcmiu.t3tr1s.enums.Direction;
 import edu.hcmiu.t3tr1s.math.Vector3f;
 
@@ -12,7 +11,8 @@ import edu.hcmiu.t3tr1s.math.Vector3f;
  */
 
 public class TShape extends Shape {
-    public TShape(){
+    public TShape(LogicBoard logicBoard){
+        super(logicBoard);
         offsetTransition = new int[][][]{
                 {{0,0},{0,0},{0,0},{0,0},{0,0}},
                 {{0,0},{1,0},{1,-1},{0,2},{1,2}},
@@ -28,7 +28,8 @@ public class TShape extends Shape {
      * @param x x-coordinate of shape in board
      * @param y y-coordinate of shape in board
      */
-    public TShape(int x, int y){
+    public TShape(int x, int y, LogicBoard logicBoard){
+        super(logicBoard);
         this.x = x;
         this.y = y;
         offsetTransition = new int[][][]{
@@ -46,10 +47,10 @@ public class TShape extends Shape {
         Vector3f right = new Vector3f(middle.getX() + size, middle.getY(), 0.5f);
         Vector3f up = new Vector3f(middle.getX(), middle.getY() + size, 0.5f);
 
-        Block middleBlock = new Block(middle, "SET1_RED", ShaderManager.getInstance());
-        Block leftBlock = new Block(left, "SET1_RED", ShaderManager.getInstance());
-        Block rightBlock = new Block(right, "SET1_RED", ShaderManager.getInstance());
-        Block upBlock = new Block(up, "SET1_RED", ShaderManager.getInstance());
+        Block middleBlock = new Block(middle, "SET1_RED");
+        Block leftBlock = new Block(left, "SET1_RED");
+        Block rightBlock = new Block(right, "SET1_RED");
+        Block upBlock = new Block(up, "SET1_RED");
 
         blocks.add(middleBlock);
         blocks.add(leftBlock);
