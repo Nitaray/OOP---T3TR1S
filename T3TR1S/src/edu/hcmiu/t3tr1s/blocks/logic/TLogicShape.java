@@ -21,7 +21,6 @@ public class TLogicShape extends LogicShape {
                 {{0, 0}, {-1, 0}, {-1, -1}, {0, 2}, {-1, 2}}
         };
         grid = shapeDataManager.getStateData(this);
-        createBlocks();
     }
 
     /**
@@ -39,24 +38,6 @@ public class TLogicShape extends LogicShape {
                 {{0, 0}, {-1, 0}, {-1, -1}, {0, 2}, {-1, 2}}
         };
         grid = shapeDataManager.getStateData(this);
-        createBlocks();
-    }
-
-    private void createBlocks() {
-        Vector3f middle = new Vector3f(80.0f, 90.0f - size - 1.0f, 0.5f);
-        Vector3f left = new Vector3f(middle.getX() - size, middle.getY(), 0.5f);
-        Vector3f right = new Vector3f(middle.getX() + size, middle.getY(), 0.5f);
-        Vector3f up = new Vector3f(middle.getX(), middle.getY() + size, 0.5f);
-
-        Block middleBlock = new Block(middle, "SET1_RED");
-        Block leftBlock = new Block(left, "SET1_RED");
-        Block rightBlock = new Block(right, "SET1_RED");
-        Block upBlock = new Block(up, "SET1_RED");
-
-        blocks.add(middleBlock);
-        blocks.add(leftBlock);
-        blocks.add(rightBlock);
-        blocks.add(upBlock);
     }
 
     @Override

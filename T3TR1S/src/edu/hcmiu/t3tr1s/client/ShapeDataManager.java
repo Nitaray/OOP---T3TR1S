@@ -35,7 +35,7 @@ public class ShapeDataManager {
         dataZShape = new ArrayList<>();
         dataTShape = new ArrayList<>();
         loadShapeData(dataIShape, "data/blocks/IShape.dat", ShapeBoxSize.FourByFour);
-        loadShapeData(dataOShape, "data/blocks/OShape.dat", ShapeBoxSize.FourByThree);
+        loadShapeData(dataOShape, "data/blocks/OShape.dat", ShapeBoxSize.TwoByTwo);
         loadShapeData(dataLShape, "data/blocks/LShape.dat", ShapeBoxSize.ThreeByThree);
         loadShapeData(dataJShape, "data/blocks/JShape.dat", ShapeBoxSize.ThreeByThree);
         loadShapeData(dataSShape, "data/blocks/SShape.dat", ShapeBoxSize.ThreeByThree);
@@ -77,17 +77,17 @@ public class ShapeDataManager {
                     dataArrayList.add(matrix);
                 }
 
-                if (boxSize == ShapeBoxSize.FourByThree) {
+                if (boxSize == ShapeBoxSize.TwoByTwo) {
                     final boolean[][] matrix = new boolean[3][4];
                     line = "";
 
-                    for (int j = 0; j < 3; ++j)
+                    for (int j = 0; j < 2; ++j)
                         line += scanner.nextLine().replaceAll("\\s+", "");
 
 
-                    for (int i = 0; i < 3; ++i) {
-                        for (int j = 0; j < 4; ++j)
-                            matrix[i][j] = (Integer.parseInt(String.valueOf(line.charAt(4 * i + j))) == 1);
+                    for (int i = 0; i < 2; ++i) {
+                        for (int j = 0; j < 2; ++j)
+                            matrix[i][j] = (Integer.parseInt(String.valueOf(line.charAt(2 * i + j))) == 1);
                     }
 
                     dataArrayList.add(matrix);

@@ -22,6 +22,13 @@ public class Vector3f {
 
         this.z = z;
     }
+
+    public Vector3f(Vector3f vector3f) {
+        this.x = vector3f.x;
+        this.y = vector3f.y;
+        this.z = vector3f.z;
+    }
+
     public void setY(float y){
         this.y = y;
     }

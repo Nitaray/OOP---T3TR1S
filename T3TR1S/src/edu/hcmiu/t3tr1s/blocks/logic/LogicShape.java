@@ -9,16 +9,12 @@ import java.util.ArrayList;
 
 public abstract class LogicShape {
 
-    protected ArrayList<Block> blocks = new ArrayList<>();
-
     protected int x, y;
     protected int state;
     protected int ID;
     protected int[][][] offsetTransition;
 
     protected boolean[][] grid;
-
-    protected float size = 2.0f;
 
     protected LogicBoard logicBoard;
     protected ShapeDataManager shapeDataManager = ShapeDataManager.getInstance();
@@ -53,10 +49,6 @@ public abstract class LogicShape {
         return ID;
     }
 
-    public ArrayList<Block> getBlocks() {
-        return blocks;
-    }
-
     public boolean move(Direction direction) {
         if (logicBoard.freeToMove(this, direction)) {
             System.out.println("Move successfully!");
@@ -75,6 +67,7 @@ public abstract class LogicShape {
                     return true;
             }
         }
+        System.out.println("Move failed!");
         return false;
     }
 
@@ -91,8 +84,9 @@ public abstract class LogicShape {
         return false;
     }
 
-    public void rotate(Direction direction) {
+    public boolean rotate(Direction direction) {
         rotate(direction, true);
+        return false;
     }
 
     public abstract void rotate(Direction direction, boolean shouldOffset);

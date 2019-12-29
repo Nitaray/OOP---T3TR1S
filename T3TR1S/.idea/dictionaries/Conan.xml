@@ -2,7 +2,14 @@
   <dictionary name="Conan">
     <words>
       <w>displayboard</w>
+      <w>ishape</w>
+      <w>jshape</w>
+      <w>lshape</w>
+      <w>oshape</w>
+      <w>sshape</w>
       <w>tetris</w>
+      <w>tshape</w>
+      <w>zshape</w>
     </words>
   </dictionary>
 </component>

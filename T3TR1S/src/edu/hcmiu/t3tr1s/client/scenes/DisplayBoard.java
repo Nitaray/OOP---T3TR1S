@@ -22,7 +22,7 @@ public class DisplayBoard extends Scene {
     public DisplayBoard(String name, LogicBoard logicBoard) {
         super(name);
         this.logicBoard = logicBoard;
-        Rectangle background = new Rectangle(new Vector3f(62.5f, 85.0f, 0.1f), 35.0f, 80.5f,
+        Rectangle background = new Rectangle(new Vector3f(-18.5f, 40.0f, 0.1f), 35.0f, 80.5f,
                 "REGULAR_RECTANGLE", "GAME_DISPLAYBOARD_BACKGROUND");
         setBackground(background);
         this.topLeft = background.getTopLeft();
@@ -65,6 +65,8 @@ public class DisplayBoard extends Scene {
             displayShape.move(Direction.DOWN);
         }
         if (Input.isKeyDown(GLFW.GLFW_KEY_R) && keyCooled(100 * MILLISECONDS))
-            logicShape.rotate(Direction.CLOCKWISE);
+            displayShape.rotate(Direction.CLOCKWISE);
+        if (Input.isKeyDown(GLFW.GLFW_KEY_Q) && keyCooled(100 * MILLISECONDS))
+            displayShape.rotate(Direction.COUNTER_CLOCKWISE);
     }
 }

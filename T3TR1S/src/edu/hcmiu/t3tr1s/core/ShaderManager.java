@@ -30,7 +30,7 @@ public class ShaderManager {
     private HashMap<String, Integer> texturesID = new HashMap<>();
 
     private ShaderManager() {
-        projection_matrix = Matrix4f.orthographic(0, 160.0f, 0, 90.f, -1.0f, 1.0f);
+        projection_matrix = Matrix4f.orthographic(-80.0f, 80.0f, -45.0f, 45.0f, -1.0f, 1.0f);
         init();
     }
 
