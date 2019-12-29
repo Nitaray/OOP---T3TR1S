@@ -188,9 +188,4 @@ public class Scoreboard extends Scene {
         if ((Input.isKeyDown(GLFW_KEY_ENTER) || Input.isKeyDown(GLFW_KEY_ESCAPE)) && keyCooled(300 * MILLISECONDS))
             handleSelection();
     }
-
-    public static void main(String[] args) {
-        initScoreList();
-        addPlayerScore(10);
-    }
 }
