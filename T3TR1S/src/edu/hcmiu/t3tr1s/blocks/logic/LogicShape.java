@@ -1,5 +1,6 @@
 package edu.hcmiu.t3tr1s.blocks.logic;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import edu.hcmiu.t3tr1s.blocks.Block;
 import edu.hcmiu.t3tr1s.client.ShapeDataManager;
 import edu.hcmiu.t3tr1s.client.logic.LogicBoard;
@@ -22,6 +23,16 @@ public abstract class LogicShape {
 
     protected LogicBoard logicBoard;
     protected ShapeDataManager shapeDataManager = ShapeDataManager.getInstance();
+
+    /**
+     * offsetData<rotatable, offsetx, offsetY, direction>
+     *     rotatable - whether the shape can rotate
+     *     offsetX, offsetY - values of offset if can rotate, else 0.
+     *     direction: rotate direction. If rotatable is false, direction = null
+     */
+    protected Tuple<Boolean, Integer, Integer, Direction> offsetData;
+
+    protected int offsetX, offsetY;
 
     public LogicShape(LogicBoard logicBoard) {
         x = 0;
@@ -59,7 +70,7 @@ public abstract class LogicShape {
 
     public boolean move(Direction direction) {
         if (logicBoard.freeToMove(this, direction)) {
-            System.out.println("Move successfully!");
+//            System.out.println("Move successfully!");
             switch (direction) {
                 case LEFT:
                     x--;
@@ -83,6 +94,8 @@ public abstract class LogicShape {
             int transX = offsetTransition[newState][i][0] - offsetTransition[oldState][i][0];
             int transY = offsetTransition[newState][i][1] - offsetTransition[oldState][i][1];
             if (logicBoard.isFreeSpace(this, x + transX, y + transY)) {
+                offsetX = transX;
+                offsetY = transY;
                 x += transX;
                 y += transY;
                 return true;
@@ -91,8 +104,9 @@ public abstract class LogicShape {
         return false;
     }
 
-    public void rotate(Direction direction) {
+    public Tuple<Boolean, Integer, Integer, Direction> rotate(Direction direction) {
         rotate(direction, true);
+        return offsetData;
     }
 
     public abstract void rotate(Direction direction, boolean shouldOffset);
