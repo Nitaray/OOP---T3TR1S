@@ -89,6 +89,7 @@ public abstract class LogicShape {
             if (logicBoard.isFreeSpace(this, x + transX, y + transY)) {
                 offsetX = transX;
                 offsetY = transY;
+                state = newState;
                 x += transX;
                 y += transY;
                 return true;

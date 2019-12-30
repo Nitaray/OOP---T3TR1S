@@ -46,7 +46,6 @@ public class TLogicShape extends LogicShape {
     public void rotate(Direction direction, boolean shouldOffset) {
         boolean canOffset = false;
         if (direction == Direction.CLOCKWISE) {
-            grid = shapeDataManager.getStateData(this, (state + 1) % 4);
             if (shouldOffset) {
                 canOffset = offset(state, (state + 1) % 4);
                 if (!canOffset) {
@@ -58,7 +57,6 @@ public class TLogicShape extends LogicShape {
                 }
             }
         } else {
-            grid = shapeDataManager.getStateData(this, (state - 1) % 4);
             if (shouldOffset) {
                 canOffset = offset(state, (state - 1) % 4);
                 if (!canOffset) {

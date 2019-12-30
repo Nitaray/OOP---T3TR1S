@@ -19,7 +19,6 @@ public class LLogicShape extends LogicShape {
                 {{0,0},{0,0},{0,0},{0,0},{0,0}},
                 {{0,0},{-1,0},{-1,-1},{0,2},{-1,2}}
         };
-        grid = shapeDataManager.getStateData(this);
     }
 
     public LLogicShape(int x, int y, LogicBoard logicBoard){
@@ -31,14 +30,12 @@ public class LLogicShape extends LogicShape {
                 {{0,0},{0,0},{0,0},{0,0},{0,0}},
                 {{0,0},{-1,0},{-1,-1},{0,2},{-1,2}}
         };
-        grid = shapeDataManager.getStateData(this);
     }
 
     @Override
     public void rotate(Direction direction, boolean shouldOffset) {
         boolean canOffset = false;
         if(direction==Direction.CLOCKWISE){
-            grid = shapeDataManager.getStateData(this,(state + 1) % 4);
             if(shouldOffset){
                 canOffset = offset(state, (state + 1) % 4);
                 if(!canOffset){
@@ -50,7 +47,6 @@ public class LLogicShape extends LogicShape {
             }
         }
         else{
-            grid = shapeDataManager.getStateData(this,(state - 1) % 4);
             if(shouldOffset){
                 canOffset = offset(state, (state - 1) % 4);
                 if(!canOffset){
