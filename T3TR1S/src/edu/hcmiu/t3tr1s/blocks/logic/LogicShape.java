@@ -17,8 +17,6 @@ public abstract class LogicShape {
     protected int ID;
     protected int[][][] offsetTransition;
 
-    protected boolean[][] grid;
-
     protected float size = 2.0f;
 
     protected LogicBoard logicBoard;
@@ -96,6 +94,7 @@ public abstract class LogicShape {
             if (logicBoard.isFreeSpace(this, x + transX, y + transY)) {
                 offsetX = transX;
                 offsetY = transY;
+                state = newState;
                 x += transX;
                 y += transY;
                 return true;
