@@ -78,18 +78,21 @@ public abstract class LogicShape {
     }
 
     protected boolean offset(int oldState, int newState) {
+        state = newState;
         for (int i = 0; i < offsetTransition[oldState].length; ++i) {
-            int transX = offsetTransition[newState][i][0] - offsetTransition[oldState][i][0];
-            int transY = offsetTransition[newState][i][1] - offsetTransition[oldState][i][1];
+            int transX = offsetTransition[oldState][i][0] - offsetTransition[newState][i][0];
+            int transY = offsetTransition[oldState][i][1] - offsetTransition[newState][i][1];
             if (logicBoard.isFreeSpace(this, x + transX, y + transY)) { // <-- bug right here
+                System.out.println(transX);
+                System.out.println(transY);
                 offsetX = transX;
                 offsetY = transY;
-                state = newState;
                 x += transX;
                 y += transY;
                 return true;
             }
         }
+        state = oldState;
         return false;
     }
 
