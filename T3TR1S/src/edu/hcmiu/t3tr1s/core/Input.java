@@ -46,7 +46,7 @@ public class Input {
         return held_key[key];
     }
 
-    public static boolean isKeyPress(int key) {
+    public static boolean isKeyDown(int key) {
         return pressed_key[key];
     }
 
