@@ -12,6 +12,7 @@ import edu.hcmiu.t3tr1s.enums.Direction;
 public class ILogicShape extends LogicShape {
     public ILogicShape(LogicBoard logicBoard){
         super(logicBoard);
+        ID = 1;
         offsetTransition = new int[][][]{
                 {{0,0},{-1,0},{2,0},{-1,0},{2,0}},
                 {{-1,0},{0,0},{0,0},{0,1},{0,-2}},
@@ -23,6 +24,7 @@ public class ILogicShape extends LogicShape {
 
     public ILogicShape(int x, int y, LogicBoard logicBoard) {
         super(x, y, logicBoard);
+        ID = 1;
         offsetTransition = new int[][][]{
                 {{0,0},{-1,0},{2,0},{-1,0},{2,0}},
                 {{-1,0},{0,0},{0,0},{0,1},{0,-2}},

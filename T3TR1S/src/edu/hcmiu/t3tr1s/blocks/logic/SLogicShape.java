@@ -13,6 +13,7 @@ public class SLogicShape extends LogicShape {
 
     public SLogicShape(LogicBoard logicBoard){
         super(logicBoard);
+        ID = 4;
         offsetTransition = new int[][][]{
                 {{0,0},{0,0},{0,0},{0,0},{0,0}},
                 {{0,0},{1,0},{1,-1},{0,2},{1,2}},
@@ -24,6 +25,7 @@ public class SLogicShape extends LogicShape {
 
     public SLogicShape(int x, int y, LogicBoard logicBoard){
         super(x, y, logicBoard);
+        ID = 4;
         offsetTransition = new int[][][]{
                 {{0,0},{0,0},{0,0},{0,0},{0,0}},
                 {{0,0},{1,0},{1,-1},{0,2},{1,2}},

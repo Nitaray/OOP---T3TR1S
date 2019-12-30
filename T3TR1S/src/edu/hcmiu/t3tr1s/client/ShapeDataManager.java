@@ -20,7 +20,9 @@ public class ShapeDataManager {
     }
 
     private ArrayList<boolean[][]> dataIShape, dataOShape, dataLShape, dataJShape, dataSShape, dataZShape, dataTShape;
+
     private HashMap<Integer, String> shapeTextureName;
+    private HashMap<Integer, String> blockTextureName;
 
     /**
      * Initialize shape data.
@@ -43,19 +45,21 @@ public class ShapeDataManager {
         loadShapeData(dataTShape, "data/blocks/TShape.dat", ShapeBoxSize.ThreeByThree);
 
         shapeTextureName = new HashMap<>();
-        loadShapeTextureName();
+        blockTextureName = new HashMap<>();
+        loadShapeTextureName("config/shapeTexture.cfg");
+        loadBlockTextureName("config/blockTexture.cfg");
     }
 
     /**
-     * Load the data from data source file into a list of boolean arrays.
+     * Load the data from data sourcePath file into a list of boolean arrays.
      * Each list has 4 arrays for 4 states of each shape.
      *
      * @param dataArrayList the list to be loaded with data.
-     * @param source        the path to the source file.
+     * @param sourcePath        the path to the sourcePath file.
      * @param boxSize       the size of the box of the shape.
      */
-    private void loadShapeData(ArrayList<boolean[][]> dataArrayList, String source, ShapeBoxSize boxSize) {
-        String dat = FileUtils.loadAsString(source);
+    private void loadShapeData(ArrayList<boolean[][]> dataArrayList, String sourcePath, ShapeBoxSize boxSize) {
+        String dat = FileUtils.loadAsString(sourcePath);
         Scanner scanner = new Scanner(dat);
         String line;
 
@@ -116,10 +120,27 @@ public class ShapeDataManager {
     }
 
     /**
-     * Load the name of shapes texture from blocksID.cfg into shapeTextureName.
+     * Load the name of shapes texture from shapeTexture.cfg into shapeTextureName.
+     */
+    private void loadShapeTextureName(String sourcePath) {
+        String cfg = FileUtils.loadAsString(sourcePath);
+        Scanner s = new Scanner(cfg);
+        while (s.hasNextLine()) {
+            String line = s.nextLine();
+            Scanner lineScanner = new Scanner(line);
+            int ID = lineScanner.nextInt();
+            lineScanner.next();
+            String name = lineScanner.next();
+            shapeTextureName.put(ID, name);
+        }
+    }
+
+    /**
+     * Load the name of shapes' blocks' textures from blockTexture.cfg into blockTextureName.
+     * Similar to loadShapeTextureName.
      * TODO: By Nguyen Nhat Minh
      */
-    private void loadShapeTextureName() {
+    private void loadBlockTextureName(String sourcePath) {
 
     }
 
@@ -195,4 +216,16 @@ public class ShapeDataManager {
         return "";
     }
 
+    /**
+     * Get the name of the texture of the blocks of a given shape.
+     * @param logicShape a shape to get texture name for.
+     * @return the name of the texture.
+     */
+    public String getBlockTextureName(LogicShape logicShape) {
+        int ID = logicShape.getID();
+        if (blockTextureName.containsKey(ID))
+            return blockTextureName.get(ID);
+        System.err.println("Cannot find shape ID!");
+        return "";
+    }
 }

@@ -12,6 +12,7 @@ import edu.hcmiu.t3tr1s.enums.Direction;
 public class OLogicShape extends LogicShape {
     public OLogicShape(LogicBoard logicBoard){
         super(logicBoard);
+        ID = 2;
         offsetTransition = new int[][][]{
                 {{0,0}},
                 {{0,-1}},
@@ -23,6 +24,7 @@ public class OLogicShape extends LogicShape {
 
     public OLogicShape(int x, int y, LogicBoard logicBoard){
         super(x, y, logicBoard);
+        ID = 2;
         offsetTransition = new int[][][]{
                 {{0,0}},
                 {{0,-1}},

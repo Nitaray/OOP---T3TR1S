@@ -29,8 +29,7 @@ public class DisplayShape implements Showable {
     public void initShape() {
         ShapeDataManager shapeDataManager = ShapeDataManager.getInstance();
         boolean[][] grid = shapeDataManager.getStateData(logicShape);
-//        test = new Shape(v, blockSize * grid.length, blockSize, shapeDataManager.getShapeTextureName(shape));
-        shape = new Shape(v, blockSize * grid.length, blockSize, "SET1_TSHAPE"); // This is temporary
+        shape = new Shape(v, blockSize * grid.length, blockSize, shapeDataManager.getShapeTextureName(logicShape));
     }
 
     public ArrayList<Block> getBlocks() {

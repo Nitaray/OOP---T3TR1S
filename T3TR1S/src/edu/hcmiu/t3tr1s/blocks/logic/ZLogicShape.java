@@ -13,6 +13,7 @@ public class ZLogicShape extends LogicShape {
 
     public ZLogicShape(LogicBoard logicBoard){
         super(logicBoard);
+        ID = 3;
         offsetTransition = new int[][][]{
                 {{0,0},{0,0},{0,0},{0,0},{0,0}},
                 {{0,0},{1,0},{1,-1},{0,2},{1,2}},
@@ -24,6 +25,7 @@ public class ZLogicShape extends LogicShape {
 
     public ZLogicShape(int x, int y, LogicBoard logicBoard){
         super(x, y, logicBoard);
+        ID = 3;
         offsetTransition = new int[][][]{
                 {{0,0},{0,0},{0,0},{0,0},{0,0}},
                 {{0,0},{1,0},{1,-1},{0,2},{1,2}},

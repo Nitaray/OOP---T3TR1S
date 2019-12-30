@@ -14,6 +14,7 @@ import edu.hcmiu.t3tr1s.math.Vector3f;
 public class TLogicShape extends LogicShape {
     public TLogicShape(LogicBoard logicBoard) {
         super(logicBoard);
+        ID = 7;
         offsetTransition = new int[][][]{
                 {{0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}},
                 {{0, 0}, {1, 0}, {1, -1}, {0, 2}, {1, 2}},
@@ -31,6 +32,7 @@ public class TLogicShape extends LogicShape {
      */
     public TLogicShape(int x, int y, LogicBoard logicBoard) {
         super(x, y, logicBoard);
+        ID = 7;
         offsetTransition = new int[][][]{
                 {{0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}},
                 {{0, 0}, {1, 0}, {1, -1}, {0, 2}, {1, 2}},

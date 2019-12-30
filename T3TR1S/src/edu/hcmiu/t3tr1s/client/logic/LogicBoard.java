@@ -53,6 +53,18 @@ public class LogicBoard {
         return false;
     }
 
+    public void solidifyShape(LogicShape logicShape) {
+        ShapeDataManager shapeDataManager = ShapeDataManager.getInstance();
+        int x = logicShape.getX();
+        int y = logicShape.getY();
+        boolean[][] shapeData = shapeDataManager.getStateData(logicShape);
+        for (int i = y; i > y - shapeData.length; i--)
+            for (int j = x; j < x + shapeData[y - i].length; j++) {
+                if (shapeData[i - y][j - x])
+                    Grid[y][x] = logicShape.getID();
+            }
+    }
+
     public int[][] getGrid() {
         return Grid;
     }

@@ -41,10 +41,10 @@ public class Shape extends Rectangle {
     public void rotate(Direction direction) {
         switch (direction) {
             case CLOCKWISE:
-                super.rotate(-5.0f);
+                super.rotate(-90.0f);
                 break;
             case COUNTER_CLOCKWISE:
-                super.rotate(5.0f);
+                super.rotate(90.0f);
                 break;
         }
     }

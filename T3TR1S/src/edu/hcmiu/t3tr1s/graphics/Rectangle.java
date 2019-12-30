@@ -44,11 +44,11 @@ public class Rectangle implements Showable{
 
     public Rectangle(Vector3f topLeft, float width, float height, String shaderName, String textureName) {
 
-        vertices = new float[] {
-                topLeft.x, topLeft.y, topLeft.z,
-                topLeft.x + width,  topLeft.y, topLeft.z,
-                topLeft.x + width,  topLeft.y - height, topLeft.z,
-                topLeft.x, topLeft.y - height, topLeft.z
+        vertices = new float[]{
+                -width / 2, height / 2, topLeft.z,
+                width / 2, height / 2, topLeft.z,
+                width / 2, -height / 2, topLeft.z,
+                -width / 2, -height / 2, topLeft.z
         };
 
         indices = new byte[] {
@@ -68,10 +68,10 @@ public class Rectangle implements Showable{
         currentAngle = 0.0f;
 
         this.topLeft = topLeft;
-        this.currentPosition = topLeft;
+        this.currentPosition = new Vector3f(topLeft.x + width / 2, topLeft.y - height / 2, topLeft.z);
 
         model_mat = Matrix4f.identity();
-        position_mat = Matrix4f.translate(new Vector3f(0, 0, 0));
+        position_mat = Matrix4f.translate(currentPosition);
         rotation_mat = Matrix4f.rotate(currentAngle);
 
         this.shaderManager = ShaderManager.getInstance();
@@ -151,6 +151,7 @@ public class Rectangle implements Showable{
 
     public void render() {
         shaderManager.enableShader(shaderID, textureID);
+        updateModel();
         shaderManager.setUniformMat4f(shaderID, "model_matrix", model_mat);
         vertexArray.render();
         shaderManager.disableShader(shaderID, textureID);
