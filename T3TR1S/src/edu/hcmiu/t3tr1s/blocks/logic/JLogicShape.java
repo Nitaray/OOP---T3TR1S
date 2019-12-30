@@ -41,19 +41,27 @@ public class JLogicShape extends LogicShape {
             grid = shapeDataManager.getStateData(this,(state + 1) % 4);
             if(shouldOffset){
                 canOffset = offset(state, (state + 1) % 4);
+                if(!canOffset){
+                    offsetData = new Tuple<>(false, 0, 0, null);
+                    rotate(Direction.COUNTER_CLOCKWISE, false);
+                }
+                else
+                    offsetData = new Tuple<>(true, offsetX, offsetY, direction);
             }
-            if(!canOffset){
-                rotate(Direction.COUNTER_CLOCKWISE, false);
-            }
+
         }
         else{
             grid = shapeDataManager.getStateData(this,(state - 1) % 4);
             if(shouldOffset){
                 canOffset = offset(state, (state - 1) % 4);
+                if(!canOffset){
+                    offsetData = new Tuple<>(false, 0, 0, null);
+                    rotate(Direction.CLOCKWISE, false);
+                }
+                else
+                    offsetData = new Tuple<>(true, offsetX, offsetY, direction);
             }
-            if(!canOffset){
-                rotate(Direction.CLOCKWISE, false);
-            }
+
         }
     }
 }
