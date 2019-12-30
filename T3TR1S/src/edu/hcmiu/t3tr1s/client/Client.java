@@ -1,14 +1,10 @@
 package edu.hcmiu.t3tr1s.client;
 
-import edu.hcmiu.t3tr1s.client.buttons.Button;
-import edu.hcmiu.t3tr1s.client.buttons.QuitButton;
-import edu.hcmiu.t3tr1s.client.buttons.StartButton;
+import edu.hcmiu.t3tr1s.client.scenes.GameScene;
 import edu.hcmiu.t3tr1s.client.scenes.MainMenu;
 import edu.hcmiu.t3tr1s.client.scenes.Scene;
-import edu.hcmiu.t3tr1s.core.ShaderManager;
-import edu.hcmiu.t3tr1s.graphics.Rectangle;
 import edu.hcmiu.t3tr1s.core.Renderer;
-import edu.hcmiu.t3tr1s.math.Vector3f;
+import edu.hcmiu.t3tr1s.graphics.Showable;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,7 +14,7 @@ import java.util.HashMap;
  * TODO: By Luu Minh Long
  */
 
-public class Client {
+public class Client implements Showable {
     private Client() {}
     private static Client instance = new Client();
     public static Client getInstance() {
@@ -26,19 +22,20 @@ public class Client {
     }
 
     private boolean running;
-    private Renderer renderer;
 
     private Scene currentScene;
 
     private ArrayList<Scene> scenes;
     private HashMap<String, Integer> sceneID;
 
-    public void init(Renderer renderer, ShaderManager shaderManager) {
+    public void init() {
         running = true;
-        this.renderer = renderer;
 
-        Scene mainMenu = initMainMenu(shaderManager);
-        Scene game = Pause(shaderManager);
+
+        Scene mainMenu = new MainMenu("MENU");
+
+        Scene gameScene = new GameScene("GAME");
+        // TEST MOVING
 
         currentScene = mainMenu;
 
@@ -46,7 +43,7 @@ public class Client {
         sceneID = new HashMap<>();
 
         addScene(mainMenu);
-        addScene(game);
+        addScene(gameScene);
 
         show();
     }
@@ -60,42 +57,12 @@ public class Client {
             throw new NullPointerException("Null scene encountered!");
     }
 
-    private Scene initMainMenu(ShaderManager shaderManager) {
-        Button startGameButton = new StartButton(new Vector3f(120.0f, 35.0f, 0.1f), 36.0f, 12.0f,
-                "REGULAR_RECTANGLE", "START_BUTTON", "START_BUTTON_SELECTED", shaderManager, true);
-        Button quitGameButton = new QuitButton(new Vector3f(120.0f, 25.0f, 0.1f), 36.0f, 12.0f,
-                "REGULAR_RECTANGLE", "QUIT_BUTTON", "QUIT_BUTTON_SELECTED", shaderManager, false);
-
-        Rectangle main_menu_background = new Rectangle(new Vector3f(0, 90.0f, 0.0f), 160.0f, 90.0f,
-                "REGULAR_RECTANGLE", "MENU_BACKGROUND", shaderManager);
-
-        MainMenu mainMenu = new MainMenu("MENU", main_menu_background);
-
-        mainMenu.addButton(startGameButton);
-        mainMenu.addButton(quitGameButton);
-
-        return  mainMenu;
-    }
-    private Scene Pause(ShaderManager shaderManager){
-        Button continueGameButton = new StartButton(new Vector3f(62.0f,45.0f,0.1f),36.0f,12.0f,
-                "REGULAR_RECTANGLE", "CONTINUE","CONTINUE", shaderManager,true);
-        Button quitGameButton = new QuitButton(new Vector3f(62.0f,33.0f,0.1f),36.0f,12.0f,
-                "REGULAR_RECTANGLE", "QUIT_BUTTON","QUIT_BUTTON_SELECTED", shaderManager,false);
-        Rectangle game_background = new Rectangle(new Vector3f(0, 90.0f, 0.0f), 160.0f, 90.0f,
-                "REGULAR_RECTANGLE", "MENU_BACKGROUND", shaderManager);
-
-        Pause pause = new Pause("GAME",game_background); //name should be: PAUSE
-        pause.addButton(continueGameButton);
-        pause.addButton(quitGameButton);
-        return pause;
-    }
-
     /**
      * Show the client's graphic processes on the given renderer
      */
 
     public void show() {
-        currentScene.show(renderer);
+        currentScene.show();
     }
 
     /**
@@ -103,7 +70,7 @@ public class Client {
      */
 
     public void hide() {
-        scenes.forEach(scene -> scene.hide(renderer));
+        scenes.forEach(Scene::hide);
     }
 
     /**
@@ -113,9 +80,9 @@ public class Client {
 
     public void switchScene(String sceneName) {
         if (sceneID.containsKey(sceneName)) {
-            currentScene.hide(renderer);
+            currentScene.hide();
             currentScene = scenes.get(sceneID.get(sceneName));
-            currentScene.show(renderer);
+            currentScene.show();
         }
         else
             System.err.println("Scene not found! Please check scene name!");
@@ -126,7 +93,7 @@ public class Client {
      */
 
     public void update() {
-        currentScene.update(this);
+        currentScene.update();
     }
 
     /**

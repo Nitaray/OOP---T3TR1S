@@ -1,74 +1,67 @@
 package edu.hcmiu.t3tr1s.client.logic;
 
-import edu.hcmiu.t3tr1s.blocks.Block;
 import edu.hcmiu.t3tr1s.client.ShapeDataManager;
 import edu.hcmiu.t3tr1s.enums.Direction;
-import edu.hcmiu.t3tr1s.blocks.Shape;
-import javafx.util.Pair;
-
-import java.util.ArrayList;
+import edu.hcmiu.t3tr1s.blocks.logic.LogicShape;
 
 public class LogicBoard {
 
     private int WIDTH, HEIGHT;
 
-    private boolean[][] Grid;
+    private int[][] Grid;
 
     public LogicBoard() {
         WIDTH = 10;
         HEIGHT = 23;
-        Grid = new boolean[23][10];
+        Grid = new int[23][10];
     }
 
-    public LogicBoard(int WIDTH, int HEIGHT) {
+    private LogicBoard(int WIDTH, int HEIGHT) {
         this.WIDTH = WIDTH;
         this.HEIGHT = HEIGHT;
-        Grid = new boolean[HEIGHT][WIDTH];
+        Grid = new int[HEIGHT][WIDTH];
     }
 
-    private boolean isFreeSpace(Shape shape, int x, int y) {
+    public boolean isFreeSpace(LogicShape logicShape, int x, int y) {
         boolean isFree = true;
 
-        boolean[][] shapeData = ShapeDataManager.getStateData(shape);
-        for (int i = x; i < x + shapeData.length && isFree; i++)
-            for (int j = y; j < y + shapeData[i].length && isFree; j++)
-                if (Grid[i][j] && shapeData[i - x][j - y])
+        boolean[][] shapeData = ShapeDataManager.getInstance().getStateData(logicShape);
+        for (int i = y; i > y - shapeData.length && isFree; i--)
+            for (int j = x; j < x + shapeData[y - i].length && isFree; j++) {
+                if ((j >= WIDTH) || (i >= HEIGHT) || (i < 0) || (j < 0)) {
+                    if (shapeData[y - i][j - x])
+                        isFree = false;
+                }
+                else if (Grid[i][j] > 0 && shapeData[y - i][j - x])
                     isFree = false;
+            }
 
         return isFree;
     }
 
-    public boolean freeToMove(Shape shape, Direction direction) {
+    public boolean freeToMove(LogicShape logicShape, Direction direction) {
         switch (direction) {
             case UP:
-                return isFreeSpace(shape, shape.getX(), shape.getY() + 1);
+                return isFreeSpace(logicShape, logicShape.getX(), logicShape.getY() + 1);
             case DOWN:
-                return isFreeSpace(shape, shape.getX(), shape.getY() - 1);
+                return isFreeSpace(logicShape, logicShape.getX(), logicShape.getY() - 1);
             case RIGHT:
-                return isFreeSpace(shape, shape.getX() + 1, shape.getY());
+                return isFreeSpace(logicShape, logicShape.getX() + 1, logicShape.getY());
             case LEFT:
-                return isFreeSpace(shape, shape.getX() - 1, shape.getY());
+                return isFreeSpace(logicShape, logicShape.getX() - 1, logicShape.getY());
         }
         return false;
     }
 
-    public boolean ValidPosition(Shape shape, int x, int y){
-        return isFreeSpace(shape,x,y);
+    public int[][] getGrid() {
+        return Grid;
     }
 
-//    public boolean freeToRotate(Shape shape, Direction direction) {
-//        switch (direction) {
-//            case CLOCKWISE:
-//        }
-//    }
-    public ArrayList<Pair<Integer, Integer>> getSolidBlocks() {
-        ArrayList<Pair<Integer, Integer>> result = new ArrayList<>();
-        for (int x = 0; x < WIDTH; x++) {
-            for (int y = 0; y < HEIGHT; y++) {
-                if (Grid[x][y])
-                    result.add(new Pair<Integer, Integer>(x, y));
-            }
-        }
-        return result;
+    public int getWIDTH() {
+        return WIDTH;
+    }
+
+    public int getHEIGHT() {
+        return HEIGHT;
     }
 }

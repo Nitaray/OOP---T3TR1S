@@ -17,22 +17,22 @@ public class ShaderManager {
 
     private static ShaderManager instance = new ShaderManager();
 
-    public static ShaderManager getInstance(Matrix4f projection_matrix) {
-        instance.projection_matrix = projection_matrix;
+    public static ShaderManager getInstance(){
         return instance;
     }
 
-    private Matrix4f projection_matrix = Matrix4f.orthographic(0, 100.0f, 0, 100.f * 9.0f / 16.0f, -1.0f, 1.0f);
+    private Matrix4f projection_matrix;
 
     private ArrayList<Shader> shaders = new ArrayList<>();
-
     private ArrayList<Texture> textures = new ArrayList<>();
 
     private HashMap<String, Integer> shadersID = new HashMap<>();
-
     private HashMap<String, Integer> texturesID = new HashMap<>();
 
-    private ShaderManager() {}
+    private ShaderManager() {
+        projection_matrix = Matrix4f.orthographic(0, 160.0f, 0, 90.f, -1.0f, 1.0f);
+        init();
+    }
 
     /**
      * Add a shader to the current list of available shaders.
@@ -112,7 +112,7 @@ public class ShaderManager {
      * Initialize the ShaderManager
      */
 
-    void init() {
+    private void init() {
         loadAllShader();
         loadAllTexture();
         setUniformAll();

@@ -9,7 +9,7 @@ import edu.hcmiu.t3tr1s.math.Vector3f;
  * A rectangle that can be rendered on screen.
  */
 
-public class Rectangle {
+public class Rectangle implements Showable{
 
     private VertexArray vertexArray;
 
@@ -39,7 +39,7 @@ public class Rectangle {
      * @param shaderName The name of the shader to draw in this rectangle.
      */
 
-    public Rectangle(Vector3f topLeft, float width, float height, String shaderName, String textureName, ShaderManager shaderManager) {
+    public Rectangle(Vector3f topLeft, float width, float height, String shaderName, String textureName) {
 
         vertices = new float[] {
                 topLeft.x, topLeft.y, topLeft.z,
@@ -69,15 +69,23 @@ public class Rectangle {
         position_mat = Matrix4f.translate(new Vector3f(0, 0, 0));
         rotation_mat = Matrix4f.rotate(0);
 
-        this.shaderManager = shaderManager;
+        this.shaderManager = ShaderManager.getInstance();
 
         vertexArray = new VertexArray(vertices, indices, tc);
-        shaderID = shaderManager.getShaderID(shaderName);
-        textureID = shaderManager.getTextureID(textureName);
+        shaderID = this.shaderManager.getShaderID(shaderName);
+        textureID = this.shaderManager.getTextureID(textureName);
     }
 
     public Vector3f getTopLeft() {
         return topLeft;
+    }
+
+    public float getHEIGHT() {
+        return HEIGHT;
+    }
+
+    public float getWIDTH() {
+        return WIDTH;
     }
 
     /**
@@ -129,11 +137,13 @@ public class Rectangle {
         shaderManager.disableShader(shaderID, textureID);
     }
 
-    public void show(Renderer renderer) {
+    public void show() {
+        Renderer renderer = Renderer.getInstance();
         renderer.addOnScreenObject(this);
     }
 
-    public void hide(Renderer renderer) {
+    public void hide() {
+        Renderer renderer = Renderer.getInstance();
         try {
             renderer.removeOnScreenObject(this);
         } catch (Exception e) {

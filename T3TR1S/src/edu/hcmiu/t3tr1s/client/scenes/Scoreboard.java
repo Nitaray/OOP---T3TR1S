@@ -1,11 +1,8 @@
 package edu.hcmiu.t3tr1s.client.scenes;
 
-import edu.hcmiu.t3tr1s.client.Client;
 import edu.hcmiu.t3tr1s.client.buttons.Button;
-import edu.hcmiu.t3tr1s.client.buttons.ReturnButton;
+import edu.hcmiu.t3tr1s.client.buttons.ReturnToMenuButton;
 import edu.hcmiu.t3tr1s.core.Input;
-import edu.hcmiu.t3tr1s.core.Renderer;
-import edu.hcmiu.t3tr1s.core.ShaderManager;
 import edu.hcmiu.t3tr1s.graphics.Rectangle;
 import edu.hcmiu.t3tr1s.math.Vector3f;
 import edu.hcmiu.t3tr1s.utils.FileUtils;
@@ -18,6 +15,7 @@ import java.util.Collections;
 import java.util.Scanner;
 
 import static org.lwjgl.glfw.GLFW.GLFW_KEY_ENTER;
+import static org.lwjgl.glfw.GLFW.GLFW_KEY_ESCAPE;
 
 /**
  * The scoreboard scene for displaying past scores and high scores.
@@ -25,25 +23,34 @@ import static org.lwjgl.glfw.GLFW.GLFW_KEY_ENTER;
  */
 
 public class Scoreboard extends Scene {
-    private final Button button;
 
-    private ArrayList<ArrayList<Rectangle>> showScoresOnScreen;
+    private final Button returnButton;
+    private final Rectangle board;
 
     private static ArrayList<Integer> playerScores;
 
-    public Scoreboard(String name, Rectangle background, ShaderManager shaderManager) {
-        super(name, background);
-        //TODO: need texture for this button
-        button = new ReturnButton(new Vector3f(120.0f, 35.0f, 0.1f), 36.0f, 12.0f,
-                "REGULAR_RECTANGLE", "START_BUTTON", "START_BUTTON_SELECTED", shaderManager, true);
+    private ArrayList<ArrayList<Rectangle>> showScoresOnScreen;
+
+    public Scoreboard(String name) {
+        super(name);
+
+        setBackground(new Rectangle(new Vector3f(0, 90.0f, 0.0f), 160.0f, 90.0f,
+                "REGULAR_RECTANGLE", "MENU_BACKGROUND"));
+
+        //TODO: need texture button and scoreboard
+        returnButton = new ReturnToMenuButton(new Vector3f(120.0f, 35.0f, 0.1f), 36.0f, 12.0f,
+                "REGULAR_RECTANGLE", "START_BUTTON", "START_BUTTON_SELECTED", true);
+        board = new Rectangle(new Vector3f(0, 90.0f, 0.0f), 160.0f, 90.0f,
+                "REGULAR_RECTANGLE", "HIGH_SCORE_BOARD");
+
         initScoreList();
-        initScoreboard(shaderManager);
+        initScoreboard();
     }
 
-    private Rectangle addDigit(int score, Vector3f topLeft, float width, float height, ShaderManager shaderManager) {
+    private Rectangle addDigit(int number, Vector3f topLeft, float width, float height) {
         String textureName = "";
 
-        switch (score % 10) {
+        switch (number % 10) {
             case 1:
                 textureName = "DIGIT_ONE";
                 break;
@@ -76,21 +83,27 @@ public class Scoreboard extends Scene {
                 break;
         }
 
-        return (new Rectangle(topLeft, width, height, "REGULAR_RECTANGLE", textureName, shaderManager));
+        return (new Rectangle(topLeft, width, height, "REGULAR_RECTANGLE", textureName));
     }
 
-    private void initScoreboard(ShaderManager shaderManager) {
+    private void initScoreboard() {
         showScoresOnScreen = new ArrayList<>();
 
         Vector3f topLeft = new Vector3f(10.0f, 1.0f, 0.5f);
+        Vector3f columnChange = new Vector3f(-2.0f, 0f, 0f);
+        Vector3f rowChange = new Vector3f(0f, -5.0f, 0f);
+
         float width = 36.0f;
         float height = 12.0f;
 
         playerScores.forEach(score -> {
             showScoresOnScreen.add(new ArrayList<>());
-            for (int i = score; i != 0; i /= 10) {
-                showScoresOnScreen.get(playerScores.indexOf(score)).add(addDigit(score, topLeft, width, height, shaderManager));
+            Vector3f position = topLeft;
+            for (int number = score; number != 0; number /= 10) {
+                showScoresOnScreen.get(playerScores.indexOf(score)).add(addDigit(number, position, width, height));
+                position.add(columnChange);
             }
+            topLeft.add(rowChange);
         });
     }
 
@@ -146,33 +159,33 @@ public class Scoreboard extends Scene {
         saveData();
     }
 
-    private void handleSelection(Client client) {
-        button.action(client);
-    }
-
     @Override
-    public void show(Renderer renderer) {
-        background.show(renderer);
-        button.show(renderer);
+    public void show() {
+        background.show();
+        returnButton.show();
+        board.show();
 
         showScoresOnScreen.forEach(score -> {
-            score.forEach(digit -> digit.show(renderer));
+            score.forEach(digit -> digit.show());
         });
     }
 
     @Override
-    public void hide(Renderer renderer) {
-        background.hide(renderer);
-        button.hide(renderer);
+    public void hide() {
+        background.hide();
+        returnButton.hide();
+        board.hide();
 
         showScoresOnScreen.forEach(score -> {
-            score.forEach(digit -> digit.hide(renderer));
+            score.forEach(digit -> digit.hide());
         });
     }
 
     @Override
-    public void update(Client client) {
-        if (Input.isKeyPress(GLFW_KEY_ENTER))
-            handleSelection(client);
+    public void update() {
+        returnButton.update();
+
+        if ((Input.isKeyDown(GLFW_KEY_ENTER) || Input.isKeyDown(GLFW_KEY_ESCAPE)) && keyCooled(300 * MILLISECONDS))
+            handleSelection();
     }
 }

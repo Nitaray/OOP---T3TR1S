@@ -46,7 +46,7 @@ class Window {
 
     static void create(String windowName) {
 
-        glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE);
+        glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 
         window = glfwCreateWindow(WIDTH, HEIGHT, windowName, NULL, NULL);
 

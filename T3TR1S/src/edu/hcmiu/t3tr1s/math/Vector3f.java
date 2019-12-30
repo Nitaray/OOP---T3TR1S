@@ -30,6 +30,15 @@ public class Vector3f {
         return y;
     }
 
+    public float getX() {
+        return x;
+    }
+
+
+    public float getZ() {
+        return z;
+    }
+
     public Vector3f add(Vector3f v) {
         Vector3f result = new Vector3f();
         result.x = this.x + v.x;
