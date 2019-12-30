@@ -7,6 +7,7 @@ import edu.hcmiu.t3tr1s.client.ShapeDataManager;
 import edu.hcmiu.t3tr1s.enums.Direction;
 import edu.hcmiu.t3tr1s.graphics.Showable;
 import edu.hcmiu.t3tr1s.math.Vector3f;
+import edu.hcmiu.t3tr1s.utils.Tuple;
 
 import java.util.ArrayList;
 
@@ -56,10 +57,32 @@ public class DisplayShape implements Showable {
     }
 
     public void rotate(Direction direction) {
-//        if (logicShape.rotate(direction)) {
-//
-//        }
-        shape.rotate(direction);
+        Tuple<Boolean, Integer, Integer, Direction> tuple = logicShape.rotate(direction);
+        if (tuple.u) {
+            shape.rotate(direction);
+            int offsetX = tuple.v;
+            int offsetY = tuple.w;
+            while (offsetX != 0) {
+                if (offsetX > 0) {
+                    shape.move(Direction.RIGHT);
+                    offsetX--;
+                }
+                else {
+                    shape.move(Direction.LEFT);
+                    offsetX++;
+                }
+            }
+            while (offsetY != 0) {
+                if (offsetY > 0) {
+                    shape.move(Direction.UP);
+                    offsetY--;
+                }
+                else {
+                    shape.move(Direction.DOWN);
+                    offsetY++;
+                }
+            }
+        }
     }
 
     @Override

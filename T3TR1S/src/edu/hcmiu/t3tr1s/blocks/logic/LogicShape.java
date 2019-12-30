@@ -1,12 +1,9 @@
 package edu.hcmiu.t3tr1s.blocks.logic;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
-import edu.hcmiu.t3tr1s.blocks.Block;
 import edu.hcmiu.t3tr1s.client.ShapeDataManager;
 import edu.hcmiu.t3tr1s.client.logic.LogicBoard;
 import edu.hcmiu.t3tr1s.enums.Direction;
-
-import java.util.ArrayList;
+import edu.hcmiu.t3tr1s.utils.Tuple;
 
 public abstract class LogicShape {
 
@@ -15,16 +12,14 @@ public abstract class LogicShape {
     protected int ID;
     protected int[][][] offsetTransition;
 
-    protected boolean[][] grid;
-
     protected LogicBoard logicBoard;
     protected ShapeDataManager shapeDataManager = ShapeDataManager.getInstance();
 
     /**
      * offsetData<rotatable, offsetx, offsetY, direction>
-     *     rotatable - whether the shape can rotate
-     *     offsetX, offsetY - values of offset if can rotate, else 0.
-     *     direction: rotate direction. If rotatable is false, direction = null
+     * rotatable - whether the shape can rotate
+     * offsetX, offsetY - values of offset if can rotate, else 0.
+     * direction: rotate direction. If rotatable is false, direction = null
      */
     protected Tuple<Boolean, Integer, Integer, Direction> offsetData;
 
@@ -86,7 +81,7 @@ public abstract class LogicShape {
         for (int i = 0; i < offsetTransition[oldState].length; ++i) {
             int transX = offsetTransition[newState][i][0] - offsetTransition[oldState][i][0];
             int transY = offsetTransition[newState][i][1] - offsetTransition[oldState][i][1];
-            if (logicBoard.isFreeSpace(this, x + transX, y + transY)) {
+            if (logicBoard.isFreeSpace(this, x + transX, y + transY)) { // <-- bug right here
                 offsetX = transX;
                 offsetY = transY;
                 state = newState;
@@ -103,5 +98,30 @@ public abstract class LogicShape {
         return offsetData;
     }
 
-    public abstract void rotate(Direction direction, boolean shouldOffset);
+    protected void rotate(Direction direction, boolean shouldOffset) {
+        boolean canOffset = false;
+        if (direction == Direction.CLOCKWISE) {
+            if (shouldOffset) {
+                canOffset = offset(state, (state + 1) % 4);
+                if (!canOffset) {
+                    offsetData = new Tuple<>(false, 0, 0, null);
+                    rotate(Direction.COUNTER_CLOCKWISE, false);
+                }
+                else{
+                    offsetData = new Tuple<>(true, offsetX, offsetY, direction);
+                }
+            }
+        } else {
+            if (shouldOffset) {
+                canOffset = offset(state, ((state - 1) % 4 + 4) % 4);
+                if (!canOffset) {
+                    offsetData = new Tuple<>(false, 0, 0, null);
+                    rotate(Direction.CLOCKWISE, false);
+                }
+                else{
+                    offsetData = new Tuple<>(true, offsetX, offsetY, direction);
+                }
+            }
+        }
+    }
 }

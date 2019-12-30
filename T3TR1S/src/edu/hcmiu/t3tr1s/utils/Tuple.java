@@ -1,4 +1,4 @@
-package edu.hcmiu.t3tr1s.blocks.logic;
+package edu.hcmiu.t3tr1s.utils;
 
 public class Tuple<U, V, W, T> {
     public final U u;

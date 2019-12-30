@@ -2,16 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9c78a22-e230-4028-93b1-e89d4a59d813" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/ADMIN.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/texture.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/config/texture.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/META-INF/T3TR1S.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/display/DisplayShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/display/DisplayShape.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/logic/LogicBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/logic/LogicBoard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/scenes/DisplayBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/scenes/DisplayBoard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/logic/ILogicShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/logic/ILogicShape.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/logic/JLogicShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/logic/JLogicShape.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/logic/LLogicShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/logic/LLogicShape.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/logic/LogicShape$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/logic/LogicShape$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/logic/LogicShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/logic/LogicShape.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/logic/OLogicShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/logic/OLogicShape.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/logic/SLogicShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/logic/SLogicShape.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/logic/TLogicShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/logic/TLogicShape.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/logic/ZLogicShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/logic/ZLogicShape.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/display/DisplayShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/display/DisplayShape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/DisplayBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/DisplayBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/logic/ILogicShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/logic/ILogicShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/logic/JLogicShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/logic/JLogicShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/logic/LLogicShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/logic/LLogicShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/logic/LogicShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/logic/LogicShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/logic/OLogicShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/logic/OLogicShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/logic/SLogicShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/logic/SLogicShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/logic/TLogicShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/logic/TLogicShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/logic/Tuple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/utils/Tuple.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/logic/ZLogicShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/logic/ZLogicShape.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,18 +83,6 @@
       <recent name="edu.hcmiu.t3tr1s.utils" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration name="Run" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="C:/Program Files/Java/jdk1.8.0_221/jre" />
@@ -117,6 +118,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -193,38 +206,38 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="690" y="286" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1577558815561" />
-    <state width="1876" height="341" key="GridCell.Tab.0.bottom" timestamp="1577646678081">
+    <state width="1876" height="341" key="GridCell.Tab.0.bottom" timestamp="1577715804188">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="341" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1577646678081" />
-    <state width="1876" height="341" key="GridCell.Tab.0.center" timestamp="1577646678081">
+    <state width="1876" height="341" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1577715804188" />
+    <state width="1876" height="341" key="GridCell.Tab.0.center" timestamp="1577715804188">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="341" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1577646678081" />
-    <state width="1876" height="341" key="GridCell.Tab.0.left" timestamp="1577646678081">
+    <state width="1876" height="341" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1577715804188" />
+    <state width="1876" height="341" key="GridCell.Tab.0.left" timestamp="1577715804188">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="341" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1577646678081" />
-    <state width="1876" height="341" key="GridCell.Tab.0.right" timestamp="1577646678081">
+    <state width="1876" height="341" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1577715804188" />
+    <state width="1876" height="341" key="GridCell.Tab.0.right" timestamp="1577715804188">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="341" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1577646678081" />
-    <state width="1876" height="341" key="GridCell.Tab.1.bottom" timestamp="1577646678081">
+    <state width="1876" height="341" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1577715804188" />
+    <state width="1876" height="341" key="GridCell.Tab.1.bottom" timestamp="1577715804188">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="341" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1577646678081" />
-    <state width="1876" height="341" key="GridCell.Tab.1.center" timestamp="1577646678081">
+    <state width="1876" height="341" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1577715804188" />
+    <state width="1876" height="341" key="GridCell.Tab.1.center" timestamp="1577715804188">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="341" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1577646678081" />
-    <state width="1876" height="341" key="GridCell.Tab.1.left" timestamp="1577646678081">
+    <state width="1876" height="341" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1577715804188" />
+    <state width="1876" height="341" key="GridCell.Tab.1.left" timestamp="1577715804188">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="341" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1577646678081" />
-    <state width="1876" height="341" key="GridCell.Tab.1.right" timestamp="1577646678081">
+    <state width="1876" height="341" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1577715804188" />
+    <state width="1876" height="341" key="GridCell.Tab.1.right" timestamp="1577715804188">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="341" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1577646678081" />
+    <state width="1876" height="341" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1577715804188" />
     <state x="384" y="88" key="SettingsEditor" timestamp="1577545209498">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -237,10 +250,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="661" y="137" key="refactoring.ChangeSignatureDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1577636742699" />
-    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1577640814414">
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1577710957077">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1577640814414" />
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1577710957077" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
