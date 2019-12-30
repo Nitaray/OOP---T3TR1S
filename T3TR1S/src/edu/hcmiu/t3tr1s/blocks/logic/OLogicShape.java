@@ -34,6 +34,6 @@ public class OLogicShape extends LogicShape {
 
     @Override
     public void rotate(Direction direction, boolean shouldOffset) {
-        offsetData = new Tuple<>(false, 0, 0, null);
+        offsetData = new Tuple<>(true, 0, 0);
     }
 }

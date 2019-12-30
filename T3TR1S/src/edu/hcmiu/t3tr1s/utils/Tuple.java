@@ -1,15 +1,13 @@
 package edu.hcmiu.t3tr1s.utils;
 
-public class Tuple<U, V, W, T> {
-    public final U u;
-    public final V v;
-    public final W w;
-    public final T t;
+public class Tuple<X, Y, Z> {
+    public final X x;
+    public final Y y;
+    public final Z z;
 
-    public Tuple(U u, V v, W w, T t){
-        this.u = u;
-        this.v = v;
-        this.w = w;
-        this.t = t;
+    public Tuple(X x, Y y, Z z){
+        this.x = x;
+        this.y = y;
+        this.z = z;
     }
 }

@@ -57,11 +57,11 @@ public class DisplayShape implements Showable {
     }
 
     public void rotate(Direction direction) {
-        Tuple<Boolean, Integer, Integer, Direction> tuple = logicShape.rotate(direction);
-        if (tuple.u) {
+        Tuple<Boolean, Integer, Integer> tuple = logicShape.rotate(direction);
+        if (tuple.x) {
             shape.rotate(direction);
-            int offsetX = tuple.v;
-            int offsetY = tuple.w;
+            int offsetX = tuple.y;
+            int offsetY = tuple.z;
             while (offsetX != 0) {
                 if (offsetX > 0) {
                     shape.move(Direction.RIGHT);

@@ -82,7 +82,7 @@ public class ShapeDataManager {
                 }
 
                 if (boxSize == ShapeBoxSize.TwoByTwo) {
-                    final boolean[][] matrix = new boolean[3][4];
+                    final boolean[][] matrix = new boolean[2][2];
                     line = "";
 
                     for (int j = 0; j < 2; ++j)

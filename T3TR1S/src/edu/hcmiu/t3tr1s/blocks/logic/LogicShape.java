@@ -21,7 +21,7 @@ public abstract class LogicShape {
      * offsetX, offsetY - values of offset if can rotate, else 0.
      * direction: rotate direction. If rotatable is false, direction = null
      */
-    protected Tuple<Boolean, Integer, Integer, Direction> offsetData;
+    protected Tuple<Boolean, Integer, Integer> offsetData;
 
     protected int offsetX, offsetY;
 
@@ -96,7 +96,7 @@ public abstract class LogicShape {
         return false;
     }
 
-    public Tuple<Boolean, Integer, Integer, Direction> rotate(Direction direction) {
+    public Tuple<Boolean, Integer, Integer> rotate(Direction direction) {
         rotate(direction, true);
         return offsetData;
     }
@@ -107,22 +107,22 @@ public abstract class LogicShape {
             if (shouldOffset) {
                 canOffset = offset(state, (state + 1) % 4);
                 if (!canOffset) {
-                    offsetData = new Tuple<>(false, 0, 0, null);
+                    offsetData = new Tuple<>(false, 0, 0);
                     rotate(Direction.COUNTER_CLOCKWISE, false);
                 }
                 else{
-                    offsetData = new Tuple<>(true, offsetX, offsetY, direction);
+                    offsetData = new Tuple<>(true, offsetX, offsetY);
                 }
             }
         } else {
             if (shouldOffset) {
                 canOffset = offset(state, ((state - 1) % 4 + 4) % 4);
                 if (!canOffset) {
-                    offsetData = new Tuple<>(false, 0, 0, null);
+                    offsetData = new Tuple<>(false, 0, 0);
                     rotate(Direction.CLOCKWISE, false);
                 }
                 else{
-                    offsetData = new Tuple<>(true, offsetX, offsetY, direction);
+                    offsetData = new Tuple<>(true, offsetX, offsetY);
                 }
             }
         }

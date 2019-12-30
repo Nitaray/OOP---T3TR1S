@@ -1,8 +1,7 @@
 package edu.hcmiu.t3tr1s.client.scenes;
 
 import edu.hcmiu.t3tr1s.blocks.display.DisplayShape;
-import edu.hcmiu.t3tr1s.blocks.logic.LogicShape;
-import edu.hcmiu.t3tr1s.blocks.logic.TLogicShape;
+import edu.hcmiu.t3tr1s.blocks.logic.*;
 import edu.hcmiu.t3tr1s.client.logic.LogicBoard;
 import edu.hcmiu.t3tr1s.core.Input;
 import edu.hcmiu.t3tr1s.enums.Direction;
