@@ -39,10 +39,10 @@ public class DisplayShape implements Showable {
         for (int y = 0; y < grid.length; y++)
             for (int x = 0; x < grid[y].length; x++) {
                 if (grid[y][x]) {
-//                    Block block = new Block(new Vector3f(v.x + i * blockSize, v.y + j * blockSize, v.z),
-//                            shapeDataManager.getBLockTextureName(shape));
-                    Block block = new Block(new Vector3f(v.x + x * blockSize, v.y - y * blockSize, v.z), blockSize,
-                            "SET1_PURPLE"); // Temporary until getBlockTextureName is implemented
+                    Block block = new Block(new Vector3f(v.x + x * blockSize, v.y + y * blockSize, v.z),
+                            shapeDataManager.getBlockTextureName(logicShape));
+//                    Block block = new Block(new Vector3f(v.x + x * blockSize, v.y - y * blockSize, v.z), blockSize,
+//                            "SET1_PURPLE"); // Temporary until getBlockTextureName is implemented
                     blocks.add(block);
                 }
             }
