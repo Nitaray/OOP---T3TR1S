@@ -120,7 +120,17 @@ public class ShapeDataManager {
      * TODO: By Nguyen Nhat Minh
      */
     private void loadShapeTextureName() {
-
+        String cfg = FileUtils.loadAsString("config/blocksID.cfg");
+        Scanner scanner = new Scanner(cfg);
+        Scanner lineScanner;
+        while (scanner.hasNextLine()) {
+            String line = scanner.nextLine();
+            lineScanner = new Scanner(line);
+            String order = lineScanner.next();
+            lineScanner.next();
+            String name = lineScanner.next();
+            shapeTextureName.put(Integer.parseInt(order), name);
+        }
     }
 
     /**
