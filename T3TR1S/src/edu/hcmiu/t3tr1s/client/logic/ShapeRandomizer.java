@@ -1,83 +1,71 @@
-//package edu.hcmiu.t3tr1s.client.logic;
-//
-//import edu.hcmiu.t3tr1s.blocks.*;
-//import edu.hcmiu.t3tr1s.blocks.logic.*;
-//import sun.rmi.runtime.Log;
-//
-//import java.util.ArrayList;
-//import java.util.List;
-//import java.util.Random;
-//
-///**
-// * A random shape generator for the game logic.
-// * This class should generate random permutation of the given length
-// * from the given bag of shapes.
-// * TODO: Implement by Nguyen Thi Hoai An.
-// */
-//
-//class ShapeRandomizer {
-//
-//    private static int length;
-//    private ArrayList<LogicShape> bag;
-//    private static int randomNum;
-//
-//    /**
-//    public static void setLength(int length) {
-//        ShapeRandomizer.length = length;
-//    }
-//     */
-//
-//    ShapeRandomizer(ArrayList<LogicShape> bag, int length) {
-//        this.bag = bag;
-//        this.length = length;
-//    }
-//
-//    private static int getRandomNumberInRange(int length) {
-//        Random r = new Random();
-//        return r.nextInt((7 - 1) + 1) + 1;
-//    }
-//
-//
-//    public void shapeRandomizer() {
-//        LogicShape[] shapes = new LogicShape[][7];
-//        List<Integer> listOfRandomInt = new ArrayList<>();
-//
-//        for (int i = 0; i < length; i++) {
-//            if (i == 0 || i >= 7) {
-//                randomNum = getRandomNumberInRange(7);
-//                listOfRandomInt.add(randomNum);
-//            }
-//            if (i > 0 && i < 7) {
-//                randomNum = getRandomNumberInRange(7);
-//                while (listOfRandomInt.contains(randomNum)) {
-//                    randomNum = getRandomNumberInRange(7);
-//                }
-//                listOfRandomInt.add(randomNum);
-//            }
-//        }
-//
-//        shapes[0] = new ILogicShape();
-//        shapes[1] = new JLogicShape();
-//        shapes[2] = new LLogicShape();
-//        shapes[3] = new OLogicShape();
-//        shapes[4] = new SLogicShape();
-//        shapes[5] = new TLogicShape();
-//        shapes[6] = new ZLogicShape();
-//
-//        for (int j = 0; j < length; j++) {
-//            bag.add(shapes[listOfRandomInt.get(j)]);
-//        }
-//    }
-//
-//    public void remove(LogicShape input) {
-//        for (int j = 0; j < bag.size(); ++j)
-//        {
-//            if (bag.get(j) == input) {
-//                bag.remove(j);
-//                break;
-//            } else {
-//                continue;
-//            }
-//        }
-//    }
-//}
+package edu.hcmiu.t3tr1s.client.logic;
+
+import edu.hcmiu.t3tr1s.blocks.Shape;
+import edu.hcmiu.t3tr1s.client.ShapeDataManager;
+import edu.hcmiu.t3tr1s.enums.ShapeType;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+/**
+ * A random shape generator for the game logic.
+ * This class generate random permutation from the given bag of shapeTypes.
+ */
+public class ShapeRandomizer {
+    private ArrayList<ShapeType> bag;
+    private int current;
+
+    public ShapeRandomizer(){
+        bag = new ArrayList<>();
+        current = 0;
+    }
+
+    /**
+     * Constructor of ShapeRandomizer class.
+     * @param bag the bag of shape types from which to generate from.
+     */
+    public ShapeRandomizer(ArrayList<ShapeType> bag) {
+        this();
+        this.bag = bag;
+    }
+
+    public boolean addToBag(ShapeType shapeType) {
+        ShapeDataManager shapeDataManager = ShapeDataManager.getInstance();
+        if (shapeDataManager.isValidID(shapeType)) {
+            bag.add(shapeType);
+            return true;
+        }
+        System.err.println("Invalid shape type!");
+        return false;
+    }
+
+    public boolean removeFromBag(ShapeType shapeType) {
+        if (bag.contains(shapeType)) {
+            bag.remove(shapeType);
+            return true;
+        }
+        System.err.println("Shape type not in bag!");
+        return false;
+    }
+
+    public void setBag(ArrayList<ShapeType> bag) {
+        this.bag = bag;
+    }
+
+    private void randomizeBag(){
+        java.util.Collections.shuffle(bag);
+    }
+
+    public ShapeType getRandom() {
+        if (!bag.isEmpty()) {
+            ShapeType result = bag.get(current++);
+            if (current >= bag.size()) {
+                current = 0;
+                randomizeBag();
+            }
+            return result;
+        }
+        System.err.println("Random bag is empty!");
+        return null;
+    }
+}

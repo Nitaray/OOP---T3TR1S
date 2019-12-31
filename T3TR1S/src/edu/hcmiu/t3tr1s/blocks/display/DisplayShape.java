@@ -1,9 +1,11 @@
 package edu.hcmiu.t3tr1s.blocks.display;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import edu.hcmiu.t3tr1s.blocks.Block;
 import edu.hcmiu.t3tr1s.blocks.Shape;
 import edu.hcmiu.t3tr1s.blocks.logic.LogicShape;
 import edu.hcmiu.t3tr1s.client.ShapeDataManager;
+import edu.hcmiu.t3tr1s.client.logic.LogicBoard;
 import edu.hcmiu.t3tr1s.enums.Direction;
 import edu.hcmiu.t3tr1s.graphics.Showable;
 import edu.hcmiu.t3tr1s.math.Vector3f;
@@ -57,11 +59,11 @@ public class DisplayShape implements Showable {
     }
 
     public void rotate(Direction direction) {
-        Tuple<Boolean, Integer, Integer> tuple = logicShape.rotate(direction);
-        if (tuple.x) {
+        Tuple<Integer, Integer, Boolean> tuple = logicShape.rotate(direction);
+        if (tuple.z) {
             shape.rotate(direction);
-            int offsetX = tuple.y;
-            int offsetY = tuple.z;
+            int offsetX = tuple.x;
+            int offsetY = tuple.y;
             while (offsetX != 0) {
                 if (offsetX > 0) {
                     shape.move(Direction.RIGHT);

@@ -1,9 +1,9 @@
 package edu.hcmiu.t3tr1s.utils;
 
 public class Tuple<X, Y, Z> {
-    public final X x;
-    public final Y y;
-    public final Z z;
+    public X x;
+    public Y y;
+    public Z z;
 
     public Tuple(X x, Y y, Z z){
         this.x = x;
