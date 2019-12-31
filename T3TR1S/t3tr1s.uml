@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>edu.hcmiu.t3tr1s</OriginalElement>
+  <nodes>
+    <node x="301.0" y="2072.0">edu.hcmiu.t3tr1s.core.Window</node>
+    <node x="901.0" y="2538.0">edu.hcmiu.t3tr1s.exceptions</node>
+    <node x="1104.0" y="2538.0">edu.hcmiu.t3tr1s.utils</node>
+    <node x="1606.148333333333" y="1201.0">edu.hcmiu.t3tr1s.client.buttons.MenuStartButton</node>
+    <node x="514.0" y="2072.0">edu.hcmiu.t3tr1s.graphics.Shader</node>
+    <node x="813.0" y="2072.0">edu.hcmiu.t3tr1s.math.Matrix4f</node>
+    <node x="1753.0" y="1341.0">edu.hcmiu.t3tr1s.core.ShaderManager</node>
+    <node x="446.1483333333332" y="169.0">edu.hcmiu.t3tr1s.client.scenes.Scene</node>
+    <node x="2237.0" y="2072.0">edu.hcmiu.t3tr1s.client.logic.ShapeRandomizer</node>
+    <node x="0.0" y="1910.0">edu.hcmiu.t3tr1s.blocks.logic.ILogicShape</node>
+    <node x="1272.0" y="2538.0">edu.hcmiu.t3tr1s.enums</node>
+    <node x="1714.6533333333332" y="201.0">edu.hcmiu.t3tr1s.client.Client</node>
+    <node x="306.0" y="2538.0">edu.hcmiu.t3tr1s.math.Vector3f</node>
+    <node x="1717.0" y="2072.0">edu.hcmiu.t3tr1s.core.Main</node>
+    <node x="244.0" y="1910.0">edu.hcmiu.t3tr1s.blocks.logic.TLogicShape</node>
+    <node x="491.0" y="1910.0">edu.hcmiu.t3tr1s.blocks.logic.OLogicShape</node>
+    <node x="671.0" y="1341.0">edu.hcmiu.t3tr1s.blocks.logic.LogicShape</node>
+    <node x="1206.9999999999998" y="806.0">edu.hcmiu.t3tr1s.client.buttons.Button</node>
+    <node x="1968.6533333333332" y="267.0">edu.hcmiu.t3tr1s.blocks.display.DisplayShape</node>
+    <node x="1037.9999999999998" y="838.0">edu.hcmiu.t3tr1s.client.scenes.MainMenu</node>
+    <node x="741.0" y="1910.0">edu.hcmiu.t3tr1s.blocks.logic.LLogicShape</node>
+    <node x="467.9999999999998" y="838.0">edu.hcmiu.t3tr1s.client.scenes.GameScene</node>
+    <node x="988.0" y="1910.0">edu.hcmiu.t3tr1s.blocks.logic.SLogicShape</node>
+    <node x="1205.0" y="2072.0">edu.hcmiu.t3tr1s.graphics.VertexArray</node>
+    <node x="0.0" y="2538.0">edu.hcmiu.t3tr1s.core.Renderer</node>
+    <node x="2072.0" y="1341.0">edu.hcmiu.t3tr1s.client.ShapeDataManager</node>
+    <node x="0.0" y="2072.0">edu.hcmiu.t3tr1s.core.Input</node>
+    <node x="676.9999999999998" y="728.0">edu.hcmiu.t3tr1s.client.scenes.Scoreboard</node>
+    <node x="1235.0" y="1910.0">edu.hcmiu.t3tr1s.blocks.logic.JLogicShape</node>
+    <node x="717.0" y="2538.0">edu.hcmiu.t3tr1s.blocks.logic.Tuple</node>
+    <node x="1480.0" y="1910.0">edu.hcmiu.t3tr1s.blocks.logic.ZLogicShape</node>
+    <node x="1614.648333333333" y="0.0">edu.hcmiu.t3tr1s.graphics.Showable</node>
+    <node x="1172.148333333333" y="1201.0">edu.hcmiu.t3tr1s.client.buttons.MenuQuitButton</node>
+    <node x="0.0" y="816.0">edu.hcmiu.t3tr1s.client.scenes.DisplayBoard</node>
+    <node x="245.99999999999977" y="827.0">edu.hcmiu.t3tr1s.client.scenes.Pause</node>
+    <node x="713.1483333333332" y="1201.0">edu.hcmiu.t3tr1s.client.buttons.ReturnToMenuButton</node>
+    <node x="1478.0" y="2072.0">edu.hcmiu.t3tr1s.core.Updater</node>
+    <node x="1586.9999999999998" y="860.0">edu.hcmiu.t3tr1s.blocks.Block</node>
+    <node x="542.0" y="2538.0">edu.hcmiu.t3tr1s.graphics.Texture</node>
+    <node x="1911.0" y="2072.0">edu.hcmiu.t3tr1s.client.logic.LogicBoard</node>
+    <node x="1404.6533333333332" y="125.0">edu.hcmiu.t3tr1s.graphics.Rectangle</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="edu.hcmiu.t3tr1s.blocks.logic.ZLogicShape" target="edu.hcmiu.t3tr1s.blocks.logic.LogicShape">
+      <point x="0.0" y="-58.5" />
+      <point x="1594.0" y="1870.0" />
+      <point x="1011.7857142857142" y="1870.0" />
+      <point x="157.28571428571422" y="254.5" />
+    </edge>
+    <edge source="edu.hcmiu.t3tr1s.client.buttons.MenuStartButton" target="edu.hcmiu.t3tr1s.client.buttons.Button">
+      <point x="0.0" y="-47.5" />
+      <point x="1813.648333333333" y="1176.0" />
+      <point x="1506.9999999999998" y="1176.0" />
+      <point x="120.0" y="133.5" />
+    </edge>
+    <edge source="edu.hcmiu.t3tr1s.client.scenes.Scoreboard" target="edu.hcmiu.t3tr1s.client.scenes.Scene">
+      <point x="0.0" y="-211.5" />
+      <point x="847.4999999999998" y="708.0" />
+      <point x="598.0483333333333" y="708.0" />
+      <point x="43.40000000000009" y="232.5" />
+    </edge>
+    <edge source="edu.hcmiu.t3tr1s.blocks.logic.JLogicShape" target="edu.hcmiu.t3tr1s.blocks.logic.LogicShape">
+      <point x="0.0" y="-58.5" />
+      <point x="1347.5" y="1880.0" />
+      <point x="959.3571428571429" y="1880.0" />
+      <point x="104.85714285714289" y="254.5" />
+    </edge>
+    <edge source="edu.hcmiu.t3tr1s.client.buttons.ReturnToMenuButton" target="edu.hcmiu.t3tr1s.client.buttons.Button">
+      <point x="0.0" y="-47.5" />
+      <point x="932.6483333333332" y="1176.0" />
+      <point x="1266.9999999999998" y="1176.0" />
+      <point x="-120.0" y="133.5" />
+    </edge>
+    <edge source="edu.hcmiu.t3tr1s.client.scenes.DisplayBoard" target="edu.hcmiu.t3tr1s.client.scenes.Scene">
+      <point x="0.0" y="-123.5" />
+      <point x="113.0" y="698.0" />
+      <point x="467.84833333333313" y="698.0" />
+      <point x="-86.80000000000001" y="232.5" />
+    </edge>
+    <edge source="edu.hcmiu.t3tr1s.client.buttons.MenuQuitButton" target="edu.hcmiu.t3tr1s.client.buttons.Button">
+      <point x="0.0" y="-47.5" />
+      <point x="1379.148333333333" y="1176.0" />
+      <point x="1386.9999999999998" y="1176.0" />
+      <point x="0.0" y="133.5" />
+    </edge>
+    <edge source="edu.hcmiu.t3tr1s.blocks.logic.LLogicShape" target="edu.hcmiu.t3tr1s.blocks.logic.LogicShape">
+      <point x="0.0" y="-58.5" />
+      <point x="0.0" y="254.5" />
+    </edge>
+    <edge source="edu.hcmiu.t3tr1s.blocks.Block" target="edu.hcmiu.t3tr1s.graphics.Rectangle">
+      <point x="0.0" y="-79.5" />
+      <point x="1686.9999999999998" y="708.0" />
+      <point x="1622.1533333333332" y="708.0" />
+      <point x="72.5" y="276.5" />
+    </edge>
+    <edge source="edu.hcmiu.t3tr1s.blocks.logic.OLogicShape" target="edu.hcmiu.t3tr1s.blocks.logic.LogicShape">
+      <point x="0.0" y="-58.5" />
+      <point x="606.0" y="1890.0" />
+      <point x="802.0714285714286" y="1890.0" />
+      <point x="-52.428571428571445" y="254.5" />
+    </edge>
+    <edge source="edu.hcmiu.t3tr1s.client.scenes.MainMenu" target="edu.hcmiu.t3tr1s.client.scenes.Scene">
+      <point x="0.0" y="-101.5" />
+      <point x="1112.4999999999998" y="698.0" />
+      <point x="641.4483333333333" y="698.0" />
+      <point x="86.80000000000007" y="232.5" />
+    </edge>
+    <edge source="edu.hcmiu.t3tr1s.blocks.logic.ILogicShape" target="edu.hcmiu.t3tr1s.blocks.logic.LogicShape">
+      <point x="0.0" y="-58.5" />
+      <point x="112.0" y="1870.0" />
+      <point x="697.2142857142858" y="1870.0" />
+      <point x="-157.28571428571422" y="254.5" />
+    </edge>
+    <edge source="edu.hcmiu.t3tr1s.client.buttons.Button" target="edu.hcmiu.t3tr1s.graphics.Rectangle">
+      <point x="0.0" y="-133.5" />
+      <point x="1386.9999999999998" y="708.0" />
+      <point x="1477.1533333333332" y="708.0" />
+      <point x="-72.5" y="276.5" />
+    </edge>
+    <edge source="edu.hcmiu.t3tr1s.blocks.display.DisplayShape" target="edu.hcmiu.t3tr1s.graphics.Showable">
+      <point x="0.0" y="-134.5" />
+      <point x="2104.153333333333" y="95.0" />
+      <point x="1711.773333333333" y="95.0" />
+      <point x="41.625" y="37.5" />
+    </edge>
+    <edge source="edu.hcmiu.t3tr1s.client.scenes.Pause" target="edu.hcmiu.t3tr1s.client.scenes.Scene">
+      <point x="0.0" y="-112.5" />
+      <point x="346.9999999999998" y="708.0" />
+      <point x="511.2483333333332" y="708.0" />
+      <point x="-43.39999999999998" y="232.5" />
+    </edge>
+    <edge source="edu.hcmiu.t3tr1s.blocks.logic.SLogicShape" target="edu.hcmiu.t3tr1s.blocks.logic.LogicShape">
+      <point x="0.0" y="-58.5" />
+      <point x="1101.5" y="1890.0" />
+      <point x="906.9285714285713" y="1890.0" />
+      <point x="52.42857142857133" y="254.5" />
+    </edge>
+    <edge source="edu.hcmiu.t3tr1s.blocks.logic.TLogicShape" target="edu.hcmiu.t3tr1s.blocks.logic.LogicShape">
+      <point x="0.0" y="-58.5" />
+      <point x="357.5" y="1880.0" />
+      <point x="749.6428571428571" y="1880.0" />
+      <point x="-104.85714285714289" y="254.5" />
+    </edge>
+    <edge source="edu.hcmiu.t3tr1s.client.scenes.GameScene" target="edu.hcmiu.t3tr1s.client.scenes.Scene">
+      <point x="0.0" y="-101.5" />
+      <point x="562.4999999999998" y="708.0" />
+      <point x="554.6483333333332" y="708.0" />
+      <point x="0.0" y="232.5" />
+    </edge>
+    <edge source="edu.hcmiu.t3tr1s.client.Client" target="edu.hcmiu.t3tr1s.graphics.Showable">
+      <point x="0.0" y="-200.5" />
+      <point x="1831.6533333333332" y="105.0" />
+      <point x="1684.023333333333" y="105.0" />
+      <point x="13.875" y="37.5" />
+    </edge>
+    <edge source="edu.hcmiu.t3tr1s.graphics.Rectangle" target="edu.hcmiu.t3tr1s.graphics.Showable">
+      <point x="0.0" y="-276.5" />
+      <point x="1549.6533333333332" y="105.0" />
+      <point x="1656.273333333333" y="105.0" />
+      <point x="-13.875" y="37.5" />
+    </edge>
+    <edge source="edu.hcmiu.t3tr1s.client.scenes.Scene" target="edu.hcmiu.t3tr1s.graphics.Showable">
+      <point x="0.0" y="-232.5" />
+      <point x="554.6483333333332" y="95.0" />
+      <point x="1628.523333333333" y="95.0" />
+      <point x="-41.625" y="37.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="1242.5" y="1162.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Constructors</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

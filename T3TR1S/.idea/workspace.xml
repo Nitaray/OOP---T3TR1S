@@ -86,7 +86,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/OOP-LAB" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -190,6 +190,7 @@
       <workItem from="1577499910005" duration="5784000" />
       <workItem from="1577542208777" duration="5368000" />
       <workItem from="1577556774126" duration="8031000" />
+<<<<<<< Updated upstream
       <workItem from="1577617377012" duration="1043000" />
       <workItem from="1577631523486" duration="6843000" />
       <workItem from="1577642338063" duration="4337000" />
@@ -198,6 +199,14 @@
       <workItem from="1577720589883" duration="163000" />
       <workItem from="1577720769696" duration="1694000" />
       <workItem from="1577768429320" duration="18547000" />
+=======
+      <workItem from="1577704028535" duration="401000" />
+      <workItem from="1577710764801" duration="475000" />
+      <workItem from="1577712178851" duration="142000" />
+      <workItem from="1577712329780" duration="1281000" />
+      <workItem from="1577713634876" duration="36000" />
+      <workItem from="1577713794796" duration="1005000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
@@ -226,7 +235,15 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="765" y="243" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1577562170400" />
+<<<<<<< Updated upstream
     <state x="636" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1577788794255">
+=======
+    <state x="808" y="429" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1577704033402">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="808" y="429" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1577704033402" />
+    <state x="636" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1577557682644">
+>>>>>>> Stashed changes
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="636" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1577788794255" />
@@ -234,7 +251,19 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="690" y="286" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1577558815561" />
+<<<<<<< Updated upstream
     <state x="690" y="286" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1577789034433">
+=======
+    <state x="704" y="123" key="Diagram.Print.Preview.Dialog" timestamp="1577713979540">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="704" y="123" key="Diagram.Print.Preview.Dialog/0.0.1920.1080@0.0.1920.1080" timestamp="1577713979540" />
+    <state x="740" y="267" key="FileChooserDialogImpl" timestamp="1577713204065">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="740" y="267" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1577713204065" />
+    <state width="1876" height="274" key="GridCell.Tab.0.bottom" timestamp="1577564823624">
+>>>>>>> Stashed changes
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="690" y="286" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1577789034433" />
@@ -265,6 +294,7 @@
     <state width="1876" height="341" key="GridCell.Tab.1.left" timestamp="1577715804188">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
+<<<<<<< Updated upstream
     <state width="1876" height="341" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1577715804188" />
     <state width="1876" height="341" key="GridCell.Tab.1.right" timestamp="1577715804188">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -291,6 +321,18 @@
     </state>
     <state x="661" y="137" key="refactoring.ChangeSignatureDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1577793352486" />
     <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1577795620798">
+=======
+    <state width="1876" height="341" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1577564823622" />
+    <state x="384" y="88" key="SettingsEditor" timestamp="1577712371114">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="384" y="88" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1577712371114" />
+    <state x="661" y="363" key="com.intellij.ide.util.TipDialog" timestamp="1577713809200">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="661" y="363" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1577713809200" />
+    <state x="661" y="137" key="refactoring.ChangeSignatureDialog" timestamp="1577562830992">
+>>>>>>> Stashed changes
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1577795620798" />
