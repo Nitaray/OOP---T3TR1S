@@ -3,23 +3,24 @@ package edu.hcmiu.t3tr1s.client.logic;
 import edu.hcmiu.t3tr1s.client.ShapeDataManager;
 import edu.hcmiu.t3tr1s.enums.Direction;
 import edu.hcmiu.t3tr1s.blocks.logic.LogicShape;
+import edu.hcmiu.t3tr1s.enums.ShapeType;
 
 public class LogicBoard {
 
     private int WIDTH, HEIGHT;
 
-    private int[][] Grid;
+    private ShapeType[][] Grid;
 
     public LogicBoard() {
         WIDTH = 10;
         HEIGHT = 23;
-        Grid = new int[23][10];
+        Grid = new ShapeType[23][10];
     }
 
     private LogicBoard(int WIDTH, int HEIGHT) {
         this.WIDTH = WIDTH;
         this.HEIGHT = HEIGHT;
-        Grid = new int[HEIGHT][WIDTH];
+        Grid = new ShapeType[HEIGHT][WIDTH];
     }
 
     public boolean isFreeSpace(LogicShape logicShape, int x, int y) {
@@ -32,7 +33,7 @@ public class LogicBoard {
                     if (shapeData[y - i][j - x])
                         isFree = false;
                 }
-                else if (Grid[i][j] > 0 && shapeData[y - i][j - x])
+                else if (Grid[i][j] != null && shapeData[y - i][j - x])
                     isFree = false;
             }
 
@@ -53,7 +54,19 @@ public class LogicBoard {
         return false;
     }
 
-    public int[][] getGrid() {
+    public void solidifyShape(LogicShape logicShape) {
+        ShapeDataManager shapeDataManager = ShapeDataManager.getInstance();
+        int x = logicShape.getX();
+        int y = logicShape.getY();
+        boolean[][] shapeData = shapeDataManager.getStateData(logicShape);
+        for (int i = y; i > y - shapeData.length; i--)
+            for (int j = x; j < x + shapeData[y - i].length; j++) {
+                if (shapeData[i - y][j - x])
+                    Grid[y][x] = logicShape.getType();
+            }
+    }
+
+    public ShapeType[][] getGrid() {
         return Grid;
     }
 

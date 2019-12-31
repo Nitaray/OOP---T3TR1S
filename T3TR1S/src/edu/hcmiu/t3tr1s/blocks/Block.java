@@ -27,7 +27,7 @@ public class Block extends Rectangle {
      * Custom block constructor.
      * @param topLeftPosition the position of the top-left position of the block.
      * @param size the size of the side of the block.
-     * @param textureName Name of the shader of this block.
+     * @param textureName Name of the texture of this block.
      */
 
     public Block(Vector3f topLeftPosition, float size, String textureName) {

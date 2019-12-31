@@ -11,7 +11,7 @@ public class GameScene extends Scene {
     public GameScene(String name) {
         super(name);
 
-        Rectangle background = new Rectangle(new Vector3f(0, 90.0f, 0.0f), 160.0f, 90.0f,
+        Rectangle background = new Rectangle(new Vector3f(-80.0f, 45.0f, 0.0f), 160.0f, 90.0f,
                 "REGULAR_RECTANGLE", "MENU_BACKGROUND");
         setBackground(background);
 
