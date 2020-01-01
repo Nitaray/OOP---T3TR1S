@@ -46,7 +46,7 @@ More gamemodes will be implemented in the future.
 * Command pattern..
 * SOLID principle.
 
-## Goal
+## Future Goal
 * Implement ghost pieces.
 * Implement scoring system.
 * Implement more gamemode.
