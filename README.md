@@ -6,7 +6,7 @@ This is a Java implementation of the famous game Tetris, made by some university
 
 ## Features
 * Fully implemented tetris game. (Scores not implemented.)
-* Super Rotation System..
+* Super Rotation System.
 * Unique homemade graphical assets/textures.
 
 # Getting started
