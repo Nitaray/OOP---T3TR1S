@@ -139,6 +139,7 @@ public class GameBoard extends Scene {
                     if (!spawnNewShape(logicBoard.getWIDTH() / 2 - 2, logicBoard.getHEIGHT() - 1))
                         endGame();
                     renderLogicBoard();
+                    updateReceived = 0;
                 }
             }
         }

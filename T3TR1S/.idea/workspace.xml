@@ -8,9 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d9c78a22-e230-4028-93b1-e89d4a59d813" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/blocks/OShape.dat" beforeDir="false" afterPath="$PROJECT_DIR$/data/blocks/OShape.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/set1/OShape.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/set1/OShape.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/ShapeDataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/ShapeDataManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/scenes/GameBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/scenes/GameBoard.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/GameBoard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -174,7 +172,7 @@
       <workItem from="1577808634303" duration="6220000" />
       <workItem from="1577821272727" duration="4157000" />
       <workItem from="1577859103883" duration="8562000" />
-      <workItem from="1577891692580" duration="2873000" />
+      <workItem from="1577891692580" duration="3691000" />
     </task>
     <servers />
   </component>
@@ -219,22 +217,22 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="690" y="286" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1577789034433" />
-    <state width="1877" height="274" key="GridCell.Tab.0.bottom" timestamp="1577894581981">
+    <state width="1877" height="274" key="GridCell.Tab.0.bottom" timestamp="1577895387118">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="274" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1577894581981" />
-    <state width="1877" height="274" key="GridCell.Tab.0.center" timestamp="1577894581981">
+    <state width="1877" height="274" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1577895387118" />
+    <state width="1877" height="274" key="GridCell.Tab.0.center" timestamp="1577895387118">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="274" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1577894581981" />
-    <state width="1877" height="274" key="GridCell.Tab.0.left" timestamp="1577894581981">
+    <state width="1877" height="274" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1577895387118" />
+    <state width="1877" height="274" key="GridCell.Tab.0.left" timestamp="1577895387118">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="274" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1577894581981" />
-    <state width="1877" height="274" key="GridCell.Tab.0.right" timestamp="1577894581981">
+    <state width="1877" height="274" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1577895387118" />
+    <state width="1877" height="274" key="GridCell.Tab.0.right" timestamp="1577895387118">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="274" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1577894581981" />
+    <state width="1877" height="274" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1577895387118" />
     <state width="1877" height="341" key="GridCell.Tab.1.bottom" timestamp="1577869866408">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
