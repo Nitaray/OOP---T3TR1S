@@ -1,0 +1,13 @@
+edu.hcmiu.t3tr1s.blocks
+edu.hcmiu.t3tr1s.blocks.display
+edu.hcmiu.t3tr1s.blocks.logic
+edu.hcmiu.t3tr1s.client
+edu.hcmiu.t3tr1s.client.buttons
+edu.hcmiu.t3tr1s.client.logic
+edu.hcmiu.t3tr1s.client.scenes
+edu.hcmiu.t3tr1s.core
+edu.hcmiu.t3tr1s.enums
+edu.hcmiu.t3tr1s.exceptions
+edu.hcmiu.t3tr1s.graphics
+edu.hcmiu.t3tr1s.math
+edu.hcmiu.t3tr1s.utils

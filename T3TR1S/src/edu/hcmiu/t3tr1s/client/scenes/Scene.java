@@ -9,6 +9,9 @@ import java.util.ArrayList;
 
 import static org.lwjgl.glfw.GLFW.*;
 
+/**
+ * A show-able scene.
+ */
 public abstract class Scene implements Showable {
     protected Rectangle background;
     protected String name;
@@ -27,6 +30,10 @@ public abstract class Scene implements Showable {
         this.lastKeyPress = System.nanoTime();
     };
 
+    /**
+     * Set the scene background.
+     * @param background a Rectangle representing the scene background.
+     */
     public void setBackground(Rectangle background) {
         if (background != null)
             this.background = background;
@@ -66,6 +73,11 @@ public abstract class Scene implements Showable {
         buttons.get(currentButtonSelection).action();
     }
 
+    /**
+     * Check if the cool down of a key is reset.
+     * @param keyCoolDown the cool down time.
+     * @return true if cool down is reset, false otherwise.
+     */
     protected boolean keyCooled(long keyCoolDown) {
         long now = System.nanoTime();
         if (now - lastKeyPress > keyCoolDown) {
@@ -75,6 +87,12 @@ public abstract class Scene implements Showable {
         return false;
     }
 
+    /**
+     * Check if the cool down of a key is reset.
+     * @param keyCoolDown the cool down time.
+     * @param key ID of the key.
+     * @return true if cool down is reset, false otherwise.
+     */
     protected boolean keyCooled(long keyCoolDown, int key) {
         long now = System.nanoTime();
         if (now - lastKeysPress[key] > keyCoolDown) {
@@ -84,15 +102,33 @@ public abstract class Scene implements Showable {
         return false;
     }
 
+    /**
+     * Check if a key is pressed and the cool down is reset.
+     * @param key the ID of the key.
+     * @param keyCoolDown The cool down time.
+     * @return true if key is pressed and cool down is reset, false otherwise.
+     */
     protected boolean keyTriggered(int key, long keyCoolDown) {
         return (Input.isKeyDown(key) && keyCooled(keyCoolDown, key));
     }
 
+    /**
+     * Handling key presses.
+     */
     protected abstract void handleKeyPress();
 
+    /**
+     * Show the scene components.
+     */
     public abstract void show();
 
+    /**
+     * Hide the scene components.
+     */
     public abstract void hide();
 
+    /**
+     * Update the elements in the scene..
+     */
     public abstract void update();
 }
