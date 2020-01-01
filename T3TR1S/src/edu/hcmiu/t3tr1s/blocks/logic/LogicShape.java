@@ -57,7 +57,7 @@ public class LogicShape {
 
     public boolean move(Direction direction) {
         if (logicBoard.freeToMove(this, direction) || Input.isButtonDown(GLFW.GLFW_MOUSE_BUTTON_1)) {
-            System.out.println("Move successfully!");
+//            System.out.println("Move successfully!");
             switch (direction) {
                 case LEFT:
                     x--;
@@ -73,7 +73,7 @@ public class LogicShape {
                     return true;
             }
         }
-        System.out.println("Move failed!");
+//        System.out.println("Move failed!");
         return false;
     }
 
