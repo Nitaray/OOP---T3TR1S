@@ -40,12 +40,14 @@ More gamemodes will be implemented in the future.
 * R: Rotate Clockwise.
 
 # Accomplishments
-## Design patterns used
+## Design patterns and principles
 * Singleton pattern.
 * Stategy pattern.
-* Command pattern?
+* Command pattern..
+* SOLID principle.
 
 ## Goal
+* Implement ghost pieces.
 * Implement scoring system.
 * Implement more gamemode.
 * Implement ingame effects (Clear line, T-Spin effects, etc.)
