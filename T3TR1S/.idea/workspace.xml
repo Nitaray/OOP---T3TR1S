@@ -2,28 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9c78a22-e230-4028-93b1-e89d4a59d813" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/graphics/Showable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu.hcmiu.t3tr1s.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu.hcmiu.t3tr1s.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/scenes/GameBoard.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu.hcmiu.t3tr1s.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu.hcmiu.t3tr1s.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/GameBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/Shape$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/Shape$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/Shape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/Shape.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/blocks/JShape.dat" beforeDir="false" afterPath="$PROJECT_DIR$/data/blocks/JShape.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/blocks/LShape.dat" beforeDir="false" afterPath="$PROJECT_DIR$/data/blocks/LShape.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/display/DisplayShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/display/DisplayShape.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/logic/LogicShape$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/logic/LogicShape$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/logic/LogicShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/blocks/logic/LogicShape.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/ShapeDataManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/ShapeDataManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/logic/LogicBoard$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/logic/LogicBoard$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/logic/LogicBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/logic/LogicBoard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/scenes/DisplayBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/scenes/DisplayBoard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/logic/ShapeRandomizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/logic/ShapeRandomizer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/scenes/DisplayBoard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/scenes/GameScene.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/scenes/GameScene.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/scenes/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/scenes/MainMenu.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/scenes/Scene.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/scenes/Scene.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/scenes/Scoreboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/client/scenes/Scoreboard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/graphics/Rectangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/graphics/Rectangle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/Shape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/core/Updater.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T3TR1S/edu/hcmiu/t3tr1s/core/Updater.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/display/DisplayShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/display/DisplayShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/logic/LogicShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/blocks/logic/LogicShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/ShapeDataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/ShapeDataManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/logic/LogicBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/logic/LogicBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/DisplayBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/DisplayBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/logic/ShapeRandomizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/logic/ShapeRandomizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/DisplayBoard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/GameScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/GameScene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/MainMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/Scene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/Scoreboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/client/scenes/Scoreboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/graphics/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/graphics/Rectangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/core/Updater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/hcmiu/t3tr1s/core/Updater.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,27 +44,19 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/T3TR1S$Run.ic" NAME="Run Coverage Results" MODIFIED="1571142312122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="T3TR1S" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Singleton" />
-        <option value="Enum" />
         <option value="GLSL Shader" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>init</find>
-      <find>context</find>
-      <find>this</find>
-      <find>this.</find>
-    </findStrings>
-    <replaceStrings>
-      <replace />
-    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -93,18 +97,6 @@
       <recent name="edu.hcmiu.t3tr1s.utils" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration name="Run" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="C:/Program Files/Java/jdk1.8.0_221/jre" />
@@ -141,6 +133,18 @@
       </method>
     </configuration>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -176,6 +180,23 @@
       <workItem from="1576892916076" duration="644000" />
       <workItem from="1577237531753" duration="51000" />
       <workItem from="1577341287625" duration="7550000" />
+      <workItem from="1577499910005" duration="5784000" />
+      <workItem from="1577542208777" duration="5368000" />
+      <workItem from="1577556774126" duration="8031000" />
+      <workItem from="1577617377012" duration="1043000" />
+      <workItem from="1577631523486" duration="6843000" />
+      <workItem from="1577642338063" duration="4337000" />
+      <workItem from="1577677872443" duration="3706000" />
+      <workItem from="1577685789171" duration="3540000" />
+      <workItem from="1577720589883" duration="163000" />
+      <workItem from="1577720769696" duration="1694000" />
+      <workItem from="1577768429320" duration="18547000" />
+      <workItem from="1577801794844" duration="5895000" />
+      <workItem from="1577808111015" duration="335000" />
+      <workItem from="1577808461648" duration="159000" />
+      <workItem from="1577808634303" duration="6220000" />
+      <workItem from="1577821272727" duration="4157000" />
+      <workItem from="1577859103883" duration="7112000" />
     </task>
     <servers />
   </component>
@@ -196,53 +217,140 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="765" y="243" key="#com.intellij.ide.util.MemberChooser" timestamp="1576578590129">
+    <state x="717" y="329" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1577782200026">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="765" y="243" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1576578590129" />
-    <state x="690" y="286" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1576579566499">
+    <state x="717" y="329" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1577782200026" />
+    <state x="765" y="243" key="#com.intellij.ide.util.MemberChooser" timestamp="1577825680386">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="690" y="286" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1576579566499" />
-    <state width="1876" height="274" key="GridCell.Tab.0.bottom" timestamp="1576580978731">
+    <state x="765" y="243" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1577825680386" />
+    <state x="636" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1577817206534">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="274" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1576580978731" />
-    <state width="1876" height="274" key="GridCell.Tab.0.center" timestamp="1576580978731">
+    <state x="636" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1577817206534" />
+    <state x="690" y="286" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1577558815561">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="274" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1576580978731" />
-    <state width="1876" height="274" key="GridCell.Tab.0.left" timestamp="1576580978730">
+    <state x="690" y="286" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1577558815561" />
+    <state x="690" y="286" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1577789034433">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="274" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1576580978730" />
-    <state width="1876" height="274" key="GridCell.Tab.0.right" timestamp="1576580978731">
+    <state x="690" y="286" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1577789034433" />
+    <state width="1877" height="274" key="GridCell.Tab.0.bottom" timestamp="1577867798212">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="274" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1576580978731" />
-    <state width="1876" height="341" key="GridCell.Tab.1.bottom" timestamp="1576580375349">
+    <state width="1877" height="274" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1577867798212" />
+    <state width="1877" height="274" key="GridCell.Tab.0.center" timestamp="1577867798212">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="341" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1576580375349" />
-    <state width="1876" height="341" key="GridCell.Tab.1.center" timestamp="1576580375349">
+    <state width="1877" height="274" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1577867798212" />
+    <state width="1877" height="274" key="GridCell.Tab.0.left" timestamp="1577867798212">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="341" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1576580375349" />
-    <state width="1876" height="341" key="GridCell.Tab.1.left" timestamp="1576580375349">
+    <state width="1877" height="274" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1577867798212" />
+    <state width="1877" height="274" key="GridCell.Tab.0.right" timestamp="1577867798212">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="341" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1576580375349" />
-    <state width="1876" height="341" key="GridCell.Tab.1.right" timestamp="1576580375349">
+    <state width="1877" height="274" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1577867798212" />
+    <state width="1877" height="341" key="GridCell.Tab.1.bottom" timestamp="1577865004395">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="341" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1576580375349" />
-    <state x="384" y="88" key="SettingsEditor" timestamp="1576569027582">
+    <state width="1877" height="341" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1577865004395" />
+    <state width="1877" height="341" key="GridCell.Tab.1.center" timestamp="1577865004395">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="384" y="88" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1576569027582" />
+    <state width="1877" height="341" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1577865004395" />
+    <state width="1877" height="341" key="GridCell.Tab.1.left" timestamp="1577865004395">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="341" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1577865004395" />
+    <state width="1877" height="341" key="GridCell.Tab.1.right" timestamp="1577865004395">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="341" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1577865004395" />
+    <state x="506" y="274" key="IDE.errors.dialog" timestamp="1577808310106">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="506" y="274" key="IDE.errors.dialog/0.0.1920.1080@0.0.1920.1080" timestamp="1577808310106" />
+    <state x="384" y="88" key="SettingsEditor" timestamp="1577809621820">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="384" y="88" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1577809621820" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1577788023541">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1920.1080@0.0.1920.1080" timestamp="1577788023541" />
     <state x="661" y="363" key="com.intellij.ide.util.TipDialog" timestamp="1576509264587">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="661" y="363" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1576509264587" />
+    <state x="763" y="272" key="extract.method.dialog" timestamp="1577795799319">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="763" y="272" key="extract.method.dialog/0.0.1920.1080@0.0.1920.1080" timestamp="1577795799319" />
+    <state x="0" y="0" width="198" height="218" key="net.trustx.simpleuml.components.BirdViewFrame" timestamp="1577809168750">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="0" y="0" width="198" height="218" key="net.trustx.simpleuml.components.BirdViewFrame/0.0.1920.1080@0.0.1920.1080" timestamp="1577809168750" />
+    <state x="661" y="128" width="582" height="789" key="refactoring.ChangeSignatureDialog" timestamp="1577805172656">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="661" y="128" width="582" height="789" key="refactoring.ChangeSignatureDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1577805172656" />
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1577795620798">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1577795620798" />
+  </component>
+  <component name="simpleUML.UMLToolWindowPlugin">
+    <General>
+      <option name="birdViewUpdateDelay" value="2000" />
+      <option name="knownFile0" value="file://$PROJECT_DIR$/../ClassDiagram.suml" />
+      <option name="defaultFileLocation" value="file://$PROJECT_DIR$/.." />
+    </General>
+    <Classdiagram>
+      <option name="diagramTitleFont" value="SansSerif,1,12" />
+      <option name="diagramFont" value="SansSerif,0,10" />
+      <option name="defaultFieldsExpanded" value="false" />
+      <option name="defaultContructorsExpanded" value="false" />
+      <option name="defaultMethodsExpanded" value="false" />
+      <option name="showParameters" value="true" />
+      <option name="showTooltip" value="true" />
+      <option name="showReturnValues" value="true" />
+      <option name="longModifier" value="true" />
+      <option name="implementsBehaviour" value="1" />
+      <option name="extendsBehaviour" value="1" />
+      <option name="compartmentBehaviour" value="1" />
+      <option name="interfaceBackgroundColor" value="-6494306" />
+      <option name="abstractClassBackgroundColor" value="-1580132" />
+      <option name="classBackgroundColor" value="-6508057" />
+      <option name="diagramBackgroundColor" value="-1" />
+      <option name="useAntialiasedConnectors" value="true" />
+      <option name="quickSourceLinkColor" value="-16776961" />
+      <option name="quickDiagramLinkColor" value="-8454144" />
+      <option name="drawDecorations" value="false" />
+      <option name="hideFieldList" value="" />
+      <option name="showFieldList" value="" />
+      <option name="hideConstructorList" value="" />
+      <option name="showConstructorList" value="" />
+      <option name="hideMethodList" value="" />
+      <option name="showMethodList" value="" />
+      <option name="minimumFigureSize" value="0,0" />
+    </Classdiagram>
+    <Dependencydiagram>
+      <option name="diagramTitleFont" value="SansSerif,1,12" />
+      <option name="diagramFont" value="SansSerif,0,10" />
+      <option name="diagramBackgroundColor" value="-1" />
+      <option name="useAntialiasedConnectors" value="true" />
+      <option name="packageNameCompressionLevel" value="0" />
+    </Dependencydiagram>
+    <Packagediagram>
+      <option name="diagramTitleFont" value="SansSerif,0,12" />
+      <option name="diagramFont" value="SansSerif,0,10" />
+      <option name="packageBackgroundColor" value="-4144960" />
+      <option name="diagramBackgroundColor" value="-1" />
+      <option name="useAntialiasedConnectors" value="true" />
+      <option name="packageNameCompressionLevel" value="2" />
+    </Packagediagram>
   </component>
 </project>

@@ -1,17 +1,13 @@
 package edu.hcmiu.t3tr1s.client.scenes;
 
-import edu.hcmiu.t3tr1s.client.Client;
 import edu.hcmiu.t3tr1s.client.buttons.Button;
 import edu.hcmiu.t3tr1s.core.Input;
-import edu.hcmiu.t3tr1s.core.Renderer;
-import edu.hcmiu.t3tr1s.core.ShaderManager;
 import edu.hcmiu.t3tr1s.graphics.Rectangle;
 import edu.hcmiu.t3tr1s.graphics.Showable;
 
 import java.util.ArrayList;
 
-import static org.lwjgl.glfw.GLFW.GLFW_KEY_DOWN;
-import static org.lwjgl.glfw.GLFW.GLFW_KEY_UP;
+import static org.lwjgl.glfw.GLFW.*;
 
 public abstract class Scene implements Showable {
     protected Rectangle background;
@@ -22,8 +18,9 @@ public abstract class Scene implements Showable {
     protected final long MILLISECONDS = 1000000;
 
     private long lastKeyPress;
+    private long[] lastKeysPress = new long[GLFW_KEY_LAST];
 
-    public Scene(String name, ShaderManager shaderManager) {
+    public Scene(String name) {
         this.name = name;
         this.buttons = new ArrayList<>();
         this.currentButtonSelection = 0;
@@ -37,6 +34,10 @@ public abstract class Scene implements Showable {
             throw new NullPointerException("Null background encountered!");
     }
 
+
+    public String getName() {
+        return name;
+    }
 
     private void selectCurrentButton(int buttonID) {
         Button selectedButton = buttons.get(buttonID);
@@ -61,11 +62,8 @@ public abstract class Scene implements Showable {
         }
     }
 
-    protected void handleSelection(Client client) {
-        buttons.get(currentButtonSelection).action(client);
-    }
-    public String getName() {
-        return name;
+    protected void handleSelection() {
+        buttons.get(currentButtonSelection).action();
     }
 
     protected boolean keyCooled(long keyCoolDown) {
@@ -77,9 +75,24 @@ public abstract class Scene implements Showable {
         return false;
     }
 
-    public abstract void show(Renderer renderer);
+    protected boolean keyCooled(long keyCoolDown, int key) {
+        long now = System.nanoTime();
+        if (now - lastKeysPress[key] > keyCoolDown) {
+            lastKeysPress[key] = now;
+            return true;
+        }
+        return false;
+    }
 
-    public abstract void hide(Renderer renderer);
+    protected boolean keyTriggered(int key, long keyCoolDown) {
+        return (Input.isKeyDown(key) && keyCooled(keyCoolDown, key));
+    }
 
-    public abstract void update(Client client);
+    protected abstract void handleKeyPress();
+
+    public abstract void show();
+
+    public abstract void hide();
+
+    public abstract void update();
 }

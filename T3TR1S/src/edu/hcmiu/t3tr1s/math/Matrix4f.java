@@ -133,13 +133,13 @@ public class Matrix4f {
 
         Matrix4f result = new Matrix4f();
 
-        for (int x = 0; x < 4; x++)
-            for (int y = 0; y < 4; y++)
+        for (int y = 0; y < 4; y++)
+            for (int x = 0; x < 4; x++)
             {
                 float sum = 0.0f;
 
                 for (int d = 0; d < 4; d++)
-                    sum += elements[x + d * 4] * matrix.elements[d + y * 4];
+                    sum += this.elements[x + d * 4] * matrix.elements[d + y * 4];
 
                 result.elements[x + y * 4] = sum;
             }

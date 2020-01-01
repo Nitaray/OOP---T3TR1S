@@ -1,85 +1,51 @@
 package edu.hcmiu.t3tr1s.blocks;
 
-import edu.hcmiu.t3tr1s.client.logic.LogicBoard;
-import edu.hcmiu.t3tr1s.core.Renderer;
 import edu.hcmiu.t3tr1s.enums.Direction;
-import edu.hcmiu.t3tr1s.graphics.Showable;
+import edu.hcmiu.t3tr1s.graphics.Rectangle;
+import edu.hcmiu.t3tr1s.math.Vector3f;
 
-import java.util.ArrayList;
-
-public abstract class Shape implements Showable {
-
-    protected ArrayList<Block> blocks = new ArrayList<>();
-
-    protected int x, y;
-    protected int state;
-    protected int[][][] offsetTransition;
-    protected boolean[][] grid;
-
-
-    public Shape() {
-        x = 0;
-        y = 0;
+public class Shape extends Rectangle {
+    /**
+     * Constructor for the rectangle class
+     *
+     * @param topLeft     The 3D-coordinates for the top-left of the rectangle.
+     * @param shapeSize   The size of the shape.
+     * @param blockSize   The size of the shape's blocks.
+     * @param textureName The name of the texture to paint over this rectangle.
+     */
+    public Shape(Vector3f topLeft, float shapeSize, float blockSize, String textureName) {
+        super(topLeft, shapeSize, shapeSize, "REGULAR_RECTANGLE", textureName);
+        this.blockSize = blockSize;
     }
 
-    public int getX() {
-        return x;
-    }
+    private float blockSize;
 
-    public int getY() {
-        return y;
-    }
 
-    public int getState() {
-        return state;
-    }
-
-    public ArrayList<Block> getBlocks() {
-        return blocks;
-    }
-
-    public void move(Direction direction, LogicBoard logicBoard) {
-        if (logicBoard.freeToMove(this, direction))
-            switch (direction) {
-                case LEFT:
-                    x--;
-                    blocks.forEach(block -> block.move(direction));
-                    break;
-                case DOWN:
-                    y++;
-                    blocks.forEach(block -> block.move(direction));
-                    break;
-                case UP:
-                    y--;
-                    blocks.forEach(block -> block.move(direction));
-                    break;
-                case RIGHT:
-                    x++;
-                    blocks.forEach(block -> block.move(direction));
-                    break;
-            }
-    }
-
-    protected boolean offset(int oldState, int newState, LogicBoard logicBoard) {
-        for (int i = 0; i < offsetTransition[oldState].length; ++i) {
-            int transX = offsetTransition[newState][i][0] - offsetTransition[oldState][i][0];
-            int transY = offsetTransition[newState][i][1] - offsetTransition[oldState][i][1];
-            if(logicBoard.isFreeSpace(this, x + transX, y + transY)){
-                x += transX;
-                y += transY;
-                return true;
-            }
+    public void move(Direction direction) {
+        switch (direction) {
+            case UP:
+                super.translate(new Vector3f(0, blockSize, 0));
+                break;
+            case DOWN:
+                super.translate(new Vector3f(0, -blockSize, 0));
+                break;
+            case RIGHT:
+                super.translate(new Vector3f(blockSize, 0, 0));
+                break;
+            case LEFT:
+                super.translate(new Vector3f(-blockSize, 0, 0));
+                break;
         }
-        return false;
     }
 
-    public abstract void rotate(Direction direction, LogicBoard logicBoard, boolean shouldOffset);
-
-    public void show(Renderer renderer) {
-        blocks.forEach(Block -> Block.show(renderer));
-    }
-
-    public void hide(Renderer renderer) {
-        blocks.forEach(Block -> Block.hide(renderer));
+    public void rotate(Direction direction) {
+        switch (direction) {
+            case CLOCKWISE:
+                super.rotate(-90.0f);
+                break;
+            case COUNTER_CLOCKWISE:
+                super.rotate(90.0f);
+                break;
+        }
     }
 }

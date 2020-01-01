@@ -20,11 +20,13 @@ public class Rectangle implements Showable{
 
     private float WIDTH;
     private float HEIGHT;
+    private float currentAngle;
 
     private float[] vertices, tc;
     private byte[] indices;
 
     private Vector3f topLeft;
+    private Vector3f currentPosition;
 
     private Matrix4f model_mat;
     private Matrix4f position_mat;
@@ -37,15 +39,16 @@ public class Rectangle implements Showable{
      * @param width The width of the rectangle.
      * @param height The height of the rectangle.
      * @param shaderName The name of the shader to draw in this rectangle.
+     * @param textureName The name of the texture to paint over this rectangle.
      */
 
-    public Rectangle(Vector3f topLeft, float width, float height, String shaderName, String textureName, ShaderManager shaderManager) {
+    public Rectangle(Vector3f topLeft, float width, float height, String shaderName, String textureName) {
 
-        vertices = new float[] {
-                topLeft.x, topLeft.y, topLeft.z,
-                topLeft.x + width,  topLeft.y, topLeft.z,
-                topLeft.x + width,  topLeft.y - height, topLeft.z,
-                topLeft.x, topLeft.y - height, topLeft.z
+        vertices = new float[]{
+                -width / 2, height / 2, topLeft.z,
+                width / 2, height / 2, topLeft.z,
+                width / 2, -height / 2, topLeft.z,
+                -width / 2, -height / 2, topLeft.z
         };
 
         indices = new byte[] {
@@ -62,18 +65,20 @@ public class Rectangle implements Showable{
 
         WIDTH = width;
         HEIGHT = height;
+        currentAngle = 0.0f;
 
         this.topLeft = topLeft;
+        this.currentPosition = new Vector3f(topLeft.x + width / 2, topLeft.y - height / 2, topLeft.z);
 
         model_mat = Matrix4f.identity();
-        position_mat = Matrix4f.translate(new Vector3f(0, 0, 0));
-        rotation_mat = Matrix4f.rotate(0);
+        position_mat = Matrix4f.translate(currentPosition);
+        rotation_mat = Matrix4f.rotate(currentAngle);
 
-        this.shaderManager = shaderManager;
+        this.shaderManager = ShaderManager.getInstance();
 
         vertexArray = new VertexArray(vertices, indices, tc);
-        shaderID = shaderManager.getShaderID(shaderName);
-        textureID = shaderManager.getTextureID(textureName);
+        shaderID = this.shaderManager.getShaderID(shaderName);
+        textureID = this.shaderManager.getTextureID(textureName);
     }
 
     public Vector3f getTopLeft() {
@@ -95,6 +100,8 @@ public class Rectangle implements Showable{
 
     protected void translate(Vector3f v) {
         position_mat.add_translation(v);
+        currentPosition = currentPosition.add(v);
+        updateModel();
     }
 
     /**
@@ -106,6 +113,19 @@ public class Rectangle implements Showable{
         Vector3f currentLocation = new Vector3f(position_mat.elements[0 + 3 * 4], position_mat.elements[1 + 3 * 4], position_mat.elements[2 + 3 * 4]);
         Vector3f differenceVector = newLocation.subtract(currentLocation);
         position_mat.add_translation(differenceVector);
+        currentPosition = newLocation;
+        updateModel();
+    }
+
+    protected void rotate(float angle) {
+        rotation_mat = Matrix4f.rotate(currentAngle + angle);
+        currentAngle = currentAngle + angle;
+        Vector3f center = new Vector3f(currentPosition);
+        center.x += WIDTH / 2;
+        center.y -= HEIGHT / 2;
+        model_mat =
+                Matrix4f.translate(center).multiply(rotation_mat).multiply(Matrix4f.translate(new Vector3f(-center.x,
+                        -center.y, -center.z)));
     }
 
     /**
@@ -137,11 +157,13 @@ public class Rectangle implements Showable{
         shaderManager.disableShader(shaderID, textureID);
     }
 
-    public void show(Renderer renderer) {
+    public void show() {
+        Renderer renderer = Renderer.getInstance();
         renderer.addOnScreenObject(this);
     }
 
-    public void hide(Renderer renderer) {
+    public void hide() {
+        Renderer renderer = Renderer.getInstance();
         try {
             renderer.removeOnScreenObject(this);
         } catch (Exception e) {

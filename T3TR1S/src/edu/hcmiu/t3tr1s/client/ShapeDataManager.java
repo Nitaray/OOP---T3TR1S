@@ -1,10 +1,13 @@
 package edu.hcmiu.t3tr1s.client;
 
-import edu.hcmiu.t3tr1s.blocks.*;
+import edu.hcmiu.t3tr1s.blocks.logic.*;
 import edu.hcmiu.t3tr1s.enums.ShapeBoxSize;
+import edu.hcmiu.t3tr1s.enums.ShapeType;
 import edu.hcmiu.t3tr1s.utils.FileUtils;
+import javafx.util.Pair;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class ShapeDataManager {
@@ -15,21 +18,77 @@ public class ShapeDataManager {
     }
 
     private ShapeDataManager() {
+        init();
     }
 
-    private static ArrayList<boolean[][]> dataIShape, dataOShape, dataLShape, dataJShape, dataSShape, dataZShape, dataTShape;
+    private HashMap<ShapeType, String> shapeTextureName;
+    private HashMap<ShapeType, String> blockTextureName;
+
+    private HashMap<ShapeType, ArrayList<boolean[][]>> shapeDataMap;
+    private HashMap<ShapeType, ArrayList<ArrayList<Pair<Integer, Integer>>>> shapeOffsetMap;
 
     /**
-     * Load the data from data source file into a list of boolean arrays.
+     * Initialize shape data.
+     */
+    private void init() {
+        shapeDataMap = new HashMap<>();
+        loadShapeData(ShapeType.I, "data/blocks/IShape.dat", ShapeBoxSize.FourByFour);
+        loadShapeData(ShapeType.O, "data/blocks/OShape.dat", ShapeBoxSize.TwoByTwo);
+        loadShapeData(ShapeType.J, "data/blocks/JShape.dat", ShapeBoxSize.ThreeByThree);
+        loadShapeData(ShapeType.L, "data/blocks/LShape.dat", ShapeBoxSize.ThreeByThree);
+        loadShapeData(ShapeType.Z, "data/blocks/ZShape.dat", ShapeBoxSize.ThreeByThree);
+        loadShapeData(ShapeType.S, "data/blocks/SShape.dat", ShapeBoxSize.ThreeByThree);
+        loadShapeData(ShapeType.T, "data/blocks/TShape.dat", ShapeBoxSize.ThreeByThree);
+
+        shapeOffsetMap = new HashMap<>();
+        loadShapeOffset(ShapeType.I, "data/offset/IShape.dat");
+        loadShapeOffset(ShapeType.O, "data/offset/OShape.dat");
+        loadShapeOffset(ShapeType.J, "data/offset/JShape.dat");
+        loadShapeOffset(ShapeType.L, "data/offset/LShape.dat");
+        loadShapeOffset(ShapeType.Z, "data/offset/ZShape.dat");
+        loadShapeOffset(ShapeType.S, "data/offset/SShape.dat");
+        loadShapeOffset(ShapeType.T, "data/offset/TShape.dat");
+
+
+        shapeTextureName = new HashMap<>();
+        blockTextureName = new HashMap<>();
+        readShapeTextureName("config/shapeTexture.cfg");
+        readBlockTextureName("config/blockTexture.cfg");
+    }
+
+    /**
+     * Load the shape data from data files into a map for easy access.
+     * @param shapeType Type of the shape.
+     * @param sourcePath Directory path of the data file.
+     * @param shapeBoxSize Size of the shape box.
+     */
+    private void loadShapeData(ShapeType shapeType, String sourcePath, ShapeBoxSize shapeBoxSize) {
+        ArrayList<boolean[][]> dataList = new ArrayList<>();
+        readShapeData(dataList, sourcePath, shapeBoxSize);
+        shapeDataMap.put(shapeType, dataList);
+    }
+
+    /**
+     * Load shape offset data into a map for easy access.
+     * @param shapeType Type of the shape.
+     * @param sourcePath Directory path of the data file.
+     */
+    private void loadShapeOffset(ShapeType shapeType, String sourcePath) {
+        ArrayList<ArrayList<Pair<Integer, Integer>>> offsetList = new ArrayList<>();
+        readShapeOffset(offsetList, sourcePath);
+        shapeOffsetMap.put(shapeType, offsetList);
+    }
+
+    /**
+     * Load the data from data sourcePath file into a list of boolean arrays.
      * Each list has 4 arrays for 4 states of each shape.
      *
      * @param dataArrayList the list to be loaded with data.
-     * @param source        the path to the source file.
+     * @param sourcePath        the path to the sourcePath file.
      * @param boxSize       the size of the box of the shape.
      */
-
-    private static void loadData(ArrayList<boolean[][]> dataArrayList, String source, ShapeBoxSize boxSize) {
-        String dat = FileUtils.loadAsString(source);
+    private void readShapeData(ArrayList<boolean[][]> dataArrayList, String sourcePath, ShapeBoxSize boxSize) {
+        String dat = FileUtils.loadAsString(sourcePath);
         Scanner scanner = new Scanner(dat);
         String line;
 
@@ -51,17 +110,17 @@ public class ShapeDataManager {
                     dataArrayList.add(matrix);
                 }
 
-                if (boxSize == ShapeBoxSize.FourByThree) {
-                    final boolean[][] matrix = new boolean[3][4];
+                if (boxSize == ShapeBoxSize.TwoByTwo) {
+                    final boolean[][] matrix = new boolean[2][2];
                     line = "";
 
-                    for (int j = 0; j < 3; ++j)
+                    for (int j = 0; j < 2; ++j)
                         line += scanner.nextLine().replaceAll("\\s+", "");
 
 
-                    for (int i = 0; i < 3; ++i) {
-                        for (int j = 0; j < 4; ++j)
-                            matrix[i][j] = (Integer.parseInt(String.valueOf(line.charAt(4 * i + j))) == 1);
+                    for (int i = 0; i < 2; ++i) {
+                        for (int j = 0; j < 2; ++j)
+                            matrix[i][j] = (Integer.parseInt(String.valueOf(line.charAt(2 * i + j))) == 1);
                     }
 
                     dataArrayList.add(matrix);
@@ -90,76 +149,146 @@ public class ShapeDataManager {
     }
 
     /**
-     * Initialize shape data.
+     * Performs the data file read to load shape offset data into a container.
+     * @param shapeOffsetList The container to store the offset data.
+     * @param sourcePath The directory path of the data file.
      */
+    private void readShapeOffset(ArrayList<ArrayList<Pair<Integer, Integer>>> shapeOffsetList, String sourcePath) {
+        String dat = FileUtils.loadAsString(sourcePath);
+        Scanner scanner = new Scanner(dat);
+        String line;
 
-    public static void init() {
-        dataIShape = new ArrayList<>();
-        dataOShape = new ArrayList<>();
-        dataLShape = new ArrayList<>();
-        dataJShape = new ArrayList<>();
-        dataSShape = new ArrayList<>();
-        dataZShape = new ArrayList<>();
-        dataTShape = new ArrayList<>();
-        loadData(dataIShape, "data/blocks/IShape.dat", ShapeBoxSize.FourByFour);
-        loadData(dataOShape, "data/blocks/OShape.dat", ShapeBoxSize.FourByThree);
-        loadData(dataLShape, "data/blocks/LShape.dat", ShapeBoxSize.ThreeByThree);
-        loadData(dataJShape, "data/blocks/JShape.dat", ShapeBoxSize.ThreeByThree);
-        loadData(dataSShape, "data/blocks/SShape.dat", ShapeBoxSize.ThreeByThree);
-        loadData(dataZShape, "data/blocks/ZShape.dat", ShapeBoxSize.ThreeByThree);
-        loadData(dataTShape, "data/blocks/TShape.dat", ShapeBoxSize.ThreeByThree);
+        while (scanner.hasNextLine()) {
+            ArrayList<Pair<Integer, Integer>> stateOffset = new ArrayList<>();
+
+            line = scanner.nextLine();
+            Scanner lineScanner = new Scanner(line);
+            for (int i = 0; i < 5; i++) {
+                int xOffset = lineScanner.nextInt();
+                int yOffset = lineScanner.nextInt();
+                Pair<Integer, Integer> offsetTestData = new Pair<>(xOffset, yOffset);
+                stateOffset.add(offsetTestData);
+            }
+
+            shapeOffsetList.add(stateOffset);
+        }
+    }
+
+    /**
+     * Load the name of shapes texture from data files into a container.
+     * @param sourcePath The directory path of the data file.
+     */
+    private void readShapeTextureName(String sourcePath) {
+        readTextureName(sourcePath, shapeTextureName);
+    }
+
+    /**
+     * Load the name of block textures from data files into a container.
+     * @param sourcePath The directory path of the data file.
+     */
+    private void readBlockTextureName(String sourcePath) {
+        readTextureName(sourcePath, blockTextureName);
+    }
+
+    private void readTextureName(String sourcePath, HashMap<ShapeType, String> textureNameMap) {
+        String cfg = FileUtils.loadAsString(sourcePath);
+        Scanner s = new Scanner(cfg);
+        while (s.hasNextLine()) {
+            String line = s.nextLine();
+            Scanner lineScanner = new Scanner(line);
+            String type = lineScanner.next();
+            lineScanner.next();
+            String name = lineScanner.next();
+            textureNameMap.put(ShapeType.valueOf(type), name);
+        }
     }
 
     /**
      * Return the solid data for the given shape.
      *
-     * @param shape a shape to get solid data for.
+     * @param logicShape a shape to get solid data for.
      * @return a 2D-boolean array containing the solid data of the shape.
      */
+    public boolean[][] getStateData(LogicShape logicShape) {
+        int state = logicShape.getState();
+        ShapeType ID = logicShape.getType();
 
-    public static boolean[][] getStateData(Shape shape) {
-        int state = shape.getState();
-
-        if (shape instanceof IShape) {
-            return dataIShape.get(state);
+        if (isValidID(ID)) {
+            ArrayList<boolean[][]> dataList = shapeDataMap.get(ID);
+            if (dataList.size() > state)
+                return dataList.get(state);
+            else {
+                System.err.println("Invalid shape state!");
+                return null;
+            }
         }
-        if (shape instanceof OShape) {
-            return dataOShape.get(state);
-        }
-        if (shape instanceof LShape) {
-            return dataLShape.get(state);
-        }
-        if (shape instanceof JShape) {
-            return dataJShape.get(state);
-        }
-        if (shape instanceof SShape) {
-            return dataSShape.get(state);
-        }
-        if (shape instanceof ZShape) {
-            return dataZShape.get(state);
-        }
-        return dataTShape.get(state);
+        System.err.println("Invalid shape ID!");
+        return null;
     }
 
-    public static boolean[][] getStateData(Shape shape, int state) {
-        if (shape instanceof IShape) {
-            return dataIShape.get(state);
-        }
-        if (shape instanceof OShape) {
-            return dataOShape.get(state);
-        }
-        if (shape instanceof LShape) {
-            return dataLShape.get(state);
-        }
-        if (shape instanceof JShape) {
-            return dataJShape.get(state);
-        }
-        if (shape instanceof SShape) {
-            return dataSShape.get(state);
-        }
-        if (shape instanceof ZShape) {
-            return dataZShape.get(state);
-        }
-        return dataTShape.get(state);
+    public ArrayList<ArrayList<Pair<Integer, Integer>>> getShapeOffset(ShapeType shapeType) {
+        if (isValidID(shapeType))
+            return shapeOffsetMap.get(shapeType);
+        System.err.println("Invalid shape type!");
+        return null;
+    }
+
+    /**
+     * Get the name of the texture of a given shape.
+     * @param logicShape a shape to get texture name for.
+     * @return the name of the texture.
+     */
+    public String getShapeTextureName(LogicShape logicShape) {
+        ShapeType type = logicShape.getType();
+        if (shapeTextureName.containsKey(type))
+            return shapeTextureName.get(type);
+        System.err.println("Cannot find shape type!");
+        return "";
+    }
+
+    /**
+     * Get the name of the texture of a given shape.
+     * @param shapeType type of shape.
+     * @return the name of the texture.
+     */
+    public String getShapeTextureName(ShapeType shapeType) {
+        if (shapeTextureName.containsKey(shapeType))
+            return shapeTextureName.get(shapeType);
+        System.err.println("Cannot find shape type!");
+        return "";
+    }
+
+    /**
+     * Get the name of the texture of the blocks of a given shape.
+     * @param logicShape a shape to get texture name for.
+     * @return the name of the texture.
+     */
+    public String getBlockTextureName(LogicShape logicShape) {
+        ShapeType type = logicShape.getType();
+        if (blockTextureName.containsKey(type))
+            return blockTextureName.get(type);
+        System.err.println("Cannot find shape type!");
+        return "";
+    }
+
+    /**
+     * Get the name of the texture of the blocks of a given shape.
+     * @param shapeType type of shape.
+     * @return the name of the texture.
+     */
+    public String getBlockTextureName(ShapeType shapeType) {
+        if (blockTextureName.containsKey(shapeType))
+            return blockTextureName.get(shapeType);
+        System.err.println("Cannot find shape type!");
+        return "";
+    }
+
+    /**
+     * Check if the given ID is valid or not.
+     * @param ID the ID to be checked.
+     * @return True if valid, false otherwise.
+     */
+    public boolean isValidID(ShapeType ID) {
+        return shapeDataMap.containsKey(ID);
     }
 }
