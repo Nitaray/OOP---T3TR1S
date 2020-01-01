@@ -7,8 +7,7 @@ import edu.hcmiu.t3tr1s.graphics.Showable;
 
 import java.util.ArrayList;
 
-import static org.lwjgl.glfw.GLFW.GLFW_KEY_DOWN;
-import static org.lwjgl.glfw.GLFW.GLFW_KEY_UP;
+import static org.lwjgl.glfw.GLFW.*;
 
 public abstract class Scene implements Showable {
     protected Rectangle background;
@@ -19,6 +18,7 @@ public abstract class Scene implements Showable {
     protected final long MILLISECONDS = 1000000;
 
     private long lastKeyPress;
+    private long[] lastKeysPress = new long[GLFW_KEY_LAST];
 
     public Scene(String name) {
         this.name = name;
@@ -34,6 +34,10 @@ public abstract class Scene implements Showable {
             throw new NullPointerException("Null background encountered!");
     }
 
+
+    public String getName() {
+        return name;
+    }
 
     private void selectCurrentButton(int buttonID) {
         Button selectedButton = buttons.get(buttonID);
@@ -61,9 +65,6 @@ public abstract class Scene implements Showable {
     protected void handleSelection() {
         buttons.get(currentButtonSelection).action();
     }
-    public String getName() {
-        return name;
-    }
 
     protected boolean keyCooled(long keyCoolDown) {
         long now = System.nanoTime();
@@ -73,6 +74,21 @@ public abstract class Scene implements Showable {
         }
         return false;
     }
+
+    protected boolean keyCooled(long keyCoolDown, int key) {
+        long now = System.nanoTime();
+        if (now - lastKeysPress[key] > keyCoolDown) {
+            lastKeysPress[key] = now;
+            return true;
+        }
+        return false;
+    }
+
+    protected boolean keyTriggered(int key, long keyCoolDown) {
+        return (Input.isKeyDown(key) && keyCooled(keyCoolDown, key));
+    }
+
+    protected abstract void handleKeyPress();
 
     public abstract void show();
 

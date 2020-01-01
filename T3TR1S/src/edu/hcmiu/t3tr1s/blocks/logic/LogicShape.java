@@ -2,10 +2,12 @@ package edu.hcmiu.t3tr1s.blocks.logic;
 
 import edu.hcmiu.t3tr1s.client.ShapeDataManager;
 import edu.hcmiu.t3tr1s.client.logic.LogicBoard;
+import edu.hcmiu.t3tr1s.core.Input;
 import edu.hcmiu.t3tr1s.enums.Direction;
 import edu.hcmiu.t3tr1s.enums.ShapeType;
 import edu.hcmiu.t3tr1s.utils.Tuple;
 import javafx.util.Pair;
+import org.lwjgl.glfw.GLFW;
 
 import java.util.ArrayList;
 
@@ -54,7 +56,7 @@ public class LogicShape {
     }
 
     public boolean move(Direction direction) {
-        if (logicBoard.freeToMove(this, direction)) {
+        if (logicBoard.freeToMove(this, direction) || Input.isButtonDown(GLFW.GLFW_MOUSE_BUTTON_1)) {
             System.out.println("Move successfully!");
             switch (direction) {
                 case LEFT:

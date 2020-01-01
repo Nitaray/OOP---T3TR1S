@@ -5,7 +5,7 @@ import edu.hcmiu.t3tr1s.graphics.Rectangle;
 import edu.hcmiu.t3tr1s.math.Vector3f;
 
 public class GameScene extends Scene {
-    private DisplayBoard displayBoard;
+    private GameBoard gameBoard;
     private LogicBoard logicBoard;
 
     public GameScene(String name) {
@@ -17,23 +17,28 @@ public class GameScene extends Scene {
 
         logicBoard = new LogicBoard();
 
-        displayBoard = new DisplayBoard("BOARD", logicBoard);
+        gameBoard = new GameBoard("BOARD", logicBoard);
+    }
+
+    @Override
+    protected void handleKeyPress() {
+
     }
 
     @Override
     public void show() {
         background.show();
-        displayBoard.show();
+        gameBoard.show();
     }
 
     @Override
     public void hide() {
         background.hide();
-        displayBoard.hide();
+        gameBoard.hide();
     }
 
     @Override
     public void update() {
-        displayBoard.update();
+        gameBoard.update();
     }
 }

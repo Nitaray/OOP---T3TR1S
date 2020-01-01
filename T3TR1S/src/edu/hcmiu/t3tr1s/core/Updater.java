@@ -15,10 +15,14 @@ class Updater {
     private long lastTime;
 
     static Updater getInstance(Client client) {
-        thisInstance.UPS = 60;
+        thisInstance.UPS = 64;
         thisInstance.lastTime = System.nanoTime();
         thisInstance.client = client;
         return thisInstance;
+    }
+
+    public int getUPS() {
+        return UPS;
     }
 
     void setUPS(int updatePerSecond) {

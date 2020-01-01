@@ -47,6 +47,11 @@ public class Scoreboard extends Scene {
         initScoreboard();
     }
 
+    @Override
+    protected void handleKeyPress() {
+
+    }
+
     private Rectangle addDigit(int number, Vector3f topLeft, float width, float height) {
         String textureName = "";
 

@@ -247,6 +247,18 @@ public class ShapeDataManager {
     }
 
     /**
+     * Get the name of the texture of a given shape.
+     * @param shapeType type of shape.
+     * @return the name of the texture.
+     */
+    public String getShapeTextureName(ShapeType shapeType) {
+        if (shapeTextureName.containsKey(shapeType))
+            return shapeTextureName.get(shapeType);
+        System.err.println("Cannot find shape type!");
+        return "";
+    }
+
+    /**
      * Get the name of the texture of the blocks of a given shape.
      * @param logicShape a shape to get texture name for.
      * @return the name of the texture.
@@ -255,6 +267,18 @@ public class ShapeDataManager {
         ShapeType type = logicShape.getType();
         if (blockTextureName.containsKey(type))
             return blockTextureName.get(type);
+        System.err.println("Cannot find shape type!");
+        return "";
+    }
+
+    /**
+     * Get the name of the texture of the blocks of a given shape.
+     * @param shapeType type of shape.
+     * @return the name of the texture.
+     */
+    public String getBlockTextureName(ShapeType shapeType) {
+        if (blockTextureName.containsKey(shapeType))
+            return blockTextureName.get(shapeType);
         System.err.println("Cannot find shape type!");
         return "";
     }

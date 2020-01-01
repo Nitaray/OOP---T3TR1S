@@ -30,6 +30,11 @@ public class MainMenu extends Scene {
     }
 
     @Override
+    protected void handleKeyPress() {
+
+    }
+
+    @Override
     public void show() {
         background.show();
 

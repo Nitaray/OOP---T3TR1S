@@ -33,6 +33,7 @@ public class ShapeRandomizer {
         ShapeDataManager shapeDataManager = ShapeDataManager.getInstance();
         if (shapeDataManager.isValidID(shapeType)) {
             bag.add(shapeType);
+            randomizeBag();
             return true;
         }
         System.err.println("Invalid shape type!");

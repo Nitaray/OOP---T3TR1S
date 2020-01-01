@@ -23,6 +23,18 @@ public class LogicBoard {
         Grid = new ShapeType[HEIGHT][WIDTH];
     }
 
+    public ShapeType[][] getGrid() {
+        return Grid;
+    }
+
+    public int getWIDTH() {
+        return WIDTH;
+    }
+
+    public int getHEIGHT() {
+        return HEIGHT;
+    }
+
     public boolean isFreeSpace(LogicShape logicShape, int x, int y) {
         boolean isFree = true;
 
@@ -61,20 +73,46 @@ public class LogicBoard {
         boolean[][] shapeData = shapeDataManager.getStateData(logicShape);
         for (int i = y; i > y - shapeData.length; i--)
             for (int j = x; j < x + shapeData[y - i].length; j++) {
-                if (shapeData[i - y][j - x])
-                    Grid[y][x] = logicShape.getType();
+                if (shapeData[y - i][j - x])
+                    Grid[i][j] = logicShape.getType();
             }
     }
 
-    public ShapeType[][] getGrid() {
-        return Grid;
+    public int lineClearUpdate() {
+        int linesCleared = 0;
+
+        for (int y = 0; y < HEIGHT; y++) {
+            int blockOnLine = 0;
+            for (int x = 0; x < WIDTH; x++) {
+                if (Grid[y][x] != null)
+                    blockOnLine++;
+            }
+            if (blockOnLine == WIDTH) {
+                for (int x = 0; x < WIDTH; x++)
+                    Grid[y][x] = null;
+                linesCleared++;
+            }
+        }
+
+        for (int y = 0; y < HEIGHT; y++) {
+            boolean lineCleared = true;
+
+            for (int x = 0; x < WIDTH && lineCleared; x++) {
+                if (Grid[y][x] != null)
+                    lineCleared = false;
+            }
+            if (lineCleared && y < HEIGHT - linesCleared) {
+                for (int x = 0; x < WIDTH; x++) {
+                    Grid[y][x] = Grid[y + linesCleared][x];
+                    Grid[y + linesCleared][x] = null;
+                }
+            }
+        }
+
+        return linesCleared;
     }
 
-    public int getWIDTH() {
-        return WIDTH;
-    }
-
-    public int getHEIGHT() {
-        return HEIGHT;
+    public void resetBoard() {
+        Grid = new ShapeType[HEIGHT][WIDTH];
     }
 }
