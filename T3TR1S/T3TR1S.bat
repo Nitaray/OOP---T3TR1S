@@ -1,0 +1,1 @@
+java -jar T3TR1S.jar
