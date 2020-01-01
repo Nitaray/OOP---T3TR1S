@@ -47,6 +47,7 @@ More gamemodes will be implemented in the future.
 * SOLID principle.
 
 ## Future Goal
+* Implement a system logger.
 * Implement ghost pieces.
 * Implement scoring system.
 * Implement more gamemode.
