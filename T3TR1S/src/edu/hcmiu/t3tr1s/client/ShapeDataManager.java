@@ -33,7 +33,7 @@ public class ShapeDataManager {
     private void init() {
         shapeDataMap = new HashMap<>();
         loadShapeData(ShapeType.I, "data/blocks/IShape.dat", ShapeBoxSize.FourByFour);
-        loadShapeData(ShapeType.O, "data/blocks/OShape.dat", ShapeBoxSize.TwoByTwo);
+        loadShapeData(ShapeType.O, "data/blocks/OShape.dat", ShapeBoxSize.FourByFour);
         loadShapeData(ShapeType.J, "data/blocks/JShape.dat", ShapeBoxSize.ThreeByThree);
         loadShapeData(ShapeType.L, "data/blocks/LShape.dat", ShapeBoxSize.ThreeByThree);
         loadShapeData(ShapeType.Z, "data/blocks/ZShape.dat", ShapeBoxSize.ThreeByThree);

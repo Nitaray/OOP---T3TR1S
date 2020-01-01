@@ -93,21 +93,27 @@ public class GameBoard extends Scene {
     }
 
     private boolean forceMoveShape(Direction direction) {
-        updateReceived -= normalDropSpeed;
-        return currentShape.move(direction);
+        boolean moveSucceed = currentShape.move(direction);
+        if (moveSucceed)
+            updateReceived -= normalDropSpeed;
+        return moveSucceed;
     }
 
-    private boolean forceSolidShape() {
+    private void forceSolidShape() {
         logicBoard.solidifyShape(currentShape.getLogicShape());
         currentShape.hide();
-        return spawnNewShape(3, 22);
+    }
+
+    private void softDrop(Direction direction) {
+        if (currentShape.move(direction))
+            updateReceived = normalDropSpeed / 2;
     }
 
     private void hardDrop(Direction direction) {
         updateReceived = normalDropSpeed * 23;
         while (updateReceived > 0) {
             if (!forceMoveShape(direction)) {
-                updateReceived = 63;
+                updateReceived = (int)(normalDropSpeed * 1.5);
                 break;
             }
         }
@@ -128,10 +134,12 @@ public class GameBoard extends Scene {
     private void processGame() {
         if (updateReceived >= normalDropSpeed) {
             if (!forceMoveShape(Direction.DOWN)) {
-                if (!forceSolidShape()) {
-                    endGame();
+                if (updateReceived >= 1.5 * normalDropSpeed) {
+                    forceSolidShape();
+                    if (!spawnNewShape(logicBoard.getWIDTH() / 2 - 2, logicBoard.getHEIGHT() - 1))
+                        endGame();
+                    renderLogicBoard();
                 }
-                renderLogicBoard();
             }
         }
     }
@@ -153,7 +161,7 @@ public class GameBoard extends Scene {
     public void show() {
         background.show();
         backplate.show();
-        spawnNewShape(logicBoard.getWIDTH() / 2 - 1, logicBoard.getHEIGHT() - 1);
+        spawnNewShape(logicBoard.getWIDTH() / 2 - 2, logicBoard.getHEIGHT() - 1);
     }
 
     @Override
@@ -171,7 +179,7 @@ public class GameBoard extends Scene {
             currentShape.move(Direction.LEFT);
         }
         if (keyTriggered(GLFW.GLFW_KEY_DOWN, 50 * MILLISECONDS)) {
-            updateReceived = 64;
+            softDrop(Direction.DOWN);
         }
         if (keyTriggered(GLFW.GLFW_KEY_SPACE, 200 * MILLISECONDS)) {
             hardDrop(Direction.DOWN);
