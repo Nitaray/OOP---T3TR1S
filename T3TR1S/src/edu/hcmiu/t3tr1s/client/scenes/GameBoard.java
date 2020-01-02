@@ -145,6 +145,11 @@ public class GameBoard extends Scene {
         }
     }
 
+    private void startGame() {
+        shapeRandomizer.randomizeBag();
+        spawnNewShape(logicBoard.getWIDTH() / 2 - 2, logicBoard.getHEIGHT() - 1);
+    }
+
     private void endGame() {
         logicBoard.resetBoard();
         Client client = Client.getInstance();
@@ -162,7 +167,7 @@ public class GameBoard extends Scene {
     public void show() {
         background.show();
         backplate.show();
-        spawnNewShape(logicBoard.getWIDTH() / 2 - 2, logicBoard.getHEIGHT() - 1);
+        startGame();
     }
 
     @Override

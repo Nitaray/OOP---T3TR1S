@@ -53,15 +53,15 @@ public class ShapeRandomizer {
         this.bag = bag;
     }
 
-    private void randomizeBag(){
+    public void randomizeBag(){
         java.util.Collections.shuffle(bag);
+        current = 0;
     }
 
     public ShapeType getRandom() {
         if (!bag.isEmpty()) {
             ShapeType result = bag.get(current++);
             if (current >= bag.size()) {
-                current = 0;
                 randomizeBag();
             }
             return result;

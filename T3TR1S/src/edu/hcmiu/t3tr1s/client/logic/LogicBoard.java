@@ -94,21 +94,32 @@ public class LogicBoard {
             }
         }
 
-        for (int y = 0; y < HEIGHT; y++) {
-            boolean lineCleared = true;
+        if (linesCleared > 0) {
+            int emptyLinesBelow = 0;
+            for (int y = 0; y < HEIGHT; y++) {
+                boolean lineCleared = true;
+                emptyLinesBelow++;
 
-            for (int x = 0; x < WIDTH && lineCleared; x++) {
-                if (Grid[y][x] != null)
-                    lineCleared = false;
-            }
-            if (lineCleared && y < HEIGHT - linesCleared) {
-                for (int x = 0; x < WIDTH; x++) {
-                    Grid[y][x] = Grid[y + linesCleared][x];
-                    Grid[y + linesCleared][x] = null;
+                for (int x = 0; x < WIDTH && lineCleared; x++) {
+                    if (Grid[y][x] != null) {
+                        lineCleared = false;
+                        emptyLinesBelow--;
+                    }
+                }
+//            if (lineCleared && y < HEIGHT - linesCleared) {
+//                for (int x = 0; x < WIDTH; x++) {
+//                    Grid[y][x] = Grid[y + linesCleared][x];
+//                    Grid[y + linesCleared][x] = null;
+//                }
+//            }
+                if (!lineCleared && emptyLinesBelow > 0) {
+                    for (int x = 0; x < WIDTH; x++) {
+                        Grid[y - emptyLinesBelow][x] = Grid[y][x];
+                        Grid[y][x] = null;
+                    }
                 }
             }
         }
-
         return linesCleared;
     }
 
