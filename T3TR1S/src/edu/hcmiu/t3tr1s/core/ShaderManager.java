@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
+import static org.lwjgl.opengl.GL11.*;
+
 /**
  * A manager to handle shaders.
  */
@@ -113,6 +115,8 @@ public class ShaderManager {
      */
 
     private void init() {
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
         loadAllShader();
         loadAllTexture();
         setUniformAll();

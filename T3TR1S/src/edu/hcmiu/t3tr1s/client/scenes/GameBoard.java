@@ -30,6 +30,7 @@ public class GameBoard extends Scene {
     private ShapeRandomizer shapeRandomizer;
 
     private DisplayShape currentShape;
+    private DisplayShape currentGhostShape;
 
     private Block[][] blocks;
 
@@ -101,6 +102,7 @@ public class GameBoard extends Scene {
 
     private void forceSolidShape() {
         logicBoard.solidifyShape(currentShape.getLogicShape());
+        currentGhostShape.hide();
         currentShape.hide();
     }
 
@@ -119,25 +121,69 @@ public class GameBoard extends Scene {
         }
     }
 
+    private void spawnGhost(int x, int y, LogicShape logicShape) {
+        currentGhostShape = new DisplayShape(logicShape.clone(), new Vector3f(topLeftBackGround.x + x * blockSize,
+                topLeftBackGround.y - (logicBoard.getHEIGHT() - 1 - y) * blockSize,
+                topLeftBackGround.z + 0.1f), blockSize, true);
+        int state = logicShape.getState();
+        while (state > 0) {
+            currentGhostShape.rotateShapeOnly(Direction.CLOCKWISE);
+            state--;
+        }
+        currentGhostShape.show();
+    }
+
+    private void killGhost() {
+        currentGhostShape.hide();
+    }
+
+    private void hardDropGhost(Direction direction) {
+        for (int i = 0; i < logicBoard.getHEIGHT(); i++) {
+            currentGhostShape.move(direction);
+        }
+    }
+
+    private void updateGhostShape() {
+        if (currentGhostShape != null)
+            killGhost();
+        int x = currentShape.getLogicShape().getX();
+        int y = currentShape.getLogicShape().getY();
+        spawnGhost(x, y, currentShape.getLogicShape());
+        hardDropGhost(Direction.DOWN);
+    }
+
+    private void moveShape(Direction direction) {
+        currentShape.move(direction);
+        updateGhostShape();
+    }
+
+    private void rotateShape(Direction direction) {
+        currentShape.rotate(direction);
+        updateGhostShape();
+    }
+
     private boolean spawnNewShape(int x, int y) {
         LogicShape logicShape = new LogicShape(x, y, logicBoard, shapeRandomizer.getRandom());
         if  (logicBoard.isFreeSpace(logicShape, x, y)) {
             currentShape = new DisplayShape(logicShape, new Vector3f(topLeftBackGround.x + x * blockSize,
                     topLeftBackGround.y - (logicBoard.getHEIGHT() - 1 - y) * blockSize,
-                    topLeftBackGround.z + 0.1f), blockSize);
+                    topLeftBackGround.z + 0.1f), blockSize, false);
             currentShape.show();
+            spawnGhost(x, y, logicShape);
             return true;
         }
         return false;
     }
 
     private void processGame() {
+        updateGhostShape();
         if (updateReceived >= normalDropSpeed) {
             if (!forceMoveShape(Direction.DOWN)) {
                 if (updateReceived >= 1.5 * normalDropSpeed) {
                     forceSolidShape();
-                    if (!spawnNewShape(logicBoard.getWIDTH() / 2 - 2, logicBoard.getHEIGHT() - 1))
+                    if (!spawnNewShape(logicBoard.getWIDTH() / 2 - 2, logicBoard.getHEIGHT() - 1)) {
                         endGame();
+                    }
                     renderLogicBoard();
                     updateReceived = 0;
                 }
@@ -179,10 +225,10 @@ public class GameBoard extends Scene {
     @Override
     protected void handleKeyPress() {
         if (keyTriggered(GLFW.GLFW_KEY_RIGHT, 100 * MILLISECONDS)) {
-            currentShape.move(Direction.RIGHT);
+            moveShape(Direction.RIGHT);
         }
         if (keyTriggered(GLFW.GLFW_KEY_LEFT, 100 * MILLISECONDS)) {
-            currentShape.move(Direction.LEFT);
+            moveShape(Direction.LEFT);
         }
         if (keyTriggered(GLFW.GLFW_KEY_DOWN, 50 * MILLISECONDS)) {
             softDrop(Direction.DOWN);
@@ -191,10 +237,10 @@ public class GameBoard extends Scene {
             hardDrop(Direction.DOWN);
         }
         if (keyTriggered(GLFW.GLFW_KEY_R, 200 * MILLISECONDS)) {
-            currentShape.rotate(Direction.CLOCKWISE);
+            rotateShape(Direction.CLOCKWISE);
         }
         if (keyTriggered(GLFW.GLFW_KEY_E, 200 * MILLISECONDS)) {
-            currentShape.rotate(Direction.COUNTER_CLOCKWISE);
+            rotateShape(Direction.COUNTER_CLOCKWISE);
         }
         if (keyTriggered(GLFW.GLFW_KEY_T, 200 * MILLISECONDS)) {
             logicBoard.solidifyShape(currentShape.getLogicShape()); // For debug purposes.

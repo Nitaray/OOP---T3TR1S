@@ -17,11 +17,17 @@ public class DisplayShape implements Showable {
     private Vector3f v;
     private float blockSize;
 
-    public DisplayShape (LogicShape logicShape, Vector3f topLeftPosition, float blockSize) {
+    private boolean isGhost;
+
+    public DisplayShape (LogicShape logicShape, Vector3f topLeftPosition, float blockSize, boolean isGhost) {
         this.logicShape = logicShape;
         this.v = topLeftPosition;
         this.blockSize = blockSize;
-        initShape();
+        this.isGhost = isGhost;
+        if (!isGhost)
+            initShape();
+        else
+            initShapeGhost();
     }
 
     public LogicShape getLogicShape() {
@@ -34,6 +40,12 @@ public class DisplayShape implements Showable {
         shape = new Shape(v, blockSize * grid.length, blockSize, shapeDataManager.getShapeTextureName(logicShape));
     }
 
+    public void initShapeGhost() {
+        ShapeDataManager shapeDataManager = ShapeDataManager.getInstance();
+        boolean[][] grid = shapeDataManager.getStateData(logicShape);
+        shape = new Shape(v, blockSize * grid.length, blockSize, shapeDataManager.getGhostTextureName(logicShape));
+    }
+
     public boolean move(Direction direction) {
         if (logicShape.move(direction)) {
             shape.move(direction);
@@ -42,30 +54,36 @@ public class DisplayShape implements Showable {
         return false;
     }
 
+    public void rotateShapeOnly(Direction direction) {
+        shape.rotate(direction);
+    }
+
     public void rotate(Direction direction) {
         Tuple<Integer, Integer, Boolean> tuple = logicShape.rotate(direction);
         if (tuple.z) {
             shape.rotate(direction);
             int offsetX = tuple.x;
             int offsetY = tuple.y;
-            while (offsetX != 0) {
-                if (offsetX > 0) {
-                    shape.move(Direction.RIGHT);
-                    offsetX--;
+            if (!isGhost) {
+                while (offsetX != 0) {
+                    if (offsetX > 0) {
+                        shape.move(Direction.RIGHT);
+                        offsetX--;
+                    }
+                    else {
+                        shape.move(Direction.LEFT);
+                        offsetX++;
+                    }
                 }
-                else {
-                    shape.move(Direction.LEFT);
-                    offsetX++;
-                }
-            }
-            while (offsetY != 0) {
-                if (offsetY > 0) {
-                    shape.move(Direction.UP);
-                    offsetY--;
-                }
-                else {
-                    shape.move(Direction.DOWN);
-                    offsetY++;
+                while (offsetY != 0) {
+                    if (offsetY > 0) {
+                        shape.move(Direction.UP);
+                        offsetY--;
+                    }
+                    else {
+                        shape.move(Direction.DOWN);
+                        offsetY++;
+                    }
                 }
             }
         }

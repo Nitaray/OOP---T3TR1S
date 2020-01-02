@@ -22,6 +22,7 @@ public class ShapeDataManager {
     }
 
     private HashMap<ShapeType, String> shapeTextureName;
+    private HashMap<ShapeType, String> ghostTextureName;
     private HashMap<ShapeType, String> blockTextureName;
 
     private HashMap<ShapeType, ArrayList<boolean[][]>> shapeDataMap;
@@ -51,8 +52,10 @@ public class ShapeDataManager {
 
 
         shapeTextureName = new HashMap<>();
+        ghostTextureName = new HashMap<>();
         blockTextureName = new HashMap<>();
         readShapeTextureName("config/shapeTexture.cfg");
+        readGhostTextureName("config/ghostShapeTexture.cfg");
         readBlockTextureName("config/blockTexture.cfg");
     }
 
@@ -183,6 +186,14 @@ public class ShapeDataManager {
     }
 
     /**
+     * Load the name of shapes ghost texture from data files into a container.
+     * @param sourcePath The directory path of the data file.
+     */
+    private void readGhostTextureName(String sourcePath) {
+        readTextureName(sourcePath, ghostTextureName);
+    }
+
+    /**
      * Load the name of block textures from data files into a container.
      * @param sourcePath The directory path of the data file.
      */
@@ -254,6 +265,31 @@ public class ShapeDataManager {
     public String getShapeTextureName(ShapeType shapeType) {
         if (shapeTextureName.containsKey(shapeType))
             return shapeTextureName.get(shapeType);
+        System.err.println("Cannot find shape type!");
+        return "";
+    }
+
+    /**
+     * Get the name of the ghost texture of a given shape.
+     * @param logicShape a shape to get texture name for.
+     * @return the name of the ghost texture.
+     */
+    public String getGhostTextureName(LogicShape logicShape) {
+        ShapeType type = logicShape.getType();
+        if (ghostTextureName.containsKey(type))
+            return ghostTextureName.get(type);
+        System.err.println("Cannot find shape type!");
+        return "";
+    }
+
+    /**
+     * Get the name of the ghost texture of a given shape.
+     * @param shapeType type of shape.
+     * @return the name of the ghost texture.
+     */
+    public String getGhostTextureName(ShapeType shapeType) {
+        if (ghostTextureName.containsKey(shapeType))
+            return ghostTextureName.get(shapeType);
         System.err.println("Cannot find shape type!");
         return "";
     }

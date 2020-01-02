@@ -39,6 +39,20 @@ public class LogicShape {
         this.offsetTransition = shapeDataManager.getShapeOffset(shapeType);
     }
 
+    public LogicShape(LogicShape logicShape) {
+        this.x = logicShape.x;
+        this.y = logicShape.y;
+        this.state = logicShape.state;
+        this.logicBoard = logicShape.logicBoard;
+        this.shapeType = logicShape.shapeType;
+        this.offsetTransition = logicShape.offsetTransition;
+        this.shapeDataManager = logicShape.shapeDataManager;
+    }
+
+    public LogicShape clone() {
+        return new LogicShape(this);
+    }
+
     public int getX() {
         return x;
     }
