@@ -8,6 +8,7 @@ This is a Java implementation of the famous game Tetris, made by some university
 * Fully implemented tetris game. (Scores not implemented.)
 * Super Rotation System.
 * Unique homemade graphical assets/textures.
+* Ghost piece supported.
 
 # Getting started
 ## Dependencies
@@ -48,7 +49,6 @@ More gamemodes will be implemented in the future.
 
 ## Future Goal
 * Implement a system logger.
-* Implement ghost pieces.
 * Implement scoring system.
 * Implement more gamemode.
 * Implement ingame effects (Clear line, T-Spin effects, etc.)
